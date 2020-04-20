@@ -55,3 +55,86 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+
+
+
+/** STYLE TIL Fladttagpage **/
+
+#seperator {
+  height: 1px;
+  background-color: grey;
+  margin: 35px;
+}
+select {
+  width: 100%;
+  font-size: medium;
+  display: block;
+  border: none;
+
+}
+select:hover {
+  border-color: dodgerblue;
+
+}
+
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: none;
+}
+input[type=text]:focus {
+  border-color: dodgerblue;
+}
+#CarportDiv {
+  margin: auto;
+  margin-left: auto;
+  width: 80%;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+label {
+  margin-top: 20px;
+  display: inline-block;
+
+}
+
+#KundeDiv {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+  font-family: Georgia,'Times New Roman', Times, serif;
+}
+#SubButton{
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+#SubButton:hover{
+  background-color: deepskyblue;
+}
+
+#holdingBox {
+  background-color:whitesmoke;
+  width: 80%;
+  border-radius: 20px;
+  padding: 20px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+
+}

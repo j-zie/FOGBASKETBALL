@@ -12,97 +12,34 @@
 <html>
 <head>
     <title>Fladt tag</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <style>
-
-        #seperator {
-            height: 1px;
-            background-color: grey;
-            margin: 35px;
-        }
-        select {
-            width: 100%;
-            font-size: medium;
-            display: block;
-            border: none;
-
-        }
-        select:hover {
-            border-color: dodgerblue;
-
-        }
-
-
-        input[type=text] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border-radius: 6px;
-            border: none;
-        }
-        input[type=text]:focus {
-            border-color: dodgerblue;
-        }
-        #CarportDiv {
-            margin: auto;
-            margin-left: auto;
-            width: 80%;
-            font-size: 20px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        label {
-            margin-top: 20px;
-            display: inline-block;
-
-        }
-
-        #KundeDiv {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: large;
-            font-family: Georgia,'Times New Roman', Times, serif;
-        }
-        #SubButton{
-            display: block;
-            width: 200px;
-            height: 40px;
-            margin-top: 10px;
-            color: white;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: dodgerblue;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            transition: 0.2s ease-out;
-        }
-        #SubButton:hover{
-            background-color: deepskyblue;
-        }
-
-        #holdingBox {
-            background-color:whitesmoke;
-            width: 80%;
-            border-radius: 20px;
-            padding: 20px;
-            border: none;
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-    </style>
-
-
-
+    <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+
+
+<nav class="white" >
+    <a href="#" class="brand-logo"><img src="logo.jpg">
+    </a>
+</nav>
+
 
 
     <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
         <input type="hidden" name="target" value="quickByg">
         <input type="hidden" name="to" value="ordrebekræft">
+
+    <h2>QUICK-BYG TILBUD - CARPORT MED FLADT TAG</h2>
+        <p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
+        </p>
+        <p> Tilbud og skitsetegning fremsendes med post hurtigst muligt. Ved bestilling medfølger standardbyggevejledning.
+        </p>
+      <h5>
+          Udfyld nedenstående omhyggeligt og klik på "Send forespørgsel"
+      </h5>
 
 <!-- Dimensioner på carport -->
         <div id="CarportDiv">
@@ -219,7 +156,7 @@
 </select>
 
 
-<label for="redskabsRumLængde">Redskabsrum bredde</label>
+<label for="redskabsRumLængde">Redskabsrum længde</label>
 <select id="redskabsRumLængde" name="Redskabsrum_længde">
     <option selected="selected" value="${requestScope.Redskabsrum_længde}"> ${requestScope.Redskabsrum_længde} cm </option>
     <option value="240">240 cm</option>
