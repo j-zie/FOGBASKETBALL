@@ -6,24 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Quick byg</title>
-
-    <style>
-        .Overskrift1 {
-            color:dodgerblue;
-            margin: 20px;
-        }
-
-        .tagvalg {
-            margin: 30px;
-        }
-    </style>
-
-
-</head>
-
+<%@ include file = "/header.inc" %>
 
 
 <body>

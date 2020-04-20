@@ -6,26 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-
-<html>
-<head>
-    <title>Fladt tag</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-
-
-<nav class="white" >
-    <a href="#" class="brand-logo"><img src="logo.jpg">
-    </a>
-</nav>
-
+<%@ include file = "/header.inc" %>
 
 
     <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
@@ -130,10 +112,9 @@
 </select>
 
 
-
 <label for="redskabsRumBredde">Redskabsrum bredde</label>
 <select id="redskabsRumBredde" name="Redskabsrum_bredde">
-    <option selected="selected" value="${requestScope.Redskabsrum_bredde}"> ${requestScope.Redskabsrum_bredde} cm </option>
+    <option selected="selected" value="Ønsker ikke redskabsrum"> Ønsker ikke redskabsrum  </option>
     <option value="240">240 cm</option>
     <option value="270">270 cm</option>
     <option value="300">300 cm</option>
@@ -158,7 +139,7 @@
 
 <label for="redskabsRumLængde">Redskabsrum længde</label>
 <select id="redskabsRumLængde" name="Redskabsrum_længde">
-    <option selected="selected" value="${requestScope.Redskabsrum_længde}"> ${requestScope.Redskabsrum_længde} cm </option>
+    <option selected="selected" value="Ønsker ikke redskabsrum"> Ønsker ikke redskabsrum</option>
     <option value="240">240 cm</option>
     <option value="270">270 cm</option>
     <option value="300">300 cm</option>

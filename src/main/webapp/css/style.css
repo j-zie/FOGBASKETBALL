@@ -129,7 +129,7 @@ label {
 }
 
 #holdingBox {
-  background-color:whitesmoke;
+  background-color:transparent;
   width: 80%;
   border-radius: 20px;
   padding: 20px;
