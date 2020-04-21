@@ -13,6 +13,7 @@ public class Navigation extends Command {
 
 
         switch (nav) {
+
             case "Katalog":
                 // Her kan der kaldes metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
@@ -20,6 +21,8 @@ public class Navigation extends Command {
                 return "QuickByg/TagValgpage";
             case "login":
                 return "login";
+            case "kurv":
+                return "Kurvpage";
         }
         return nav + "page";
     }

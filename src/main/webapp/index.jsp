@@ -13,8 +13,8 @@
 </head>
 
 <body>
-<nav class="white" >
-  <a href="#" class="brand-logo"><img src="resources/logo.jpg">
+<nav style="background-image: linear-gradient(to right, #164886, #00B0FF)" >
+  <a href="#" class="brand-logo"><img src="resources/fog.png">
   </a>
 </nav>
 

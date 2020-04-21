@@ -19,18 +19,18 @@
         <a href="#" class="brand-logo"><img src="resources/fog.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">emailHer@måske.dk</a></li>
-          <li><a href="badges.html"> <i class="material-icons">shopping_cart</i></a></li>
+          <li><a class="tab white-text" href="#email">emailHer@måske.dk</a></li>
+          <li><a class="tab white-text" href="FrontController?target=nav&Nav=kurv"> <i class="material-icons">shopping_cart</i></a></li>
 
         </ul>
       </div>
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
-          <li class="tab"><a class="active" href="index.jsp" style="color: orange">Hjem</a></li>
-          <li class="tab"><a class="active" href="FrontController?target=nav&Nav=Katalog" style="color: orange">Katalog</a></li>
-          <li class="tab"><a href="FrontController?target=nav&Nav=QuickByg" style="color: orange">QuickByg</a></li>
-          <li class="tab"><a href="FrontController?target=nav&Nav=login" style="color: orange">LOGIN TESTER</a></li>
-          <li class="tab"><a href="FrontController?target=nav&Nav=login" style="color: orange"> ${sessionScope.email}</a></li>
+          <li class="tab hoverable"><a class="active" href="main.jsp" >Hjem</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=Katalog" >Katalog</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=QuickByg">QuickByg</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login" >LOGIN TESTER</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login"> ${sessionScope.email}</a></li>
 
         </ul>
       </div>
@@ -41,4 +41,6 @@
       <li><a href="badges.html">test</a></li>
       <li><a href="collapsible.html">test</a></li>
     </ul>
+
+
   <!-- Nav bar slut-->
