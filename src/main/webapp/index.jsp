@@ -14,7 +14,7 @@
 
 <body>
 <nav class="white" >
-  <a href="#" class="brand-logo"><img src="logo.jpg">
+  <a href="#" class="brand-logo"><img src="resources/logo.jpg">
   </a>
 </nav>
 

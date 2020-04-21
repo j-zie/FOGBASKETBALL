@@ -16,11 +16,11 @@
   <!-- Nav bar -->
     <nav class="nav-extended" style="background-color: white">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><img src="logo.jpg"></a>
+        <a href="#" class="brand-logo"><img src="resources/logo.jpg"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html">emailHer@måske.dk</a></li>
-          <li><a href="badges.html">Kurv?</a></li>
+          <li><a href="badges.html"> <i class="material-icons">shopping_cart</i></a></li>
 
         </ul>
       </div>
@@ -37,8 +37,8 @@
     </nav>
   ${sessionScope.email}
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
+      <li><a href="sass.html">test</a></li>
+      <li><a href="badges.html">test</a></li>
+      <li><a href="collapsible.html">test</a></li>
     </ul>
   <!-- Nav bar slut-->
