@@ -4,11 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- The purpose of Connector is to...
 
- @author kasper
- */
 public class Connector {
 
     private static String URL;
@@ -39,10 +35,9 @@ public class Connector {
             PASSWORD = System.getenv("JDBC_PASSWORD");
         } else {
             // Localhost
-            URL = "jdbc:mysql://localhost:3306/useradmin?serverTimezone=CET&useSSL=false";
-            USERNAME = "root";
-            PASSWORD = "root";
+            URL = "jdbc:mysql://localhost:3306/FogDB?serverTimezone=CET&useSSL=false";
+            USERNAME = "tobias";
+            PASSWORD = "password";
         }
     }
-
 }
