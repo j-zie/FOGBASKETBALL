@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ include file = "header.inc" %>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+<nav class="white" >
+  <a href="#" class="brand-logo"><img src="logo.jpg">
+  </a>
+</nav>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -8,11 +24,11 @@
         <br><br>
         <h1 class="header center white-text text-lighten-2" style="font-weight: bolder;">TRÆLAST <br>& BYGGECENTER</h1>
         <div class="row center">
-          <a href="https://www.johannesfog.dk/byggecenter/" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
+          <a href="main.jsp" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="resources/background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
   <div class="card-panel orange lighten-2">
@@ -67,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="resources/background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -84,7 +100,7 @@
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    <input placeholder="Placeholder" id="first_nae" type="text" class="validate">
                     <label for="first_name">First Name</label>
                   </div>
                     <div class="input-field col s6">
@@ -96,7 +112,7 @@
                   <label for="first_name">Telefonnummer</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate">
+                  <input id="last_nam" type="text" class="validate">
                   <label for="last_name">Email</label>
                 </div>
 
@@ -107,57 +123,12 @@
                 </div>
 
               </div>
-
-                </div>
               </form>
             </div>
         </div>
       </div>
-
     </div>
   </div>
-
-  <footer class="page-footer blue">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Velkommen i Fog</h5>
-          <p class="grey-text text-lighten-4">Her får du kvalificeret rådgivning til den bedste løsning. Fog hjælper dig med at få overblik og komme i mål med dit byggeprojekt. Lige fra hvad der er godt at vide til vejledning i valg af materialer.</p>
+<%@ include file = "includes/footer.jsp" %>
 
 
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Om Fog</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Åbningstider</a></li>
-            <li><a class="white-text" href="#!">Kontakt Fog</a></li>
-            <li><a class="white-text" href="#!">Ledige stillinger</a></li>
-            <li><a class="white-text" href="#!">Persondata politik</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Aktuelt</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Nej tak+</a></li>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Instagram</a></li>
-            <li><a class="white-text" href="#!">Linkedin</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="”http://www.google.com/search?q=Gruppe+123”">Gruppe 123</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
-</html>
