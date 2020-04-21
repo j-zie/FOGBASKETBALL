@@ -29,11 +29,13 @@
           <li class="tab"><a class="active" href="index.jsp" style="color: orange">Hjem</a></li>
           <li class="tab"><a class="active" href="FrontController?target=nav&Nav=Katalog" style="color: orange">Katalog</a></li>
           <li class="tab"><a href="FrontController?target=nav&Nav=QuickByg" style="color: orange">QuickByg</a></li>
-          <li class="tab"><a href="FrontController?target=nav&Nav=login" style="color: orange">Something</a></li>
+          <li class="tab"><a href="FrontController?target=nav&Nav=login" style="color: orange">LOGIN TESTER</a></li>
+          <li class="tab"><a href="FrontController?target=nav&Nav=login" style="color: orange"> ${sessionScope.email}</a></li>
+
         </ul>
       </div>
     </nav>
-
+  ${sessionScope.email}
     <ul class="sidenav" id="mobile-demo">
       <li><a href="sass.html">Sass</a></li>
       <li><a href="badges.html">Components</a></li>

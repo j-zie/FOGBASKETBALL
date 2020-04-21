@@ -36,7 +36,8 @@ public class UserMapper {
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT brugerId, rolle FROM Users "
+            System.out.println("I got a connection");
+            String SQL = "SELECT brugerId, rolle FROM Bruger "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -49,7 +50,7 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
-                throw new LoginSampleException( "Could not validate user" );
+                return null; // return null and the function caller will handle
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new LoginSampleException(ex.getMessage());
