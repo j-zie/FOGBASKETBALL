@@ -24,7 +24,7 @@
         <br><br>
         <h1 class="header center white-text text-lighten-2" style="font-weight: bolder;">TRÆLAST <br>& BYGGECENTER</h1>
         <div class="row center">
-          <a href="https://www.johannesfog.dk/byggecenter/" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
+          <a href="main.jsp" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    <input placeholder="Placeholder" id="first_nae" type="text" class="validate">
                     <label for="first_name">First Name</label>
                   </div>
                     <div class="input-field col s6">
