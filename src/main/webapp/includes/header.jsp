@@ -14,9 +14,9 @@
   <body>
 
   <!-- Nav bar -->
-    <nav class="nav-extended" style="background-color: white">
+    <nav class="nav-extended" style="background-image: linear-gradient(to right, #164886, #00B0FF)">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><img src="resources/logo.jpg"></a>
+        <a href="#" class="brand-logo"><img src="resources/fog.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html">emailHer@måske.dk</a></li>
