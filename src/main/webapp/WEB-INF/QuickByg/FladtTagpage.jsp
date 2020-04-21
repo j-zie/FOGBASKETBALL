@@ -10,18 +10,30 @@
 <%@ include file = "/includes/header.jsp" %>
 
 
+
+
+
+
+<div id="Oplysninger" style="display: block; width: 60%; margin-left: auto; margin-right: auto">
+
+
+<h3>QUICK-BYG TILBUD - CARPORT MED FLADT TAG</h3>
+<p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
+</p>
+<p> Tilbud og skitsetegning fremsendes med post hurtigst muligt. Ved bestilling medfølger standardbyggevejledning.
+</p>
+<h6>
+    Udfyld nedenstående omhyggeligt og klik på "Send forespørgsel"
+</h6>
+</div>
+
+
+
     <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
         <input type="hidden" name="target" value="quickByg">
         <input type="hidden" name="to" value="ordrebekræft">
 
-    <h2>QUICK-BYG TILBUD - CARPORT MED FLADT TAG</h2>
-        <p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
-        </p>
-        <p> Tilbud og skitsetegning fremsendes med post hurtigst muligt. Ved bestilling medfølger standardbyggevejledning.
-        </p>
-      <h5>
-          Udfyld nedenstående omhyggeligt og klik på "Send forespørgsel"
-      </h5>
+
 
 <!-- Dimensioner på carport -->
         <div id="CarportDiv">
@@ -193,6 +205,4 @@
     </form>
 
 
-
-</body>
-</html>
+<%@ include file = "/includes/footer.jsp" %>

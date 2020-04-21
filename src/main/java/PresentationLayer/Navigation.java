@@ -21,6 +21,8 @@ public class Navigation extends Command {
 
             case "QuickByg":
                 return "QuickByg/TagValgpage";
+
+
         }
 
 

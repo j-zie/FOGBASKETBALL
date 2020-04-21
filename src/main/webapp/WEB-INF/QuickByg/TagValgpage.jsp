@@ -9,19 +9,26 @@
 <%@ include file = "/includes/header.jsp" %>
 
 
-<body>
 
-<h1 class="Overskrift1"> QUICKBYG</h1>
+<div style=" width: 50%; height: 100%; margin-right: auto; margin-left: auto">
 
-<div class="tagvalg">
-    <h2> Tag med fladt tag</h2>
-    <a href="FrontController?target=quickByg&to=Fladt"><img src="Images/Fladttag.png" ></a>
+
+
+    <h2 style="color: #00b0ff; display: block; text-align: center "> QUICK-BYG </h2>
+<p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
+</p>
+ <p>   Tilbud og skitsetegning fremsendes med post hurtigst muligt.
+    Ved bestilling medfølger standardbyggevejledning. </p>
+
+   <p> Rekvirér tilbud - start med at vælge type: </p>
+<div class="tagvalg" style="text-align: center">
+    <h4> Carport med fladt tag</h4>
+    <a href="FrontController?target=quickByg&to=Fladt"><img src="resources/Fladttag.png" ></a>
 </div>
 
-<div class="tagvalg">
-    <h2> Tag med rejsning</h2>
-    <a href="FrontController?target=quickByg&to=Rejsning"> <img src="Images/Rejsning.png"></a>
+<div class="tagvalg" style="text-align: center">
+    <h4> Carport med rejsning</h4>
+    <a href="FrontController?target=quickByg&to=Rejsning"> <img src="resources/Rejsning.png"></a>
 </div>
-
-</body>
-</html>
+</div>
+<%@ include file = "/includes/footer.jsp" %>
