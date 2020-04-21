@@ -11,6 +11,20 @@ public class Navigation extends Command {
 
         String nav = request.getParameter("Nav");
 
+
+        switch (nav) {
+            case "Katalog":
+
+                // Her kan der kaldes metode til evt. at hente alle carporte fra db.
+
+                return "Katalogpage";
+
+            case "QuickByg":
+                return "QuickByg/TagValgpage";
+        }
+
+
+
         return nav + "page";
     }
 }

@@ -27,7 +27,7 @@
         <ul class="tabs tabs-transparent">
           <li class="tab"><a class="active" href="index.jsp" style="color: orange">Hjem</a></li>
           <li class="tab"><a class="active" href="FrontController?target=nav&Nav=Katalog" style="color: orange">Katalog</a></li>
-          <li class="tab"><a href="FrontController?target=nav&Nav=QuickByg/TagValg"" style="color: orange">QuickByg</a></li>
+          <li class="tab"><a href="FrontController?target=nav&Nav=QuickByg"" style="color: orange">QuickByg</a></li>
           <li class="tab"><a href="#test4" style="color: orange">Something</a></li>
         </ul>
       </div>
