@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ include file = "header.inc" %>
+<%@ include file = "includes/header.inc" %>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="resources/background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
   <div class="card-panel orange lighten-2">
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="resources/background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">

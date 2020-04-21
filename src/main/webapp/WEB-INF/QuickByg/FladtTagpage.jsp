@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@ include file = "/header.inc" %>
+<%@ include file = "/includes/header.inc" %>
 
 
     <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
