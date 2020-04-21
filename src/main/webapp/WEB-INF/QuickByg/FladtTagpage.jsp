@@ -31,7 +31,7 @@
 
     <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
         <input type="hidden" name="target" value="quickByg">
-        <input type="hidden" name="to" value="ordrebekræft">
+        <input type="hidden" name="to" value="FladtTagOrdrebekræft">
 
 
 
@@ -126,7 +126,7 @@
 
 <label for="redskabsRumBredde">Redskabsrum bredde</label>
 <select id="redskabsRumBredde" name="Redskabsrum_bredde">
-    <option selected="selected" value="Ønsker ikke redskabsrum"> Ønsker ikke redskabsrum  </option>
+    <option selected="selected" value="0"> Ønsker ikke redskabsrum  </option>
     <option value="240">240 cm</option>
     <option value="270">270 cm</option>
     <option value="300">300 cm</option>
@@ -151,7 +151,7 @@
 
 <label for="redskabsRumLængde">Redskabsrum længde</label>
 <select id="redskabsRumLængde" name="Redskabsrum_længde">
-    <option selected="selected" value="Ønsker ikke redskabsrum"> Ønsker ikke redskabsrum</option>
+    <option selected="selected" value="0"> Ønsker ikke redskabsrum</option>
     <option value="240">240 cm</option>
     <option value="270">270 cm</option>
     <option value="300">300 cm</option>

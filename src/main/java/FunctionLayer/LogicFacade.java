@@ -18,4 +18,9 @@ public class LogicFacade {
         return user;
     }
 
+
+
+    public static void sendForspørgsel(Carport carport, FKunde kunde){
+        // send videre til db
+    }
 }

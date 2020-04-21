@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 public class Carport {
+
     public Carport(double carportLængde, double carportBredde, int tagtypeID, double hældning, boolean redskabsrum, double redskabsrumLængde, double getRedskabsrumBredde) {
         this.carportLængde = carportLængde;
         this.carportBredde = carportBredde;
