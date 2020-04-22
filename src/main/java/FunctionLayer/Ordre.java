@@ -19,5 +19,6 @@ public class Ordre {
         this.redskabsrumLængde = redskabsrumLængde;
         this.RedskabsrumBredde = redskabsrumBredde;
         this.fKunde = fKunde;
+    FKunde fkunde = new FKunde();
     }
 }

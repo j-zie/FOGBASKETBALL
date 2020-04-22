@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="resources/background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/resources/background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
   <div class="card-panel orange lighten-2">
