@@ -1,5 +1,8 @@
 package PresentationLayer;
 
+import FunctionLayer.Carport;
+import FunctionLayer.FKunde;
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,16 +24,18 @@ public class QuickByg extends Command{
             case "Rejsning":
                 return "QuickByg/RejsningTagpage";
 
-            case "ordrebekræft":
+            case "FladtTagOrdrebekræft":
 
                 Boolean fejlFundet = tjekFelter(request);
                 if (fejlFundet == true) {
                 return "QuickByg/FladtTagpage";
             }
 
+                Carport carport = sammenSætCarport(request);
+                FKunde kunde = hentKundeInfo(request);
 
-
-                return "FAIL";  // Skal sende en videre til en ny side eller en bekræftelse
+                LogicFacade.sendForspørgsel(carport, kunde);
+                return "QuickByg/Bekræftelse";  // Skal sende en videre til en ny side eller en bekræftelse
         }
 
         return "fail"; // Lav error handle
@@ -38,7 +43,36 @@ public class QuickByg extends Command{
 
 
 
+private Carport sammenSætCarport(HttpServletRequest request){
 
+    Double bredde = Double.parseDouble(request.getParameter("Bredde"));
+    Double længde = Double.parseDouble(request.getParameter("Længde"));
+    String tagtype = request.getParameter("tagtype");
+    Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
+    Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
+
+    Carport carport = new Carport(længde, bredde,
+            1,
+            0.0,
+            true,
+            redskabsrum_længde,
+            redskabsrum_bredde);
+
+return carport;
+
+    }
+
+
+    private FKunde hentKundeInfo(HttpServletRequest request){
+        String navn = request.getParameter("Navn");
+        String adresse = request.getParameter("Adresse");
+        String by = request.getParameter("Postnummer");
+        String telefon = request.getParameter("Telefon");
+        String email = request.getParameter("Email");
+
+        FKunde kunde = new FKunde(navn, adresse, by, telefon, email);
+        return kunde;
+    }
 
 
 
