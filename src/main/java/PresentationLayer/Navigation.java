@@ -25,6 +25,8 @@ public class Navigation extends Command {
                 return "Kurvpage";
             case "admin":
                 return "admin";
+            case "register":
+                return "register";
         }
         return nav + "page";
     }
