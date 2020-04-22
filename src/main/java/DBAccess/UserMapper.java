@@ -52,10 +52,10 @@ public class UserMapper {
                 String role = rs.getString( "rolle" );
                 int id = rs.getInt( "brugerId" );
                 String navn = rs.getString("navn");
-                String telefon = rs.getString("telefonNummer");
+                String telefon = rs.getString("telefon");
                 String emails = rs.getString("email");
                 String adresse = rs.getString("adresse");
-                int postnr = rs.getInt("postNr");
+                int postnr = rs.getInt("postnr");
                 User user = new User( email, password, role, telefon, email, id, password, postnr);
                 user.setId( id );
                 return user;
