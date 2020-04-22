@@ -1,12 +1,10 @@
 package PresentationLayer;
 
-import FunctionLayer.Carport;
-import FunctionLayer.FKunde;
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class QuickByg extends Command{
 
@@ -32,9 +30,12 @@ public class QuickByg extends Command{
             }
 
                 Carport carport = sammenSætCarport(request);
-                FKunde kunde = hentKundeInfo(request);
+
+                   HttpSession session = request.getSession();
+                 User kunde = (User) session.getAttribute("") ;
 
                 LogicFacade.sendForspørgsel(carport, kunde);
+
                 return "QuickByg/Bekræftelse";  // Skal sende en videre til en ny side eller en bekræftelse
         }
 
@@ -76,7 +77,7 @@ return carport;
 
 
 
-    private Boolean tjekFelter(HttpServletRequest request){
+    private Boolean tjekFelter(HttpServletRequest request) throws LoginSampleException {
         Boolean fejfundet = false;
         String bredde = request.getParameter("Bredde");
         String længde = request.getParameter("Længde");
@@ -104,45 +105,41 @@ return carport;
         }
 
 
-
-        String navn = request.getParameter("Navn");
-        String adresse = request.getParameter("Adresse");
-        String by = request.getParameter("Postnummer");
-        String telefon = request.getParameter("Telefon");
-        String email = request.getParameter("Email");
-
-        request.setAttribute("Navn", navn);
-        request.setAttribute("Adresse", adresse);
-        request.setAttribute("Postnummer", by);
-        request.setAttribute("Telefon", telefon);
-        request.setAttribute("Email", email);
-
-        if (navn.length() < 2 ) {
-            request.setAttribute("navnError", "Navn mangler");
-            fejfundet = true;
-        }
-        if (adresse.length() < 2 ) {
-            request.setAttribute("adresseError", "Adresse mangler");
-            fejfundet = true;
-        }
-        if (by.length() < 2 ) {
-            request.setAttribute("byError", "Felt mangler");
-            fejfundet = true;
-        }
-        if (telefon.length() < 2 ) {
-            request.setAttribute("telefonError", "Telefonnummer mangler");
-            fejfundet = true;
-        }
+           if (!tjekLogin(request)) {
+               fejfundet = true;
+           }
 
 
-       if (validerEmail(email) == false) {
-       request.setAttribute("emailError", "Email kan ikke bruges, skriv en rigtig en!");
-           fejfundet = true;
-        }
 
         return fejfundet;
     }
 
+    private Boolean tjekLogin(HttpServletRequest request) throws LoginSampleException {
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+   
+        request.setAttribute("email", email );
+        request.setAttribute("password", password);
+
+        if (validerEmail(email)) {
+        if (LogicFacade.login(email, password) != null) {
+                 return true;
+              }  else {
+
+                request.setAttribute("emailError", "Bruger findes ikke");
+              }
+
+        } else{
+                  request.setAttribute("emailError", "Ikke valid email");
+        }
+
+        return false;
+    }
+    private Boolean tjekSignup(){
+
+        return false;
+    }
     private Boolean validerEmail(String email){
         String regex = "^(.+)@(.+)$";
         if (!email.matches(regex))   {

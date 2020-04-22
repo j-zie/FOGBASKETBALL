@@ -50,6 +50,7 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
+
                 return null; // return null and the function caller will handle
             }
         } catch ( ClassNotFoundException | SQLException ex ) {

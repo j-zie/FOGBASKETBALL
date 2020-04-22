@@ -1,5 +1,6 @@
 package FunctionLayer;
 
+import DBAccess.OrdreMapper;
 import DBAccess.UserMapper;
 
 /**
@@ -20,7 +21,13 @@ public class LogicFacade {
 
 
 
-    public static void sendForspørgsel(Carport carport, FKunde kunde){
-        // send videre til db
+    public static void sendForspørgsel(Carport carport, User kunde){
+    try {
+        OrdreMapper.createOrder(kunde, carport);
+    } catch (OrdreRetrivalException e) {
+        System.out.println(e);
+    }
+
+
     }
 }
