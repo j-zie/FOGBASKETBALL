@@ -30,12 +30,12 @@
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=Katalog" >Katalog</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=QuickByg">QuickByg</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login" >LOGIN TESTER</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">ADMIN TESTER</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login"> ${sessionScope.email}</a></li>
 
         </ul>
       </div>
     </nav>
-  ${sessionScope.email}
     <ul class="sidenav" id="mobile-demo">
       <li><a href="sass.html">test</a></li>
       <li><a href="badges.html">test</a></li>
