@@ -44,14 +44,6 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`bruger` (
   `telefon` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`brugerId`))
 ENGINE = InnoDB;
-  PRIMARY KEY (`brugerId`),
-  INDEX `postNr_idx` (`postNr` ASC) VISIBLE,
-  CONSTRAINT `postNr`
-    FOREIGN KEY (`postNr`)
-    REFERENCES `fog_db`.`byer` (`postNr`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
