@@ -70,38 +70,32 @@
 
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="navn" placeholder="Indtast navn*">
+                        <input type="text" name="navn" placeholder="Indtast navn*">
                     </div>
                 </div>
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="adresse" placeholder="Indtast adresse*">
+                        <input type="text" name="adresse" placeholder="Indtast adresse*">
                     </div>
                 </div>
 
 
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="postnr" placeholder="Indtast postnummer*">
+                        <input type="text" name="postnr" placeholder="Indtast postnummer*">
                     </div>
                 </div>
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="telefon" placeholder="Intast Telefon*">
+                        <input type="text" name="telefon" placeholder="Intast Telefon*">
                     </div>
                 </div>
 
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="by" placeholder="Indtast by*">
+                        <input type="text" name="by" placeholder="Indtast by*">
                     </div>
                 </div>
-                <div class="col s12">
-                    <div class="input-field">
-                        <input type="password" name="password2" placeholder="Password again*">
-                    </div>
-                </div>
-
 
 
                 <div class="col s12">
