@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 public class QuickByg extends Command{
 
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 

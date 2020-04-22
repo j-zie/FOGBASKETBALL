@@ -32,7 +32,7 @@
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login" >LOGIN TESTER</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register TESTER</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">ADMIN TESTER</a></li>
-          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login"> ${sessionScope.email}</a></li>
+
 
         </ul>
       </div>
