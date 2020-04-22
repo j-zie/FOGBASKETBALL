@@ -25,7 +25,7 @@ public class User {
     }
 
     public User(String navn, String adresse, String by, String telefon, String email,
-                String password,  int postnr) {
+                String password, int postnr) {
         this.navn = navn;
         this.adresse = adresse;
         this.by = by;
@@ -98,4 +98,27 @@ public class User {
         this.id = id;
     }
 
+    public void setPostnr(int postnr) {
+        this.postnr = postnr;
+    }
+
+    public void setRolle(String rolle) {
+        this.rolle = rolle;
+    }
+
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setBy(String by) {
+        this.by = by;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
 }

@@ -4,32 +4,53 @@ package DBAccess;
 import FunctionLayer.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class OrdreMapper {
 
-    public static Carport getOrdre(String OrdreID) throws OrdreRetrivalException {
+    public static ArrayList<Ordre> getAlleOrdre() throws OrdreRetrivalException {
+        User user = new User("","","","","","",0);
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT carportLængde, carportBredde, tagtype, tæghældning, redskabsrum, redskabsrumBredde, redskabsrumLængde FROM Ordre "
-                    + "WHERE OrdreID=?";
-            PreparedStatement ps = con.prepareStatement( SQL );
-            ps.setString( 1, OrdreID );
-            ResultSet rs = ps.executeQuery();
-            //alle de her skal instiseres når db er klar
-            double carportLængde = 0;
-            double carportBredde = 0;
-            int tagtypeID = 0;
-            double tæghældning = 0;
-            boolean redskabsrum = false;
-            double redskabsrumBredde = 0;
-            double redskabsrumLængde = 0;
-            Carport carport = new Carport( carportLængde, carportBredde, tagtypeID, tæghældning, redskabsrum, redskabsrumBredde, redskabsrumLængde);
-            if ( rs.next() ) {
-                // en masse Carport.set; her
-                return carport;
-            } else {
-                throw new OrdreRetrivalException( "Could not retrive data from database" );
+            String SQL = "SELECT * FROM ORDRE";
+            Statement stm;
+            stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(SQL);
+            ArrayList<Ordre> OrdreListe = new ArrayList<>();
+
+
+            while(rs.next()) {
+
+                String id = Integer.toString(rs.getInt("brugerId"));
+
+                try {
+
+                    String SQL2 = "SELECT * FROM bruger "
+                            + "WHERE brugerId=?";
+                    PreparedStatement ps = con.prepareStatement( SQL2 );
+                    ps.setString( 1, id );
+                    ResultSet rs2 = ps.executeQuery();
+
+                    if ( rs2.next() ) {
+                        user.setId(rs2.getInt("brugerId"));
+                        user.setNavn(rs2.getString("navn"));
+                        user.setAdresse(rs2.getString("adresse"));
+                        user.setPostnr(rs2.getInt("postNr"));
+                        user.setTelefon(rs2.getString("telefonNummer"));
+                        user.setEmail(rs2.getString("email"));
+                    } else {
+                    throw new OrdreRetrivalException("Kunne ikke få fat i user");
+                    }
+                } catch ( SQLException ex ) {
+                }
+
+                Ordre ordre = new Ordre(rs.getInt("ordreNr"),rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"),user);
+                OrdreListe.add(ordre);
             }
+
+            return OrdreListe;
+
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new OrdreRetrivalException(ex.getMessage());
         }

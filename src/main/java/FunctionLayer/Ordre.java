@@ -8,17 +8,16 @@ public class Ordre {
     private double hældning;
     private double redskabsrumLængde;
     private double RedskabsrumBredde;
-    private FKunde fKunde;
+    private User user;
 
-    public Ordre(int ordreNr, double carportLængde, double carportBredde, int tagtypeNr, double hældning, double redskabsrumLængde, double redskabsrumBredde, FKunde fKunde) {
+    public Ordre(int ordreNr, double carportLængde, double carportBredde, int tagtypeNr, double hældning, double redskabsrumLængde, double redskabsrumBredde, User user) {
         OrdreNr = ordreNr;
         this.carportLængde = carportLængde;
         this.carportBredde = carportBredde;
         this.tagtypeNr = tagtypeNr;
         this.hældning = hældning;
         this.redskabsrumLængde = redskabsrumLængde;
-        this.RedskabsrumBredde = redskabsrumBredde;
-        this.fKunde = fKunde;
-    FKunde fkunde = new FKunde();
+        RedskabsrumBredde = redskabsrumBredde;
+        this.user = user;
     }
 }
