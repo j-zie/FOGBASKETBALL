@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 public class QuickByg extends Command{
 
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
@@ -34,7 +33,7 @@ public class QuickByg extends Command{
                 Carport carport = sammenSætCarport(request);
                 System.out.println(carport.toString());
 
-                 User kunde = (User) session.getAttribute("") ;
+                 User kunde = (User) session.getAttribute("user");
 
                 LogicFacade.sendForspørgsel(carport, kunde);
 

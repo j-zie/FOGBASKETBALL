@@ -19,8 +19,8 @@ public class LogicFacade {
 
 
         User user = new User(navn, adresse, by, telefonnummer, email, password, postnummer);
-        UserMapper.createUser( user );
-        return user;
+
+        return UserMapper.createUser( user );
     }
 
 
