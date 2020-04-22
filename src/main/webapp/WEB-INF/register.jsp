@@ -48,7 +48,7 @@
 <div class="container">
     <div class="row card hoverable">
         <div class="card-content ">
-            <h4 class="center blue-text">Login Form</h4>
+            <h4 class="center blue-text">Register</h4>
             <form class="row s12" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="register" >
 
