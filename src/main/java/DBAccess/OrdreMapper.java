@@ -12,7 +12,7 @@ public class OrdreMapper {
         User user = new User("","","","","","",0);
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM ORDRE";
+            String SQL = "SELECT * FROM ordre";
             Statement stm;
             stm = con.createStatement();
             ResultSet rs;
@@ -36,8 +36,8 @@ public class OrdreMapper {
                         user.setId(rs2.getInt("brugerId"));
                         user.setNavn(rs2.getString("navn"));
                         user.setAdresse(rs2.getString("adresse"));
-                        user.setPostnr(rs2.getInt("postNr"));
-                        user.setTelefon(rs2.getString("telefonNummer"));
+                        user.setPostnr(rs2.getInt("postnr"));
+                        user.setTelefon(rs2.getString("telefon"));
                         user.setEmail(rs2.getString("email"));
                     } else {
                     throw new OrdreRetrivalException("Kunne ikke få fat i user");

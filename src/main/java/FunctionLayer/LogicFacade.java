@@ -2,7 +2,6 @@ package FunctionLayer;
 
 import DBAccess.*;
 import DBAccess.UserMapper;
-import com.sun.tools.corba.se.idl.constExpr.Or;
 
 import java.util.ArrayList;
 
@@ -41,7 +40,13 @@ public class LogicFacade {
     public static ArrayList<Ordre> hentAlleOrdre(){
         try {
 
-       return OrdreMapper.getAlleOrdre();
+
+            ArrayList<Ordre> xs = OrdreMapper.getAlleOrdre();
+            for (int i = 0; i < xs.size(); i++) {
+                System.out.println(xs);
+            }
+
+            return xs;
 
         } catch (OrdreRetrivalException e) {
             e.printStackTrace();
