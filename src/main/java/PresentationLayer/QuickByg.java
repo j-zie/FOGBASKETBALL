@@ -12,7 +12,9 @@ public class QuickByg extends Command{
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-    String to = request.getParameter("to");
+        HttpSession session = request.getSession();
+
+       String to = request.getParameter("to");
 
         switch (to) {
 
@@ -30,8 +32,8 @@ public class QuickByg extends Command{
             }
 
                 Carport carport = sammenSætCarport(request);
+                System.out.println(carport.toString());
 
-                   HttpSession session = request.getSession();
                  User kunde = (User) session.getAttribute("") ;
 
                 LogicFacade.sendForspørgsel(carport, kunde);
@@ -52,7 +54,8 @@ private Carport sammenSætCarport(HttpServletRequest request){
     Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
     Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
 
-    Carport carport = new Carport(længde, bredde,
+    Carport carport = new Carport(længde,
+            bredde,
             1,
             0.0,
             true,
@@ -61,18 +64,6 @@ private Carport sammenSætCarport(HttpServletRequest request){
 
 return carport;
 
-    }
-
-
-    private FKunde hentKundeInfo(HttpServletRequest request){
-        String navn = request.getParameter("Navn");
-        String adresse = request.getParameter("Adresse");
-        String by = request.getParameter("Postnummer");
-        String telefon = request.getParameter("Telefon");
-        String email = request.getParameter("Email");
-
-        FKunde kunde = new FKunde(navn, adresse, by, telefon, email);
-        return kunde;
     }
 
 
@@ -105,41 +96,12 @@ return carport;
         }
 
 
-           if (!tjekLogin(request)) {
-               fejfundet = true;
-           }
-
 
 
         return fejfundet;
     }
 
-    private Boolean tjekLogin(HttpServletRequest request) throws LoginSampleException {
 
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-   
-        request.setAttribute("email", email );
-        request.setAttribute("password", password);
-
-        if (validerEmail(email)) {
-        if (LogicFacade.login(email, password) != null) {
-                 return true;
-              }  else {
-
-                request.setAttribute("emailError", "Bruger findes ikke");
-              }
-
-        } else{
-                  request.setAttribute("emailError", "Ikke valid email");
-        }
-
-        return false;
-    }
-    private Boolean tjekSignup(){
-
-        return false;
-    }
     private Boolean validerEmail(String email){
         String regex = "^(.+)@(.+)$";
         if (!email.matches(regex))   {

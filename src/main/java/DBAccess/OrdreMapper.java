@@ -39,7 +39,7 @@ public class OrdreMapper {
         try {
             Connection con = Connector.connection();
 
-            String SQL = "INSERT INTO Ordre (BrugerID, CarportLængde, CarportBredde, RedskabsrumLængde, RedskabsrumBredde, TagTypeNr, Hældning) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO ordre (brugerid, carportLængde, carportBredde, redskabsrumLængde, redskabsrumBredde, tagTypeNr, hældning) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt(1, kunde.getId());
             ps.setDouble( 2, carport.getCarportLængde());
@@ -50,8 +50,8 @@ public class OrdreMapper {
             ps.setDouble( 7, carport.getHældning());
             ps.executeUpdate();
 
-
         } catch ( SQLException | ClassNotFoundException ex ) {
+
             throw new OrdreRetrivalException( ex.getMessage() );
         }
     }

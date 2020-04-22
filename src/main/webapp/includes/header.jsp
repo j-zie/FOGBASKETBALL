@@ -19,7 +19,7 @@
         <a href="#" class="brand-logo"><img src="resources/fog.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="tab white-text" href="#email">emailHer@måske.dk</a></li>
+          <li><a class="tab white-text" href="#email">${sessionScope.user.email}</a></li>
           <li><a class="tab white-text" href="FrontController?target=nav&Nav=kurv"> <i class="material-icons">shopping_cart</i></a></li>
 
         </ul>
