@@ -21,7 +21,7 @@ public class Navigation extends Command {
                 return "Katalogpage";
             case "QuickByg":
 
-    
+
                 if (session.getAttribute("user") == null) {
                     return "QuickByg/LoginOrSignuppage";
                 }
