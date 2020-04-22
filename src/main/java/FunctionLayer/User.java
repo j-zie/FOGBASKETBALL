@@ -12,7 +12,7 @@ public class User {
     }
 
     public User(String navn, String adresse, String by, String telefon, String email, int id,
-                String password, String rolle, int postnr) {
+                String password,  int postnr) {
         this.navn = navn;
         this.adresse = adresse;
         this.by = by;
@@ -20,7 +20,19 @@ public class User {
         this.email = email;
         this.id = id;
         this.password = password;
-        this.rolle = rolle;
+        this.rolle = "kunde";
+        this.postnr = postnr;
+    }
+
+    public User(String navn, String adresse, String by, String telefon, String email,
+                String password,  int postnr) {
+        this.navn = navn;
+        this.adresse = adresse;
+        this.by = by;
+        this.telefon = telefon;
+        this.email = email;
+        this.password = password;
+        this.rolle = "kunde";
         this.postnr = postnr;
     }
 

@@ -75,7 +75,7 @@ public class UserMapperTest {
         assertEquals( "customer", user.getRole() );
     }
 
-    @Test
+    /*@Test
     public void testCreateUser01() throws LoginSampleException {
         // Can we create a new user - Notice, if login fails, this will fail
         // but so would login01, so this is OK
@@ -83,5 +83,5 @@ public class UserMapperTest {
         UserMapper.createUser( original );
         User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
         assertEquals( "konge", retrieved.getRole() );
-    }
+    } */
 }

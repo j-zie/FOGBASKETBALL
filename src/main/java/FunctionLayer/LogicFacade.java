@@ -14,10 +14,10 @@ public class LogicFacade {
 
 
     public static User createUser(String email, String password, String telefonnummer,
-                                   String adresse, String navn, String postnummer, String by, int id, String rolle ) throws LoginSampleException {
+                                   String adresse, String navn, int postnummer, String by ) throws LoginSampleException {
 
 
-        User user = new User(navn, adresse, by, telefonnummer, email, id, password, rolle);
+        User user = new User(navn, adresse, by, telefonnummer, email, password, postnummer);
         UserMapper.createUser( user );
         return user;
     }
