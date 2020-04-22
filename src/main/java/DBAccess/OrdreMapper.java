@@ -1,12 +1,9 @@
 package DBAccess;
 
 
-import FunctionLayer.OrdreRetrivalException;
-import FunctionLayer.Carport;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import FunctionLayer.*;
+
+import java.sql.*;
 
 public class OrdreMapper {
 
@@ -35,6 +32,27 @@ public class OrdreMapper {
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new OrdreRetrivalException(ex.getMessage());
+        }
+    }
+
+    public static void createOrder( User kunde, Carport carport ) throws OrdreRetrivalException {
+        try {
+            Connection con = Connector.connection();
+
+            String SQL = "INSERT INTO Ordre (BrugerID, CarportLængde, CarportBredde, RedskabsrumLængde, RedskabsrumBredde, TagTypeNr, Hældning) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setInt(1, kunde.getId());
+            ps.setDouble( 2, carport.getCarportLængde());
+            ps.setDouble( 3, carport.getCarportBredde());
+            ps.setDouble( 4, carport.getRedskabsrumLængde());
+            ps.setDouble( 5, carport.getGetRedskabsrumBredde());
+            ps.setDouble( 6, carport.getTagtypeID());
+            ps.setDouble( 7, carport.getHældning());
+            ps.executeUpdate();
+
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new OrdreRetrivalException( ex.getMessage() );
         }
     }
 

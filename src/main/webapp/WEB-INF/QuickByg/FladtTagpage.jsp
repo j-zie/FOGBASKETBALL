@@ -176,6 +176,70 @@
 <div id="seperator"></div>
 
 <!-- Kundens oplysninger -->
+
+<div style="width: 80%; margin-left: auto; margin-right: auto">
+
+    <h3> Login eller signup for at sende forspørgsel</h3>
+
+        <div class="container" style="display: inline; width: 50%">
+            <div class="row card hoverable">
+                <div class="card-content ">
+                    <h4 class="center blue-text">Login</h4>
+
+                        <div class="col s12">
+                            <div class="input-field">
+                                <c:if test="${requestScope.emailError != null}"> <p style="color: red; display: inline">${requestScope.emailError}</p> </c:if>
+
+                                <input type="text" name="email" placeholder="Username*" value="${requestScope.email}">
+
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input type="password" name="password" placeholder="Password*">
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <p><label><input type="checkbox"></label></p>
+                        </div>
+                        <div class="col s12 center">
+                            <button type="submit" value="Submit" class="btn btn-large waves-effect waves-light blue">Send forespørgsel<i class="material-icons right">send</i></button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- signUP -->
+        <div class="container" style="display: inline; width: 50%">
+            <div class="row card hoverable">
+                <div class="card-content ">
+                    <h4 class="center blue-text">Singup</h4>
+
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input type="text" name="email" placeholder="Username*">
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input type="password" name="password" placeholder="Password*">
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <p><label><input type="checkbox"></label></p>
+                        </div>
+                        <div class="col s12 center">
+                            <button type="submit" value="Submit" class="btn btn-large waves-effect waves-light blue">Send forespørgsel<i class="material-icons right">send</i></button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+</div>
+    </form>
+        <!--
         <div id="KundeDiv">
 
 
@@ -202,7 +266,7 @@
 
         <input id="SubButton" type="submit" value="Send forespørgsel ">
         </div>
-    </form>
 
+-->
 
 <%@ include file = "/includes/footer.jsp" %>
