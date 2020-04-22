@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class UserMapper {
 
-    public static void createUser( User user ) throws LoginSampleException {
+    public static User createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO bruger (email, password, rolle, adresse, postnr, telefon, navn) " +
@@ -33,6 +33,7 @@ public class UserMapper {
             ids.next();
             int id = ids.getInt( 1 );
             user.setId( id );
+            return user;
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }

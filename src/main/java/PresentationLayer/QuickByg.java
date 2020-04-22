@@ -34,7 +34,7 @@ public class QuickByg extends Command{
                 Carport carport = sammenSætCarport(request);
                 System.out.println(carport.toString());
 
-                 User kunde = (User) session.getAttribute("") ;
+                 User kunde = (User) session.getAttribute("user");
 
                 LogicFacade.sendForspørgsel(carport, kunde);
 
