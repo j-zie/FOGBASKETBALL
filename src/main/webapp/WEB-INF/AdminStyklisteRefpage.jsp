@@ -11,10 +11,12 @@
 </body>
 <h2 class="light-blue-text center"> Odrer oversigt </h2>
 <div class="collection" style="width: 60%; margin-right: auto; margin-left: auto">
-    <a href="#!" class="collection-item "> odreID Navn Carporttype <i class="material-icons right">send</i></a>
-    <a href="#!" class="collection-item center">odreID Navn Carporttype </a>
-    <a href="#!" class="collection-item center">odreID Navn Carporttype </a>
-    <a href="#!" class="collection-item center">odreID Navn Carporttype </a>
+
+    <c:forEach var="ordre" items="${sessionScope.alleOrdre}">
+
+        <a href="#!" class="collection-item center">Ordre: ${ordre.ordreNr} ${ordre.user.navn} </a>
+    </c:forEach>
+
 </div>
 
 <br>

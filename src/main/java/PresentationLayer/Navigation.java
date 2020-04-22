@@ -1,10 +1,13 @@
 package PresentationLayer;
 
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Ordre;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class Navigation extends Command {
     @Override
@@ -32,6 +35,10 @@ public class Navigation extends Command {
             case "kurv":
                 return "Kurvpage";
             case "admin":
+                ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();
+
+                session.setAttribute("alleOrdre", alleOrdre);
+
                 return "AdminStyklisteRefpage";
             case "register":
                 return "register";

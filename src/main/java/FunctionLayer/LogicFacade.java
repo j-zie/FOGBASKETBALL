@@ -1,7 +1,10 @@
 package FunctionLayer;
 
-import DBAccess.OrdreMapper;
+import DBAccess.*;
 import DBAccess.UserMapper;
+import com.sun.tools.corba.se.idl.constExpr.Or;
+
+import java.util.ArrayList;
 
 /**
  * The purpose of LogicFacade is to...
@@ -32,6 +35,18 @@ public class LogicFacade {
         System.out.println(e);
     }
 
+    }
 
+
+    public static ArrayList<Ordre> hentAlleOrdre(){
+        try {
+
+       return OrdreMapper.getAlleOrdre();
+
+        } catch (OrdreRetrivalException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

@@ -20,4 +20,37 @@ public class Ordre {
         RedskabsrumBredde = redskabsrumBredde;
         this.user = user;
     }
+
+
+    public int getOrdreNr() {
+        return OrdreNr;
+    }
+
+    public double getCarportLængde() {
+        return carportLængde;
+    }
+
+    public double getCarportBredde() {
+        return carportBredde;
+    }
+
+    public int getTagtypeNr() {
+        return tagtypeNr;
+    }
+
+    public double getHældning() {
+        return hældning;
+    }
+
+    public double getRedskabsrumLængde() {
+        return redskabsrumLængde;
+    }
+
+    public double getRedskabsrumBredde() {
+        return RedskabsrumBredde;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }
