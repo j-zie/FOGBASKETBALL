@@ -18,11 +18,16 @@ public class UserMapper {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            String SQL = "INSERT INTO bruger (email, password, role, adresse, postnr, telefon, navn) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
             ps.setString( 3, user.getRole() );
+            ps.setString(4, user.getAdresse());
+            ps.setInt(5, user.getPostnr());
+            ps.setString(6, user.getTelefon());
+            ps.setString(7, user.getNavn());
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
@@ -37,7 +42,7 @@ public class UserMapper {
         try {
             Connection con = Connector.connection();
             System.out.println("I got a connection");
-            String SQL = "SELECT brugerId, rolle FROM Bruger "
+            String SQL = "SELECT brugerId, rolle FROM bruger "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -57,5 +62,4 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
-
 }

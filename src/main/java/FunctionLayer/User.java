@@ -6,16 +6,53 @@ package FunctionLayer;
  */
 public class User {
 
-    public User( String email, String password, String role ) {
-        this.email = email;
-        this.password = password;
-        this.role = role;
+
+    public String getRolle() {
+        return rolle;
     }
 
-    private int id; // just used to demo retrieval of autogen keys in UserMapper
-    private String email;
-    private String password; // Should be hashed and secured
-    private String role;
+    public User(String navn, String adresse, String by, String telefon, String email, int id,
+                String password, String rolle, int postnr) {
+        this.navn = navn;
+        this.adresse = adresse;
+        this.by = by;
+        this.telefon = telefon;
+        this.email = email;
+        this.id = id;
+        this.password = password;
+        this.rolle = rolle;
+        this.postnr = postnr;
+    }
+
+    public int getPostnr() {
+        return postnr;
+    }
+
+    int postnr;
+    String rolle;
+    int id;
+    String password;
+    String navn;
+    String adresse;
+    String by;
+    String telefon;
+    String email;
+
+    public String getNavn() {
+        return navn;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public String getBy() {
+        return by;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
 
     public String getEmail() {
         return email;
@@ -34,11 +71,11 @@ public class User {
     }
 
     public String getRole() {
-        return role;
+        return rolle;
     }
 
     public void setRole( String role ) {
-        this.role = role;
+        this.rolle = role;
     }
 
     public int getId() {
