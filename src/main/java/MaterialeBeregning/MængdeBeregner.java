@@ -1,19 +1,27 @@
 package MaterialeBeregning;
 
+import FunctionLayer.Ordre;
+
 import java.util.Scanner;
 
 public class MængdeBeregner {
+    double height;
+    double width;
+    double angle;
+    double tagSten;
+
+    public MængdeBeregner(Ordre ordre) {
+        width = ordre.getCarportBredde();
+        height = ordre.getCarportLængde();
+        angle = ordre.getHældning();
+        tagSten = ordre.getTagtypeNr();
+    }
 
     // TODO: 21/04/2020 !find ud af hvordan input skal ind i den her slags metoder, scanner skal væk!
     public int antalStolper(){
-
         //Til denne metode kræves der længde fra databasen.
 
-        Scanner S = new Scanner(System.in);
-
-        System.out.println("Indtast længde");
-
-        int userinput = S.nextInt();
+        int userinput = (int) height;
         int AfstandprBjælke = 180;
         //int N = 180; Udhæng skal det være der eller ej?
         int minimumsøjler = 2;
@@ -24,43 +32,25 @@ public class MængdeBeregner {
 
         return Resultat;
     }
-    public int antalSpær(){
-
-        //Til denne metode kræves der en længde fra databasen.
-
-        Scanner S = new Scanner(System.in);
-
-        System.out.println("Indtast længde");
-
-        int userinput = S.nextInt();
+    public int antalSpaer(){
+        int userinput = (int) height;
         int AfstandPrSpær = 56;
         int Resultat = (userinput/AfstandPrSpær);
 
         return Resultat;
-
     }
 
     public double antalTagsten(){
-
-        //Til denne metode kræves der en længde, bredde, vinkel og tagsten Pr Kvadratmeter
-
-        Scanner S = new Scanner(System.in);
-
-        System.out.println("Indtast bredde");
-        double bredde = S.nextDouble();
-        System.out.println("Indtast længde");
-        double længde = S.nextDouble();
-        System.out.println("Indtast vinkel");
-        double heldning = S.nextDouble();
+        double bredde = height;
+        double længde = width;;
+        double heldning = angle;
         heldning = Math.toRadians(heldning);
-
         double Resultat = (længde/100) * ((bredde/100) / Math.cos(heldning));
-
         System.out.println("Indtast tagstens størrelse");
-        double tagstenPrKvadratMeter = S.nextDouble();
+        // vi skal lige have en tagsten klasse.. deafulter til b7
+        double tagstenPrKvadratMeter = 2.7;
         double TotalRes = Resultat*tagstenPrKvadratMeter;
 
         return TotalRes;
-
     }
 }

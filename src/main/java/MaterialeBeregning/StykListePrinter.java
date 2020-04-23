@@ -9,15 +9,26 @@ public class StykListePrinter {
     OrdreListe generatedLists;
     Ordre ordre;
     StringBuilder textToScreen = new StringBuilder();
+    MængdeBeregner mængder;
     public StykListePrinter(int orderNum){ // eh
         generatedLists = new OrdreListe();
         ordre = generatedLists.getOrderFromOrderNumber(orderNum);
+        mængder = new MængdeBeregner(ordre);
     }
 
     public String printEverything() {
         orderInfoHeader();
         startTable();
-        insertElement(0.00, "søm", 5 );
+        //Should have some ehh composition this ;)))
+        insertElement(0.00, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
+        insertElement(0.00, "Spær", mængder.antalSpaer());
+        // Possibly a huge loss of precision here.
+        insertElement(0.00, "Trapezplader", 6);
+        insertElement(0.00, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
+        insertElement(0.00, "Cement", 1);
+        insertElement(0.00, "Stolpesko", mængder.antalStolper());
+        insertElement(0.00, "Rem", 4);
+        insertElement(0.00, "Sternbræt", 4);
         endTable();
         return textToScreen.toString();
     }

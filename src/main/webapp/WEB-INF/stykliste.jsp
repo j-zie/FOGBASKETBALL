@@ -13,6 +13,11 @@
     <li>56 centimeter mellem spær</li>
     <li>Afstand mellem stolper er 180 cm</li>
     <li>Der skal være minimum 4 stolper</li>
+    <li>Defaulter til en tagtype:'EternittagB7-Sort'</li>
+    <li>2 Vinkelbeslag per spær</li>
+    <li>Stoler er cementerede med sokkelsko</li>
+    <li>Ingen priser lige nu</li>
+
 </ul>
 
 ${sessionScope.page}
