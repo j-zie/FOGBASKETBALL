@@ -22,7 +22,6 @@ public class StykListePrinter {
         //Should have some ehh composition this ;)))
         insertElement(0.00, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
         insertElement(0.00, "Spær", mængder.antalSpaer());
-        // Possibly a huge loss of precision here.
         insertElement(0.00, "Trapezplader", 6);
         insertElement(0.00, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
         insertElement(0.00, "Cement", 1);

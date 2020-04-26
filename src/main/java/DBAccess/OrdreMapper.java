@@ -5,9 +5,15 @@ import FunctionLayer.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+/**
+ * OrdreMapper håndtere kommunikation mellem database og vores program.
+ * Funktioner herfra bliver benyttet mange andre steder, se eksempelvis Mængdeberegner.
+ */
 public class OrdreMapper {
-
+    /**
+     * Retunere alle ordre fra databasen
+     * @return Retunere typen ArrayList<Ordre>.
+     */
     public static ArrayList<Ordre> getAlleOrdre() throws OrdreRetrivalException {
         User user = new User("","","","","","",0);
         try {
@@ -55,7 +61,11 @@ public class OrdreMapper {
             throw new OrdreRetrivalException(ex.getMessage());
         }
     }
-
+    /**
+     * Metode gemmer ordre til databasen
+     * @param kunde er af typen kundeobjekt, hvis tilstand skal indeholde brugerid
+     * @param carport er af typen kundeobjekt, hvis tilstand skal indeholde længde, bredde, reskabsrumlængde, redskabsrumbredde tagtype og hældning.
+     */
     public static void createOrder( User kunde, Carport carport ) throws OrdreRetrivalException {
         try {
             Connection con = Connector.connection();
