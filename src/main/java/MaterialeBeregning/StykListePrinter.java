@@ -15,7 +15,7 @@ public class StykListePrinter {
         ordre = generatedLists.getOrderFromOrderNumber(orderNum);
         mængder = new MængdeBeregner(ordre);
     }
-
+    // skulle gerne hedde noget andet 'print fladt tag' ish
     public String printEverything() {
         orderInfoHeader();
         startTable();
