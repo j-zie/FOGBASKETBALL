@@ -5,14 +5,21 @@ import FunctionLayer.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+/**
+ * OrdreMapper håndtere kommunikation mellem database og vores program.
+ * Funktioner herfra bliver benyttet mange andre steder, se eksempelvis Mængdebersegner.
+ */
 public class OrdreMapper {
-
+    /**
+     * TODO(Jonathan): Kunne godt refaktores med en join, så der ikke er så meget unødvendigt instantiering. I det mindste fix den tomme catch blok - ellers nice.
+     * Retunere alle ordre fra databasen
+     * @return Retunere typen ArrayList<Ordre>.
+     */
     public static ArrayList<Ordre> getAlleOrdre() throws OrdreRetrivalException {
         User user = new User("","","","","","",0);
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM ORDRE";
+            String SQL = "SELECT * FROM ordre";
             Statement stm;
             stm = con.createStatement();
             ResultSet rs;
@@ -36,8 +43,8 @@ public class OrdreMapper {
                         user.setId(rs2.getInt("brugerId"));
                         user.setNavn(rs2.getString("navn"));
                         user.setAdresse(rs2.getString("adresse"));
-                        user.setPostnr(rs2.getInt("postNr"));
-                        user.setTelefon(rs2.getString("telefonNummer"));
+                        user.setPostnr(rs2.getInt("postnr"));
+                        user.setTelefon(rs2.getString("telefon"));
                         user.setEmail(rs2.getString("email"));
                     } else {
                     throw new OrdreRetrivalException("Kunne ikke få fat i user");
@@ -55,7 +62,11 @@ public class OrdreMapper {
             throw new OrdreRetrivalException(ex.getMessage());
         }
     }
-
+    /**
+     * Metode gemmer ordre til databasen
+     * @param kunde er af typen kundeobjekt, hvis tilstand skal indeholde brugerid
+     * @param carport er af typen kundeobjekt, hvis tilstand skal indeholde længde, bredde, reskabsrumlængde, redskabsrumbredde tagtype og hældning.
+     */
     public static void createOrder( User kunde, Carport carport ) throws OrdreRetrivalException {
         try {
             Connection con = Connector.connection();

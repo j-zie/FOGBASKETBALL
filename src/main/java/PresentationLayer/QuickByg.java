@@ -5,9 +5,20 @@ import FunctionLayer.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * TODO(Jonathan) PATRICK: nice skrevet! især de klasse private metoder, det glemmer jeg ofte. fix lige indents og white space, please
+ * QuickByg modtager http request fra formen under quickbyg siden, kontrollere input og
+ * vil ved gyldigt input putte formens informationer i databasen gennem kaldet til LogicFacade.sendForspørgsel
+ * Den modtager http requests og retunere strenge der repræsenere filstier til andre jsp pages.
+ */
 public class QuickByg extends Command{
-
+    /**
+     * QuickByg modtager http request fra formen under quickbyg siden, kontrollere input og
+     *
+     * @return Retunere en jsp side. Har som sideeffekt et funktionskald der gemmer ordren i databasen
+     * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
+     * @param response Header informationer
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
@@ -44,7 +55,11 @@ public class QuickByg extends Command{
     }
 
 
-
+    /**
+     * Privat metoder der laver en carport fra informationer i request scope
+     * @return Retunere et carport objekt
+     * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
+     */
 private Carport sammenSætCarport(HttpServletRequest request){
 
     Double bredde = Double.parseDouble(request.getParameter("Bredde"));
@@ -66,7 +81,11 @@ return carport;
     }
 
 
-
+    /**
+     * Privat metode der validere informationer i requestscope
+     * @return Boolean der bestemmer om carporten bliver sendt til databasen
+     * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
+     */
     private Boolean tjekFelter(HttpServletRequest request) throws LoginSampleException {
         Boolean fejfundet = false;
         String bredde = request.getParameter("Bredde");
@@ -100,7 +119,10 @@ return carport;
         return fejfundet;
     }
 
-
+    /**
+     * Validere email
+     * TODO(Jonathan): Nice med regex, men hvorfor ikke bare return email.matches(regex);
+     */
     private Boolean validerEmail(String email){
         String regex = "^(.+)@(.+)$";
         if (!email.matches(regex))   {
