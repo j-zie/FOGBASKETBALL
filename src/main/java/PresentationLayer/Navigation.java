@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Navigation extends Command {
     /**
-     * TODO(Jonathan) Til patrick: Hvis det er meningen du ikke vil have en default case, så skriv det som kommentar, det er standard
+     * TODO(Jonathan) Til patrick: Hvis det er meningen du ikke vil have en default case, så skriv det som kommentar, det er standard. Tænkte det var almen viden.
      * Går til den jsp side som du giver som parametre i din request (kan være skjult.)
      * @return Retunere en streng til en gyldig jsp side
      * @param request fra jsp side med værdi "nav"
