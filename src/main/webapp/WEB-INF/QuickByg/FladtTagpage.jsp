@@ -118,9 +118,7 @@
         </c:otherwise>
     </c:choose>
 
-    <option value="plast">plast</option>
-    <option value="træ">træ</option>
-    <option value="sten">sten</option>
+    <option value="Plasttrapezplader">plast</option>
 </select>
 
 
@@ -170,6 +168,7 @@
     <option value="690">690 cm</option>
     <option value="720">720 cm</option>
     <option value="750">750 cm</option>
+    <option value="780">780 cm</option>
 </select>
 
         </div>
