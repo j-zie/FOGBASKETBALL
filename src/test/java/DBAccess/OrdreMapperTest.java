@@ -52,7 +52,7 @@ public class OrdreMapperTest {
     public void createOrder() throws OrdreRetrivalException, LoginSampleException {
         // OBS. Vil ikke fungere hvis registrer ikke fungere eller carport ikke funger
 
-        User user = LogicFacade.createUser("Test","Test","Test","test","test",2000,"test");
+        User user = new User("Test","Test","Test","test","test","test",1234);
         Carport carp = new Carport(240.0, 240.0,1,0.0,true,200.0,200.0);
 
         // Vi skulle få en exception hvis odreren ikke går igennem
