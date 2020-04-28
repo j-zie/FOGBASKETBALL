@@ -15,12 +15,12 @@
 
 <div class="tagvalg">
     <h2> Tag med fladt tag</h2>
-    <a href="FrontController?target=quickByg&to=Fladt"><img src="Fladttag.png" ></a>
+    <a href="FrontController?target=quickByg&to=Fladt"><img src="resources/Fladttag.png" ></a>
 </div>
 
 <div class="tagvalg">
     <h2> Tag med rejsning</h2>
-    <a href="FrontController?target=quickByg&to=Rejsning"> <img src="Images/Rejsning.png"></a>
+    <a href="FrontController?target=quickByg&to=Rejsning"> <img src="resources/Rejsning.png"></a>
 </div>
 
 </body>
