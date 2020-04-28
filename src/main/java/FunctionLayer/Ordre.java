@@ -21,6 +21,16 @@ public class Ordre {
         this.user = user;
     }
 
+    public Ordre(double carportLængde, double carportBredde, int tagtypeID, double hældning, double redskabsrumLængde, double redskabsrumBredde) {
+        this.carportLængde = carportLængde;
+        this.carportBredde = carportBredde;
+        this.tagtypeNr = tagtypeID;
+        this.hældning = hældning;
+
+        this.redskabsrumLængde = redskabsrumLængde;
+        this.RedskabsrumBredde = redskabsrumBredde;
+
+    }
 
     public int getOrdreNr() {
         return OrdreNr;

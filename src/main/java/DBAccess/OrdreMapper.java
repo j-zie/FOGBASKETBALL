@@ -67,7 +67,7 @@ public class OrdreMapper {
      * @param kunde er af typen kundeobjekt, hvis tilstand skal indeholde brugerid
      * @param carport er af typen kundeobjekt, hvis tilstand skal indeholde længde, bredde, reskabsrumlængde, redskabsrumbredde tagtype og hældning.
      */
-    public static void createOrder( User kunde, Carport carport ) throws OrdreRetrivalException {
+    public static void createOrder( User kunde, Ordre carport ) throws OrdreRetrivalException {
         try {
             Connection con = Connector.connection();
 
@@ -77,8 +77,8 @@ public class OrdreMapper {
             ps.setDouble( 2, carport.getCarportLængde());
             ps.setDouble( 3, carport.getCarportBredde());
             ps.setDouble( 4, carport.getRedskabsrumLængde());
-            ps.setDouble( 5, carport.getGetRedskabsrumBredde());
-            ps.setDouble( 6, carport.getTagtypeID());
+            ps.setDouble( 5, carport.getRedskabsrumBredde());
+            ps.setDouble( 6, carport.getTagtypeNr());
             ps.setDouble( 7, carport.getHældning());
             ps.executeUpdate();
 

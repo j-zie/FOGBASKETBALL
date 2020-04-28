@@ -1,6 +1,7 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
+import com.sun.tools.corba.se.idl.constExpr.Or;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +42,7 @@ public class QuickByg extends Command{
                 return "QuickByg/FladtTagpage";
             }
 
-                Carport carport = sammenSætCarport(request);
+                Ordre carport = sammenSætCarport(request);
                 System.out.println(carport.toString());
 
                  User kunde = (User) session.getAttribute("user");
@@ -60,7 +61,7 @@ public class QuickByg extends Command{
      * @return Retunere et carport objekt
      * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
      */
-private Carport sammenSætCarport(HttpServletRequest request){
+private Ordre sammenSætCarport(HttpServletRequest request){
 
     Double bredde = Double.parseDouble(request.getParameter("Bredde"));
     Double længde = Double.parseDouble(request.getParameter("Længde"));
@@ -68,11 +69,10 @@ private Carport sammenSætCarport(HttpServletRequest request){
     Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
     Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
 
-    Carport carport = new Carport(længde,
+    Ordre carport = new Ordre(længde,
             bredde,
             1,
             0.0,
-            true,
             redskabsrum_længde,
             redskabsrum_bredde);
 

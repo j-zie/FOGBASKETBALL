@@ -1,6 +1,6 @@
 package FunctionLayer;
 
-import DBAccess.OrdreMapper;
+import DBAccess.*;
 
 import java.util.ArrayList;
 

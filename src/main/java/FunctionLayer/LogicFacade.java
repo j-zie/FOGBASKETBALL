@@ -27,7 +27,7 @@ public class LogicFacade {
 
 
 
-    public static void sendForspørgsel(Carport carport, User kunde){
+    public static void sendForspørgsel(Ordre carport, User kunde){
     try {
         OrdreMapper.createOrder(kunde, carport);
     } catch (OrdreRetrivalException e) {
