@@ -53,10 +53,10 @@ public class OrdreMapperTest {
         // OBS. Vil ikke fungere hvis registrer ikke fungere eller carport ikke funger
 
         User user = new User("Teest","Test","Test","test","test@test.dk","test",1234);
-        Ordre carp = new Ordre(240.0, 240.0,1,0.0,200.0,200.0);
+        Carport carp = new Carport(240.0, 240.0,1,0.0, false, 0,0);
 
         // Vi skulle få en exception hvis odreren ikke går igennem
-        OrdreMapper.createOrder(user,carp);
+        OrdreMapper.createOrder(new Ordre(carp, user));
 
         // For at teste med ekstra sikkerhed kan vi tjekke om listen med alle odre bliver 1 længerer
         // Dette afhænger dog af at getAlleOrdre virker.

@@ -36,19 +36,13 @@ public class QuickByg extends Command{
                 return "QuickByg/RejsningTagpage";
 
             case "FladtTagOrdrebekræft":
-
                 Boolean fejlFundet = tjekFelter(request);
                 if (fejlFundet == true) {
                 return "QuickByg/FladtTagpage";
             }
-
-                Ordre carport = sammenSætCarport(request);
-                System.out.println(carport.toString());
-
+                Carport carport = sammenSætCarport(request);
                  User kunde = (User) session.getAttribute("user");
-
-                LogicFacade.sendForspørgsel(carport, kunde);
-
+                LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 return "QuickByg/Bekræftelse";  // Skal sende en videre til en ny side eller en bekræftelse
         }
 
@@ -56,26 +50,26 @@ public class QuickByg extends Command{
     }
 
 
+
     /**
      * Privat metoder der laver en carport fra informationer i request scope
      * @return Retunere et carport objekt
      * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
      */
-private Ordre sammenSætCarport(HttpServletRequest request){
+private Carport sammenSætCarport(HttpServletRequest request){
 
     Double bredde = Double.parseDouble(request.getParameter("Bredde"));
     Double længde = Double.parseDouble(request.getParameter("Længde"));
     String tagtype = request.getParameter("tagtype");
     Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
     Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
-
-    Ordre carport = new Ordre(længde,
+    Carport carport = new Carport(længde,
             bredde,
             1,
             0.0,
+            false,
             redskabsrum_længde,
             redskabsrum_bredde);
-
 return carport;
 
     }
@@ -122,6 +116,7 @@ return carport;
     /**
      * Validere email
      * TODO(Jonathan): Nice med regex, men hvorfor ikke bare return email.matches(regex);
+     * Det jo dig der er regex mester, jeg er bare din lærling, ved intet.
      */
     private Boolean validerEmail(String email){
         String regex = "^(.+)@(.+)$";
