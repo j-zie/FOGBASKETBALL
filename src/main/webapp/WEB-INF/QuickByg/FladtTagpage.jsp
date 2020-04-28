@@ -104,6 +104,7 @@
     <option value="690">690 cm</option>
     <option value="720">720 cm</option>
     <option value="750">750 cm</option>
+    <option value="780">780 cm</option>
 </select>
 
 
@@ -118,7 +119,7 @@
         </c:otherwise>
     </c:choose>
 
-    <option value="Plasttrapezplader">plast</option>
+    <option value="plast">Plasttrapezplader</option>
 </select>
 
 
@@ -142,7 +143,7 @@
     <option value="660">660 cm</option>
     <option value="690">690 cm</option>
     <option value="720">720 cm</option>
-    <option value="750">750 cm</option>
+
 
 </select>
 
@@ -166,9 +167,6 @@
     <option value="630">630 cm</option>
     <option value="660">660 cm</option>
     <option value="690">690 cm</option>
-    <option value="720">720 cm</option>
-    <option value="750">750 cm</option>
-    <option value="780">780 cm</option>
 </select>
 
         </div>
