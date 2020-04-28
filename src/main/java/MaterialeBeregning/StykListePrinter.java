@@ -4,18 +4,30 @@ import FunctionLayer.Ordre;
 import FunctionLayer.OrdreListe;
 import FunctionLayer.OrdreRetrivalException;
 
+/**
+ * Denne klasse kræver et ordreNr til blive instansieret. Da bliver så hentet en ordre med det pågældende Ordrennummer fra DB'en.
+ * @return Med metoden @see kan du så få en stykliste (Html-table) med værdier fra den hentede ordre.
+ * @see MængdeBeregner Samtidigt bliver der kaldt på mængdeberegner klassen. Det antal materialer som den udregner kommer så med i tabellen.
+ */
 public class StykListePrinter {
     //TODO det her burde være skrevet bedre. Klokken er snart 4.
+
     OrdreListe generatedLists;
     Ordre ordre;
     StringBuilder textToScreen = new StringBuilder();
     MængdeBeregner mængder;
+
     public StykListePrinter(int orderNum){ // eh
         generatedLists = new OrdreListe();
         ordre = generatedLists.getOrderFromOrderNumber(orderNum);
         mængder = new MængdeBeregner(ordre);
     }
     // skulle gerne hedde noget andet 'print fladt tag' ish
+
+    /**
+     * @return et html table med værdier fra ordrenr som er krævet for at kalde klassen
+     *
+     */
     public String printEverything() {
         orderInfoHeader();
         startTable();
