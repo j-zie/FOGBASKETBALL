@@ -119,7 +119,7 @@
         </c:otherwise>
     </c:choose>
 
-    <option value="plast">Plasttrapezplader</option>
+    <option value="1">Plasttrapezplader</option>
 </select>
 
 

@@ -40,36 +40,70 @@ public class QuickByg extends Command{
                 if (fejlFundet == true) {
                 return "QuickByg/FladtTagpage";
             }
-                Carport carport = sammenSætCarport(request);
+                Carport carport = sammenSætCarport(request, Tag.Fladt);
                  User kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
-                return "QuickByg/Bekræftelse";  // Skal sende en videre til en ny side eller en bekræftelse
+                return "QuickByg/Bekræftelse";
+
+            case "RejsningTagOrdrebekræft":
+                 fejlFundet = tjekFelter(request);
+                if (fejlFundet == true) {
+                    return "QuickByg/RejsningTagpage";
+                }
+                 carport = sammenSætCarport(request, Tag.Rejsning);
+                 kunde = (User) session.getAttribute("user");
+                LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
+                return "QuickByg/Bekræftelse";
+
         }
 
         return "fail"; // Lav error handle
     }
 
 
+enum Tag {
+        Fladt,
+    Rejsning
+}
 
     /**
      * Privat metoder der laver en carport fra informationer i request scope
      * @return Retunere et carport objekt
      * @param request Request fra jsp side skal indeholde alle felter der beskriver en carports tilstand.
      */
-private Carport sammenSætCarport(HttpServletRequest request){
+private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
 
     Double bredde = Double.parseDouble(request.getParameter("Bredde"));
     Double længde = Double.parseDouble(request.getParameter("Længde"));
-    String tagtype = request.getParameter("tagtype");
+    int tagtype = Integer.parseInt(request.getParameter("tagtype"));
     Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
     Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
-    Carport carport = new Carport(længde,
-            bredde,
-            1,
-            0.0,
-            redskabsrum_længde,
-            redskabsrum_bredde);
-return carport;
+
+
+    switch (tag) {
+        case Fladt:
+
+            Carport carport = new Carport(længde,
+                    bredde,
+                    1,
+                    0.0,
+                    redskabsrum_længde,
+                    redskabsrum_bredde);
+            return carport;
+
+        case Rejsning:
+            Double hældning = Double.parseDouble(request.getParameter("Taghældning"));
+            Carport carport2 = new Carport(længde,
+                    bredde,
+                    tagtype,
+                    hældning,
+                    redskabsrum_længde,
+                    redskabsrum_bredde);
+            return carport2;
+
+
+        default: return null;
+    }
 
     }
 
@@ -83,7 +117,7 @@ return carport;
         Boolean fejfundet = false;
         String bredde = request.getParameter("Bredde");
         String længde = request.getParameter("Længde");
-        String tagtype = request.getParameter("tagtype");
+        int tagtype = Integer.parseInt(request.getParameter("tagtype"));
         String redskabsrum_bredde = request.getParameter("Redskabsrum_bredde");
         String redskabsrum_længde = request.getParameter("Redskabsrum_længde");
 
@@ -101,7 +135,7 @@ return carport;
             request.setAttribute("længdeError", "Udfyld venligst felt");
             fejfundet = true;
         }
-        if (tagtype.length() < 2) {
+        if (tagtype < 1) {
             request.setAttribute("tagError", "Udfyld venligst felt");
             fejfundet = true;
         }
