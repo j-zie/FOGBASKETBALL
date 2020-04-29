@@ -29,7 +29,6 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
-
 -- -----------------------------------------------------
 -- Table `fog_db`.`bruger`
 -- -----------------------------------------------------
@@ -80,14 +79,35 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`ordre` (
     REFERENCES `fog_db`.`bruger` (`brugerId`),
   CONSTRAINT `tagtypeNr`
     FOREIGN KEY (`tagtypeNr`)
-    REFERENCES `fog_db`.`tagtyper` (`tagtypeNr`))
+    REFERENCES `fog_db`.`tagtyper` (`tagtypeNr`)
+    ON DELETE CASCADE)
+
 
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+
+-- -----------------------------------------------------
+-- Table `fog_db`.`materialer`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `fog_db`.`materialer` (
+  `materialeID` INT(11) NOT NULL AUTO_INCREMENT,
+  `materialeNavn` VARCHAR(100) NULL DEFAULT NULL,
+  `pris` DOUBLE NULL DEFAULT NULL,
+  `billedeNavn` VARCHAR(100) NULL DEFAULT NULL,
+  `billede` varbinary(20000) NOT NULL,
+  PRIMARY KEY (`materialeID`)
+  )
+
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+
 insert into tagtyper (tagtypeNavn,dækningsgrad) values ("Plasttrapezplade-fladtag",0.35), ("Betontag-Rød",8.9) ,("Betontag-Sort", 8.9),("EternittagB6-Sort", 0.92),("EternittagB6-Rødbrun",0.92),("EternittagB7-Sort", 2.3),("EternittagB7-Mokka",2.3);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;ON UPDATE CASCADE ON DELETE CASCADE   -- ----------------------------------------------------- -- Table `fog_db`.`bruger` -- ----------------------------------------------------- CREATE TABLE IF NOT EXISTS `fog_db`.`bruger` (   `brugerId` INT(11) NOT NULL AUTO_INCREMENT,   `navn` VARCHAR(45) NULL DEFAULT NULL,   `email` VARCHAR(45) NULL DEFAULT NULL,   `password` VARCHAR(45) NULL DEFAULT NULL,   `rolle` VARCHAR(45) NULL DEFAULT NULL,   `adresse` VARCHAR(45) NULL DEFAULT NULL,   `postnr` INT(11) NULL DEFAULT NULL,   `telefon` VARCHAR(45) NULL DEFAULT NULL,   PRIMARY KEY (`brugerId`))  ON UPDATE CASCADE ON DELETE CASCADE ENGINE = InnoDB
