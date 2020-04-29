@@ -67,7 +67,6 @@ private Carport sammenSætCarport(HttpServletRequest request){
             bredde,
             1,
             0.0,
-            false,
             redskabsrum_længde,
             redskabsrum_bredde);
 return carport;
@@ -107,7 +106,7 @@ return carport;
             fejfundet = true;
         }
 
-
+       // OBS VI SKAL LIGE TJEKKE OM REDSKABSRUMMET ER I EN valid størelse.
 
 
         return fejfundet;

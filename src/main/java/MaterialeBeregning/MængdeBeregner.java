@@ -11,10 +11,10 @@ public class MængdeBeregner {
     double tagSten;
 
     public MængdeBeregner(Ordre ordre) {
-        width = ordre.getCarportBredde();
-        height = ordre.getCarportLængde();
-        angle = ordre.getHældning();
-        tagSten = ordre.getTagtypeNr();
+        width = ordre.getcarport().getCarportBredde();
+        height = ordre.getcarport().getCarportLængde();
+        angle = ordre.getcarport().getHældning();
+        tagSten = ordre.getcarport().getTagtypeID();
     }
 
     // TODO: 21/04/2020 !find ud af hvordan input skal ind i den her slags metoder, scanner skal væk!
