@@ -24,8 +24,11 @@ public class MaterialeMapper {
 
 
             while (rs.next()) {
+                int materialeID = rs.getInt("materialeID");
+                String materialeNavn = rs.getString("materialeNavn");
+                Double pris = rs.getDouble("pris");
 
-                Materiale materiale = new Materiale(0, "", 0.0);
+                Materiale materiale = new Materiale(materialeID, materialeNavn, pris);
 
                 materialeListe.add(materiale);
 
