@@ -11,7 +11,7 @@ package FunctionLayer;
 public class User {
 
     public User(String navn, String adresse, String by, String telefon, String email, int id,
-                String password,  int postnr) {
+                String password,  int postnr , String rolle) {
         this.navn = navn;
         this.adresse = adresse;
         this.by = by;
@@ -19,19 +19,19 @@ public class User {
         this.email = email;
         this.id = id;
         this.password = password;
-        this.rolle = "kunde";
+        this.rolle = rolle;
         this.postnr = postnr;
     }
 
     public User(String navn, String adresse, String by, String telefon, String email,
-                String password, int postnr) {
+                String password, int postnr, String rolle) {
         this.navn = navn;
         this.adresse = adresse;
         this.by = by;
         this.telefon = telefon;
         this.email = email;
         this.password = password;
-        this.rolle = "kunde";
+        this.rolle = rolle;
         this.postnr = postnr;
     }
 
