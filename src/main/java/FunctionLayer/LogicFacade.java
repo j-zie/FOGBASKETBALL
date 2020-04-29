@@ -56,4 +56,26 @@ public class LogicFacade {
 
         return null;
     }
+
+    public static int getAntalAdmin() throws LoginSampleException {
+        ArrayList<User> userliste = UserMapper.getAllUsers();
+        int antal = 0;
+        for (User user : userliste) {
+            if (user.getRole().equals("Admin")) {
+                antal++;
+            }
+        }
+        return antal;
+    }
+
+    public static int getAntalKunder() throws LoginSampleException {
+        ArrayList<User> userliste = UserMapper.getAllUsers();
+        int antal = 0;
+        for (User user : userliste) {
+            if (!user.getRole().equals("Admin")) {
+                antal++;
+            }
+        }
+       return antal;
+    }
 }
