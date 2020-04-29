@@ -59,6 +59,7 @@ public class UserMapper {
                 int postnr = rs.getInt("postnr");
                 User user = new User( email, password, role, telefon, email, id, password, postnr);
                 user.setId( id );
+
                 return user;
             } else {
 

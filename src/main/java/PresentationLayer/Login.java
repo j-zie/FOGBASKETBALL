@@ -19,11 +19,15 @@ public class Login extends Command {
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
         User user = LogicFacade.login( email, password );
-        System.out.println("I'm here...");
+
         if (user == null) {
-            return "QuickByg/FladtTagpage"; // Should be a page with a login error..
+            return "login"; // Should be a page with a login error..
         }
 
+        if (user.getRole() == "Admin"){
+            // GO TO ADMIN PAGE
+            return "admin";
+        }
         HttpSession session = request.getSession();
 
         session.setAttribute( "user", user );
