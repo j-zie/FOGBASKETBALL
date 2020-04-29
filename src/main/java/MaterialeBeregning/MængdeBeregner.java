@@ -4,11 +4,23 @@ import FunctionLayer.Ordre;
 
 import java.util.Scanner;
 
+
+/**
+ *
+ * MængdeBeregner klassen indeholder det fornødne logik, til at regne mængder af materialer ud fra en ordre
+ *
+ */
+
+
+
 public class MængdeBeregner {
     double height;
     double width;
     double angle;
     double tagSten;
+
+
+
 
     public MængdeBeregner(Ordre ordre) {
         width = ordre.getcarport().getCarportBredde();
@@ -18,6 +30,8 @@ public class MængdeBeregner {
     }
 
     // TODO: 21/04/2020 !find ud af hvordan input skal ind i den her slags metoder, scanner skal væk!
+
+    
     public int antalStolper(){
         //Til denne metode kræves der længde fra databasen.
 

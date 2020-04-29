@@ -31,7 +31,7 @@
 
 <form id="holdingBox" name="kundeInfo" action="FrontController" method="POST">
     <input type="hidden" name="target" value="quickByg">
-    <input type="hidden" name="to" value="FladtTagOrdrebekræft">
+    <input type="hidden" name="to" value="RejsningTagOrdrebekræft">
 
 
 
@@ -111,16 +111,19 @@
         <select id="tag" name="tagtype">
             <c:choose>
                 <c:when test="${requestScope.Bredde != null}">
-                    <option selected="selected" value="${requestScope.tagtype}"> ${requestScope.tagtype} cm </option>
+                    <option selected="selected" value="${requestScope.tagtype}"> ${requestScope.tagtype} </option>
                 </c:when>
                 <c:otherwise>
-                    <option selected="selected" value=""> Vælg tagtype</option>
+                    <option selected="selected" value="0"> Vælg tagtype</option>
                 </c:otherwise>
             </c:choose>
 
-            <option value="plast">plast</option>
-            <option value="træ">træ</option>
-            <option value="sten">sten</option>
+            <option value="2">Betontag-rød</option>
+            <option value="3">Betontag-sort</option>
+            <option value="4">EternittagB6-Sort</option>
+            <option value="5">EternittagB6-Rødbrun</option>
+            <option value="6">EternittagB7-Sort</option>
+            <option value="7">EternittagB7-Mokka</option>
         </select>
 
 
