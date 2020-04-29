@@ -124,4 +124,19 @@ public class User {
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "postnr=" + postnr +
+                ", rolle='" + rolle + '\'' +
+                ", id=" + id +
+                ", password='" + password + '\'' +
+                ", navn='" + navn + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", by='" + by + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

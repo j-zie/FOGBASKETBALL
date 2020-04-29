@@ -24,12 +24,14 @@ public class OrdreMapper {
             ResultSet rs;
             rs = stm.executeQuery(SQL);
             ArrayList<Ordre> OrdreListe = new ArrayList<>();
-
+            System.out.println("after");
 
             while(rs.next()) {
-
                 String id = Integer.toString(rs.getInt("brugerId"));
+
+
                 User user = new User("","","","","","",0,"");
+
 
                 try {
 
@@ -43,6 +45,7 @@ public class OrdreMapper {
 
                         user.setId(rs2.getInt("brugerId"));
                         user.setNavn(rs2.getString("navn"));
+                        System.out.println(user.getNavn());
                         user.setAdresse(rs2.getString("adresse"));
                         user.setPostnr(rs2.getInt("postnr"));
                         user.setTelefon(rs2.getString("telefon"));
@@ -56,8 +59,10 @@ public class OrdreMapper {
                // Ordre ordre = new Ordre(rs.getInt("ordreNr"),rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"),user);
                 Carport carport = new Carport(rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"));
                 Ordre ordre = new Ordre(carport, user, rs.getInt("ordreNr"));
+
                 OrdreListe.add(ordre);
             }
+
 
 
             return OrdreListe;

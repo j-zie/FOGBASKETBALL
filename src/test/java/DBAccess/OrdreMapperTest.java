@@ -4,6 +4,7 @@ import FunctionLayer.*;
 import PresentationLayer.Register;
 import org.junit.Before;
 import org.junit.Test;
+import sun.rmi.runtime.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -35,7 +36,9 @@ public class OrdreMapperTest {
                 // Make mappers use test
                 Connector.setConnection( testConnection );
             }
-    getAlleOrdre();
+            System.out.println("before");
+     getAlleOrdre();
+
         } catch (SQLException | OrdreRetrivalException ex ) {
             testConnection = null;
             System.out.println( "Could not open connection to database: " + ex.getMessage() );
@@ -45,7 +48,8 @@ public class OrdreMapperTest {
     @Test
     public void getAlleOrdre() throws OrdreRetrivalException {
         // Virker selvfølgelig kun hvis der er en odre i DB...
-       odre = OrdreMapper.getAlleOrdre();
+        odre = LogicFacade.hentAlleOrdre();
+     //  odre = OrdreMapper.getAlleOrdre();
         assertTrue( odre != null );
 
     }

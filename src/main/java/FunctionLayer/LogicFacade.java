@@ -45,7 +45,7 @@ public class LogicFacade {
 
             ArrayList<Ordre> xs = OrdreMapper.getAlleOrdre();
             for (int i = 0; i < xs.size(); i++) {
-                System.out.println(xs);
+                System.out.println(xs.get(i).getUser().getNavn());
             }
 
             return xs;
