@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 /**
  * OrdreMapper håndtere kommunikation mellem database og vores program.
- * Funktioner herfra bliver benyttet mange andre steder, se eksempelvis Mængdebersegner.
+ * Funktioner herfra bliver benyttet mange andre steder, se eksempelvis Mængdeberegner.
  */
 public class OrdreMapper {
     /**
