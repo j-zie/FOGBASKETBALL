@@ -29,7 +29,7 @@
           <li class="tab hoverable"><a class="active" href="main.jsp" >Admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Ordrer</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register</a></li>
-          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=QuickByg">Logud</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
 
 
 

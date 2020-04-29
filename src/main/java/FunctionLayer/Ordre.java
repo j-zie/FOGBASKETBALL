@@ -41,4 +41,12 @@ public class Ordre {
         return user;
     }
 
+    @Override
+    public String toString() {
+        return "Ordre{" +
+                "OrdreNr=" + OrdreNr +
+                ", user=" + user +
+                ", carport=" + carport +
+                '}';
+    }
 }
