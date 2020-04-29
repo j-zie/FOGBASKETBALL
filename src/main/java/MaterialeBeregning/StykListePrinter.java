@@ -28,7 +28,7 @@ public class StykListePrinter {
      * @return et html table med værdier fra ordrenr som er krævet for at kalde klassen
      *
      */
-    public String printEverything() {
+    public String printFladtTag() {
         orderInfoHeader();
         startTable();
         //Should have some ehh composition this ;)))
@@ -43,6 +43,32 @@ public class StykListePrinter {
         endTable();
         return textToScreen.toString();
     }
+
+    public String printTagMedHældning() {
+        orderInfoHeader();
+        startTable();
+        insertElement(0.00, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
+        insertElement(0.00, "Spær", mængder.antalSpaer());
+        insertElement(0.00, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
+        insertElement(0.00, "Cement", 1);
+        insertElement(0.00, "Stolpesko", mængder.antalStolper());
+
+        // Vi skal lave den lidt anderledes
+        insertElement(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
+
+        insertElement(0.00, "Rem", 4);
+        insertElement(0.00, "Sternbræt", 4);
+
+        return textToScreen.toString();
+    }
+
+    public String roofPicker() {
+        if (ordre.getcarport().getTagtypeID() > 1) {
+            return printTagMedHældning();
+        }
+        return printFladtTag();
+    }
+
 
     public void orderInfoHeader() {
         textToScreen.append("<h4> Carport til: ");
