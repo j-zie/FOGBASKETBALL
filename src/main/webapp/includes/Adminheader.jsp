@@ -26,7 +26,7 @@
       </div>
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
-          <li class="tab hoverable"><a class="active" href="main.jsp" >Admin</a></li>
+          <li class="tab hoverable"><a class="active" href="admin.jsp" >Admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Ordrer</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>

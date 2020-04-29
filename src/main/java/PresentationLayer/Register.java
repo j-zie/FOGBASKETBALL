@@ -11,6 +11,9 @@ public class Register extends Command {
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+
+        HttpSession session = request.getSession();
+
         String email = request.getParameter( "email" );
         String password1 = request.getParameter( "password1" );
         String password2 = request.getParameter( "password2" );
@@ -21,8 +24,12 @@ public class Register extends Command {
         String by = request.getParameter("by");
 
        if ( password1.equals( password2 ) ) {
-            User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by );
-            HttpSession session = request.getSession();
+
+            if (session.getAttribute("role").equals("Admin")){
+                User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by, "Admin" );
+            return "admin";
+            }
+           User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by, "kunde" );
 
             session.setAttribute("email",email);
             session.setAttribute( "user", user );

@@ -45,7 +45,6 @@ public class OrdreMapper {
 
                         user.setId(rs2.getInt("brugerId"));
                         user.setNavn(rs2.getString("navn"));
-                        System.out.println(user.getNavn());
                         user.setAdresse(rs2.getString("adresse"));
                         user.setPostnr(rs2.getInt("postnr"));
                         user.setTelefon(rs2.getString("telefon"));
