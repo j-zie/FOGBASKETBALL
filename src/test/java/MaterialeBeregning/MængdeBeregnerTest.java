@@ -19,7 +19,9 @@ public class MængdeBeregnerTest {
     @Test
     public void testMB() throws LoginSampleException {
         User user = new User("Test","Test","Test","test","test","test",1234);
-        Ordre x = new Ordre(1,540, 320, 1, 15, 4, 4, user);
+
+        Carport carport = new Carport(1,540, 320, 1, 15, 4);
+       Ordre x = new Ordre(carport, user);
         MængdeBeregner TestRegner = new MængdeBeregner(x);
 
         //Expected

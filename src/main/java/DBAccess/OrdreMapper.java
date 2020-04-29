@@ -52,7 +52,9 @@ public class OrdreMapper {
                 } catch ( SQLException ex ) {
                 }
 
-                Ordre ordre = new Ordre(rs.getInt("ordreNr"),rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"),user);
+               // Ordre ordre = new Ordre(rs.getInt("ordreNr"),rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"),user);
+                Carport carport = new Carport(rs.getInt("carportLængde"), rs.getInt("carportBredde"),rs.getInt("tagtypeNr"),rs.getDouble("hældning"),rs.getInt("redskabsrumLængde"),rs.getInt("redskabsrumBredde"));
+                Ordre ordre = new Ordre(carport, user, rs.getInt("ordreNr"));
                 OrdreListe.add(ordre);
             }
 
@@ -65,8 +67,6 @@ public class OrdreMapper {
     /**
      * Metode gemmer ordre til databasen
      * @param ordre er af typen ordreobjekt, hvis tilstand skal indeholde et CarportObejkt og Userobjekt.
-     * @param kunde er af typen kundeobjekt, hvis tilstand skal indeholde brugerid
-     * @param carport er af typen kundeobjekt, hvis tilstand skal indeholde længde, bredde, reskabsrumlængde, redskabsrumbredde tagtype og hældning.
      */
     public static void createOrder(Ordre ordre) throws OrdreRetrivalException {
         try {

@@ -26,14 +26,16 @@ public class LogicFacade {
     }
 
 
-
+    /**
+     * Denne metoder går ned på DB niveau og får den til at lave en ny ordre.
+     * @param ordre er af typen ordreObjekt, der indeholder en carport og en kunde
+     */
     public static void sendForspørgsel(Ordre ordre){
     try {
         OrdreMapper.createOrder(ordre);
     } catch (OrdreRetrivalException e) {
         System.out.println(e);
     }
-
     }
 
 
