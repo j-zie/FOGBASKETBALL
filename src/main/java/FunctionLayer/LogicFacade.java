@@ -20,7 +20,7 @@ public class LogicFacade {
                                    String adresse, String navn, int postnummer, String by ) throws LoginSampleException {
 
 
-        User user = new User(navn, adresse, by, telefonnummer, email, password, postnummer);
+        User user = new User(navn, adresse, by, telefonnummer, email, password, postnummer, "Kunde");
 
         return UserMapper.createUser( user );
     }

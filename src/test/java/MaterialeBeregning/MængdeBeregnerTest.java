@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 public class MængdeBeregnerTest {
     @Test
     public void testMB() throws LoginSampleException {
-        User user = new User("Test","Test","Test","test","test","test",1234);
+        User user = new User("Test","Test","Test","test","test","test",1234,"kunde");
 
         Carport carport = new Carport(1,540, 320, 1, 15, 4);
        Ordre x = new Ordre(carport, user);

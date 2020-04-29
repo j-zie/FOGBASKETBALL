@@ -24,15 +24,17 @@ public class Login extends Command {
             return "login"; // Should be a page with a login error..
         }
 
-        if (user.getRole() == "Admin"){
-            // GO TO ADMIN PAGE
-            return "admin";
-        }
         HttpSession session = request.getSession();
 
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
-        session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
+        session.setAttribute("email", email);
+        // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
+
+        if (user.getRole().equals("Admin")){
+            // GO TO ADMIN PAGE
+            return "admin";
+        }
         return "main";
     }
 }
