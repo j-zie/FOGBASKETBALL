@@ -93,8 +93,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fog_db`.`materialer` (
   `materialeID` INT(11) NOT NULL AUTO_INCREMENT,
-  `materiale navn` VARCHAR(100) NULL DEFAULT NULL,
+  `materialeNavn` VARCHAR(100) NULL DEFAULT NULL,
   `pris` DOUBLE NULL DEFAULT NULL,
+  `billedeNavn` VARCHAR(100) NULL DEFAULT NULL,
   `billede` varbinary(20000) NOT NULL,
   PRIMARY KEY (`materialeID`)
   )
