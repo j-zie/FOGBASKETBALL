@@ -4,7 +4,6 @@ import FunctionLayer.*;
 import PresentationLayer.Register;
 import org.junit.Before;
 import org.junit.Test;
-import sun.rmi.runtime.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
