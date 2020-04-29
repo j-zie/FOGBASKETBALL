@@ -16,7 +16,6 @@ public class OrdreMapper {
      * @return Retunere typen ArrayList<Ordre>.
      */
     public static ArrayList<Ordre> getAlleOrdre() throws OrdreRetrivalException {
-        User user = new User("","","","","","",0,"");
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM ordre";
@@ -29,7 +28,11 @@ public class OrdreMapper {
 
             while(rs.next()) {
                 String id = Integer.toString(rs.getInt("brugerId"));
-                System.out.println(id);
+
+
+                User user = new User("","","","","","",0,"");
+
+
                 try {
 
                     String SQL2 = "SELECT * FROM bruger "
