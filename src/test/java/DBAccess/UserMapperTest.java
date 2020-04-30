@@ -49,6 +49,29 @@ public class UserMapperTest {
         }
     }
 
+
+    @Test
+    public void testCreateUser() throws LoginSampleException {
+        User user = new User("Test","Test","test","test","test","test",200,"kunde");
+
+        // If error we should get a exception and the test would fail
+       User test = UserMapper.createUser(user);
+
+       // Hvis brugeren faktisk bliver sat ind i DB'en burde id blive sat til et tal større end 0
+       assertTrue(test.getId() > 0);
+
+    }
+
+
+
+
+
+
+
+
+
+
+    // LOGIN TEST
     @Test
     public void testSetUpOK() {
         // Just check that we have a connection.
