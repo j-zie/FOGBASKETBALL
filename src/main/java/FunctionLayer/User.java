@@ -1,14 +1,15 @@
 package FunctionLayer;
 
 /**
- * En user bliver lavet til login, og håndtering af oplysninger relateret til salg af ydelser og varer.
- *
+ * The purpose of User is to generate a user with with attributes depending on what is written by the user.
+ * @author kasper
  */
-
-
-
-
 public class User {
+
+
+    public String getRolle() {
+        return rolle;
+    }
 
     public User(String navn, String adresse, String by, String telefon, String email, int id,
                 String password,  int postnr , String rolle) {
@@ -59,10 +60,6 @@ public class User {
 
     public String getBy() {
         return by;
-    }
-
-    public String getRolle() {
-        return rolle;
     }
 
     public String getTelefon() {
