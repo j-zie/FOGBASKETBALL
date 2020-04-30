@@ -62,7 +62,7 @@ public class QuickByg extends Command{
 
 
 enum Tag {
-        Fladt,
+    Fladt,
     Rejsning
 }
 

@@ -30,11 +30,11 @@ public class Register extends Command {
 
        if ( password1.equals( password2 ) ) {
 
-            if (session.getAttribute("role").equals("Admin")){
+            if (session.getAttribute("role") != null && session.getAttribute("role").equals("Admin")){
                 User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by, "Admin" );
             return "admin";
             }
-           User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by, "kunde" );
+             User user = LogicFacade.createUser( email, password1, tlf, adresse, navn, postnr, by, "kunde" );
 
             session.setAttribute("email",email);
             session.setAttribute( "user", user );
