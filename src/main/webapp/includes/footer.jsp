@@ -28,7 +28,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="”http://www.google.com/search?q=Gruppe+123”">Gruppe 123(Github)</a>
+      Made by <a class="brown-text text-lighten-3" href="https://github.com/j-zie/FOGBASKETBALL">Gruppe 123(Github)</a>
       </div>
     </div>
   </footer>
