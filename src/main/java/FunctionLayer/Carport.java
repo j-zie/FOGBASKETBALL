@@ -2,6 +2,10 @@ package FunctionLayer;
 
 public class Carport {
 
+    /**
+     * Carport klassen laver en carport constructor til at gemme carport oplysninger for et tilbud og evt brug til 3d skitse.
+     */
+
     public Carport(double carportLængde, double carportBredde, int tagtypeID, double hældning, double redskabsrumLængde, double getRedskabsrumBredde) {
         this.carportLængde = carportLængde;
         this.carportBredde = carportBredde;

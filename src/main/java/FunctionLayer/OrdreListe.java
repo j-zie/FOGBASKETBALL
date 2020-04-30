@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  *
  *  Metoden OrdreListe henter alle Ordre ud af et ArrayList af samme navn
- * @param ArrayList<Ordre> ordre;
+ * @param //ArrayList<Ordre> ordre;
  */
 
 

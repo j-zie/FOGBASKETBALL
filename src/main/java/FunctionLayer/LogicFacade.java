@@ -6,7 +6,7 @@ import DBAccess.UserMapper;
 import java.util.ArrayList;
 
 /**
- * The purpose of LogicFacade is to...
+ * Formålet med loginfacade er at oprette en bruger til jsp siden
  * @author kasper
  */
 public class LogicFacade {

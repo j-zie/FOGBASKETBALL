@@ -1,7 +1,7 @@
 package FunctionLayer;
 
 /**
- * The purpose of LoginSampleException is to...
+ * Formålet med loginsampleexception er at kunne kaste exception messeges fra super klassen
  * @author kasper
  */
 public class LoginSampleException extends Exception {
