@@ -13,7 +13,7 @@ public class lavStykListe extends Command {
         HttpSession session = request.getSession();
         String ordernumber = request.getParameter("ordrenr");
         StykListePrinter printer = new StykListePrinter(Integer.parseInt(ordernumber));
-        String msg = printer.printEverything();
+        String msg = printer.roofPicker();
         session.setAttribute("page", msg);
         return "stykliste";
     }
