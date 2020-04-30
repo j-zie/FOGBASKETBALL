@@ -71,6 +71,7 @@ public class UserMapperTest {
 
 
 
+
     // LOGIN TEST
     @Test
     public void testSetUpOK() {

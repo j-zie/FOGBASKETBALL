@@ -146,19 +146,6 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         return fejfundet;
     }
 
-    /**
-     * Validere email
-     * TODO(Jonathan): Nice med regex, men hvorfor ikke bare return email.matches(regex);
-     * Det jo dig der er regex mester, jeg er bare din lærling, ved intet.
-     */
-    private Boolean validerEmail(String email){
-        String regex = "^(.+)@(.+)$";
-        if (!email.matches(regex))   {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
 
 

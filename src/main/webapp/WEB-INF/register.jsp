@@ -49,11 +49,14 @@
     <div class="row card hoverable">
         <div class="card-content ">
             <h4 class="center blue-text">Register</h4>
+            <c:if test="${requestScope.emptyError != null}"> <p style="color: red; display: inline">${requestScope.emptyError} </p> </c:if>
+
             <form class="row s12" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="register" >
 
                 <div class="col s12">
                     <div class="input-field">
+                        <c:if test="${requestScope.emailError != null}"> <p style="color: red; display: inline">${requestScope.emailError} </p> </c:if>
                         <input type="text" name="email" placeholder="Email*">
                     </div>
                 </div>
@@ -82,6 +85,7 @@
 
                 <div class="col s12">
                     <div class="input-field">
+                        <c:if test="${requestScope.postnrError != null}"> <p style="color: red; display: inline">${requestScope.postnrError} </p> </c:if>
                         <input type="text" name="postnr" placeholder="Indtast postnummer*">
                     </div>
                 </div>

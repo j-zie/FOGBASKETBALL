@@ -34,7 +34,7 @@ public class UserMapper {
             int id = ids.getInt( 1 );
             user.setId( id );
             return user;
-        } catch ( SQLException | ClassNotFoundException ex ) {
+        } catch ( SQLException | NumberFormatException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
