@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 abstract class Command {
 
+    /**
+     * registrer og gemmer indtastede commands fra en bruger eller medarbejder.
+     */
+
     private static HashMap<String, Command> commands;
 
     private static void initCommands() {

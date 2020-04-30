@@ -1,5 +1,9 @@
 package FunctionLayer;
 
+/**
+ * Materiale klassen laver en constructor til et materiale så vi kan angive priser til de givede materialer.
+ */
+
 public class Materiale {
     private int materialeID;
     private String materialeNavn;

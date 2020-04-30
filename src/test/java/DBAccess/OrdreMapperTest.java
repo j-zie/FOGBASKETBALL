@@ -35,7 +35,7 @@ public class OrdreMapperTest {
                 // Make mappers use test
                 Connector.setConnection( testConnection );
             }
-            System.out.println("before");
+
      getAlleOrdre();
 
         } catch (SQLException | OrdreRetrivalException ex ) {
@@ -48,15 +48,14 @@ public class OrdreMapperTest {
     public void getAlleOrdre() throws OrdreRetrivalException {
         // Virker selvfølgelig kun hvis der er en odre i DB...
         odre = LogicFacade.hentAlleOrdre();
-     //  odre = OrdreMapper.getAlleOrdre();
+
         assertTrue( odre != null );
 
     }
 
     @Test
     public void createOrder() throws OrdreRetrivalException, LoginSampleException {
-        // OBS. Vil ikke fungere hvis registrer ikke fungere eller carport ikke funger
-
+        // OBS. Vil ikke fungere hvis carport eller user klassen ikke funger
         User user = new User("Test","Test","Test","test","test@test.dk", "",2000,"Kunde");
         Carport carp = new Carport(240.0, 240.0,1,0.0, 0,0);
         user.setId(1);

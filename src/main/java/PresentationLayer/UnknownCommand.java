@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- The purpose of UnknownCommand is to...
+ UnknownCommand bliver brugt som en exception messege hvis der bliver indtastet eks. en email uden @.
 
  @author kasper
  */

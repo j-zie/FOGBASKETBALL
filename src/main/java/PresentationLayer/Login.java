@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- The purpose of Login is to...
+ login bruges til at forespørge om email og password.
+ For derefter at sende en exception hvis dette ikke stemmer med databasens oplysninger
 
  @author kasper
  */
@@ -28,6 +29,7 @@ public class Login extends Command {
 
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
+        System.out.println(user.getRole());
         session.setAttribute("email", email);
         // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
 
