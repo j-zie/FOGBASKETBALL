@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- The purpose of Login is to...
+ login bruges til at forespørge om email og password.
+ For derefter at sende en exception hvis dette ikke stemmer med databasens oplysninger
 
  @author kasper
  */

@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Register bruger command til at registrer buger indput til de
+ * forskellige parametre der bliver brugt til at lave en bruger
+ */
+
 public class Register extends Command {
 
     @Override
