@@ -9,19 +9,19 @@
         <div class="col l3 s12">
           <h5 class="white-text">Om Fog</h5>
           <ul>
-            <li><a class="white-text" href="#!">Åbningstider</a></li>
-            <li><a class="white-text" href="#!">Kontakt Fog</a></li>
-            <li><a class="white-text" href="#!">Ledige stillinger</a></li>
-            <li><a class="white-text" href="#!">Persondata politik</a></li>
+            <li><a class="white-text" href="https://www.johannesfog.dk/byggecenter/find-butik/">Åbningstider</a></li>
+            <li><a class="white-text" href="https://www.johannesfog.dk/byggecenter/find-butik/kontakt/">Kontakt Fog</a></li>
+            <li><a class="white-text" href="https://www.johannesfog.dk/byggecenter/om-fog/">Ledige stillinger</a></li>
+            <li><a class="white-text" href="https://www.johannesfog.dk/byggecenter/om-fog/persondata/">Persondata politik</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Aktuelt</h5>
           <ul>
-            <li><a class="white-text" href="#!">Nej tak+</a></li>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Instagram</a></li>
-            <li><a class="white-text" href="#!">Linkedin</a></li>
+            <li><a class="white-text" href="https://www.johannesfog.dk/byggecenter/nej-tak/">Nej tak+</a></li>
+            <li><a class="white-text" href="https://www.facebook.com/fogtraelastbyggecenter/">Facebook</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/fogboligdesignhus/">Instagram</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/company/johannes-fog-as">Linkedin</a></li>
           </ul>
         </div>
       </div>
