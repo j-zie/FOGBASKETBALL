@@ -29,9 +29,15 @@ public class StykListePrinterTest {
 
 
     @Test
-    public void printEverything() {
+    public void printFladtTag() {
         StykListePrinter s = new StykListePrinter(1);
-        assertTrue(s.printEverything() != null);
+        assertTrue(s.printFladtTag() != null);
         }
+
+    @Test
+    public void printRejsningsTag() {
+        StykListePrinter s = new StykListePrinter(1);
+        assertTrue(s.printTagMedHældning() != null);
+    }
 
 }
