@@ -11,7 +11,6 @@ import java.util.ArrayList;
  */
 public class OrdreMapper {
     /**
-     * TODO(Jonathan): Kunne godt refaktores med en join, så der ikke er så meget unødvendigt instantiering. I det mindste fix den tomme catch blok - ellers nice.
      * Retunere alle ordre fra databasen
      * @return Retunere typen ArrayList<Ordre>.
      */
