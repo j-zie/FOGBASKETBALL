@@ -1,17 +1,8 @@
 package PresentationLayer;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-import java.io.*;
-import java.util.ArrayList;
 import javax.servlet.http.*;
-
-import FunctionLayer.LogicFacade;
-import FunctionLayer.Ordre;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
-import PresentationLayer.Command;
 public class NavigationTest extends Mockito {
 
     @Test
