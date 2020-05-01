@@ -40,5 +40,8 @@ public class OrdreListe {
         return null;
     }
 
+    public int getSize(){
+        return ordre.size();
+    }
 
 }

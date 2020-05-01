@@ -36,6 +36,18 @@ public class User {
         this.postnr = postnr;
     }
 
+    public User(String navn, String adresse, String by, String telefon, String email, int id, int postnr , String rolle) {
+        this.navn = navn;
+        this.adresse = adresse;
+        this.by = by;
+        this.telefon = telefon;
+        this.email = email;
+        this.id = id;
+        this.password = password;
+        this.rolle = rolle;
+        this.postnr = postnr;
+    }
+
     public int getPostnr() {
         return postnr;
     }

@@ -2,7 +2,10 @@ package PresentationLayer;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.OrdreListe;
 import FunctionLayer.User;
+import sun.rmi.runtime.Log;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,7 +38,12 @@ public class Login extends Command {
         session.setAttribute("email", email);
 
         if (user.getRole().equals("Admin")){
-            // GO TO ADMIN PAGE
+           OrdreListe ordre = new OrdreListe();
+           int antalKunder = LogicFacade.getAntalKunder();
+            int antalAdmins = LogicFacade.getAntalAdmin();
+           session.setAttribute("antalOrdre", ordre.getSize());
+            session.setAttribute("antalKunder", antalKunder);
+            session.setAttribute("antalAdmins", antalAdmins);
             return "admin";
         }
         return "main";
