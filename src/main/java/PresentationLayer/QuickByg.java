@@ -79,10 +79,8 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
     Double redskabsrum_bredde = Double.parseDouble(request.getParameter("Redskabsrum_bredde"));
     Double redskabsrum_længde = Double.parseDouble(request.getParameter("Redskabsrum_længde"));
 
-
     switch (tag) {
         case Fladt:
-
             Carport carport = new Carport(længde,
                     bredde,
                     1,
@@ -104,8 +102,7 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
 
         default: return null;
     }
-
-    }
+}
 
 
     /**

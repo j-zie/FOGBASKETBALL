@@ -17,7 +17,6 @@
     <li>2 Vinkelbeslag per spær</li>
     <li>Stoler er cementerede med sokkelsko</li>
     <li>Ingen priser lige nu</li>
-
 </ul>
 
 ${sessionScope.page}

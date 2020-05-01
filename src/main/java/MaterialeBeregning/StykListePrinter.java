@@ -55,10 +55,11 @@ public class StykListePrinter {
 
         // Vi skal lave den lidt anderledes
         insertElement(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
-
         insertElement(0.00, "Rem", 4);
         insertElement(0.00, "Sternbræt", 4);
 
+
+        endTable();
         return textToScreen.toString();
     }
 
