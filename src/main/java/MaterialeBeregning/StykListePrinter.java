@@ -32,14 +32,14 @@ public class StykListePrinter {
         orderInfoHeader();
         startTable();
         //Should have some ehh composition this ;)))
-        insertElement(0.00, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
-        insertElement(0.00, "Spær", mængder.antalSpaer());
-        insertElement(0.00, "Trapezplader", 6);
-        insertElement(0.00, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
-        insertElement(0.00, "Cement", 1);
-        insertElement(0.00, "Stolpesko", mængder.antalStolper());
-        insertElement(0.00, "Rem", 4);
-        insertElement(0.00, "Sternbræt", 4);
+        insertElement(17.95, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
+        insertElement(21.55, "Spær", mængder.antalSpaer());
+        insertElement(184.00, "Trapezplader", 6);
+        insertElement(3.75, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
+        insertElement(33.25, "Cement", 1);
+        insertElement(39.90, "Stolpesko", mængder.antalStolper());
+        insertElement(167.65, "Rem", 4);
+        insertElement(15.25, "Sternbræt", 4);
         endTable();
         return textToScreen.toString();
     }
@@ -47,16 +47,16 @@ public class StykListePrinter {
     public String printTagMedHældning() {
         orderInfoHeader();
         startTable();
-        insertElement(0.00, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
-        insertElement(0.00, "Spær", mængder.antalSpaer());
-        insertElement(0.00, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
-        insertElement(0.00, "Cement", 1);
-        insertElement(0.00, "Stolpesko", mængder.antalStolper());
+        insertElement(17.95, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
+        insertElement(21.55, "Spær", mængder.antalSpaer());
+        insertElement(3.75, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
+        insertElement(33.25, "Cement", 1);
+        insertElement(39.90, "Stolpesko", mængder.antalStolper());
 
         // Vi skal lave den lidt anderledes
         insertElement(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
-        insertElement(0.00, "Rem", 4);
-        insertElement(0.00, "Sternbræt", 4);
+        insertElement(167.65, "Rem", 4);
+        insertElement(15.25, "Sternbræt", 4);
 
 
         endTable();
