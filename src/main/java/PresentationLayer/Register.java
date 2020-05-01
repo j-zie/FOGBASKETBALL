@@ -13,9 +13,11 @@ import javax.servlet.http.HttpSession;
  */
 
 public class Register extends Command {
+    
+
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException, NumberFormatException {
+    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
 
         HttpSession session = request.getSession();
 
