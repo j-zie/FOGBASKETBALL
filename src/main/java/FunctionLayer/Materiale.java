@@ -40,6 +40,10 @@ public class Materiale {
         return materialeNavn;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
     public void setMaterialeNavn(String materialeNavn) {
         this.materialeNavn = materialeNavn;
     }

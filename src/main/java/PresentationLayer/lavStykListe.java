@@ -21,6 +21,7 @@ public class lavStykListe extends Command {
         String msg = printer.roofPicker();
         MaterialeListe xs = new MaterialeListe();
         xs.debugPrint();
+        session.setAttribute("testyo", xs.canIShow());
         session.setAttribute("page", msg);
         return "stykliste";
     }

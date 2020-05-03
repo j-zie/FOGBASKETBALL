@@ -8,7 +8,6 @@
 
 <%@ include file = "../includes/header.jsp" %>
 
-
 <p>Here's a paragraph for ye</p>
 <%-- BR's TO FILL THE PAGE --%>
 <a href="https://countingdownto.com/email-countdown/OPNc1C0uEEYL-g" target="_blank" style="display:block; text-align:
