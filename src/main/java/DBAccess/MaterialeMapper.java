@@ -43,7 +43,7 @@ public class MaterialeMapper {
         return materialeListe;
     }
 
-    public static void opretMateriale(int materialeID, String materialeNavn, double pris, String billedeNavn, ) {
+    public static void opretMateriale(int materialeID, String materialeNavn, double pris, String billedeNavn ) {
 
 
 

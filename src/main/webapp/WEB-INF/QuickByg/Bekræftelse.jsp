@@ -12,5 +12,8 @@
 </head>
 <body>
 <h1>Bekræft mig nu for syv søren</h1>
+<br>
+<br>
+${requestScope.svgCarport}
 </body>
 </html>

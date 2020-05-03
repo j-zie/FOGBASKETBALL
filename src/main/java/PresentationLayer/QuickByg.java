@@ -1,6 +1,7 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
+import SVG.SvgCarport;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,6 +44,11 @@ public class QuickByg extends Command{
                 Carport carport = sammenSætCarport(request, Tag.Fladt);
                  User kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
+                SvgCarport svg = new SvgCarport();
+                int bredde = Integer.parseInt(request.getParameter("Bredde"));
+                int længde = Integer.parseInt(request.getParameter("Længde"));
+               request.setAttribute("svgCarport", svg.Build(længde, bredde));
+
                 return "QuickByg/Bekræftelse";
 
             case "RejsningTagOrdrebekræft":
