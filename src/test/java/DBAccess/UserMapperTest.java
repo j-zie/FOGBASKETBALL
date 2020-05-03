@@ -63,7 +63,12 @@ public class UserMapperTest {
     }
 
 
+    @Test
+    public void testgetAllusers() throws LoginSampleException {
 
+        assertTrue(UserMapper.getAllUsers() != null);
+
+    }
 
 
 

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  */
 
 public class Register extends Command {
-    
+
 
 
     @Override
