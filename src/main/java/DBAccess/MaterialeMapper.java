@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class MaterialeMapper {
 
 
-    public ArrayList<Materiale> getAlleMaterialer() {
+    public static ArrayList<Materiale> getAlleMaterialer() {
 
         ArrayList<Materiale> materialeListe = new ArrayList<>();
 
@@ -27,8 +27,11 @@ public class MaterialeMapper {
                 int materialeID = rs.getInt("materialeID");
                 String materialeNavn = rs.getString("materialeNavn");
                 Double pris = rs.getDouble("pris");
+                String tag = rs.getString("tag");
+                String beskrivelse = rs.getString("materialeBeskrivelse");
 
-                Materiale materiale = new Materiale(materialeID, materialeNavn, pris);
+                Materiale materiale = new Materiale(materialeID, materialeNavn, pris,
+                                                    beskrivelse, tag);
 
                 materialeListe.add(materiale);
 

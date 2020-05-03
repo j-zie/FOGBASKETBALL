@@ -1,6 +1,7 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.MaterialeListe;
 import MaterialeBeregning.StykListePrinter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class lavStykListe extends Command {
         String ordernumber = request.getParameter("ordrenr");
         StykListePrinter printer = new StykListePrinter(Integer.parseInt(ordernumber));
         String msg = printer.roofPicker();
+        MaterialeListe xs = new MaterialeListe();
+        xs.debugPrint();
         session.setAttribute("page", msg);
         return "stykliste";
     }
