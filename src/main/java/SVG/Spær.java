@@ -1,38 +1,43 @@
 package SVG;
 
-public class Spær  {
+public class Spær implements Draw  {
 
 
     int spærTykkelse = 10;
+    int x = 0;
+    int y1 = 30;
 
 
-    public String drawSpær(int length, int width){
+    @Override
+    public String draw(int length, int width) {
         StringBuilder svgSpærText = new StringBuilder();
-        int totalBredde = width + 60;
+        int inderBredde = width - 60;
+        int y2 = inderBredde + spærTykkelse;
 
-
-        svgSpærText.append("<rect x=\"20\" y=\"20\" width=\""+length+"\" " +
+        svgSpærText.append("<rect x=\"" +x+ "\" y=\""+y1+"\" width=\""+length+"\" " +
                 "height=\""+spærTykkelse+"\" " +
                 "style=\"stroke:black; storke-width:1; fill:rgb(255,255,255);\" > </rect>" + "\n"
         );
-        svgSpærText.append("<rect x=\"20\" y=\""+width+"\" width=\""+length+"\"" +
+
+        svgSpærText.append("<rect x=\""+x+"\" y=\""+y2+"\" width=\""+length+"\"" +
                 " height=\""+spærTykkelse+"\" " +
-                "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
+                "style=\"stroke:black; storke-width:1;  fill:rgb(255,255,255);\" > </rect>" + "\n"
         );
 
-        // Lodrette spær
-        int x = 20 - spærTykkelse;
-        svgSpærText.append("<rect x=\""+x+"\" y=\"5\" width=\"2\" height=\""+(width+30)+ "\" " +
-                "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-        );
-        svgSpærText.append("<rect x=\""+(20 + length)+"\" y=\"5\" width=\"6\" height=\""+(width+30)+"\" " +
-                "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
+        svgSpærText.append("<rect x=\"" +0+ "\" y=\""+0+"\" width=\""+spærTykkelse+"\" " +
+                "height=\""+width+"\" " +
+                "style=\"stroke:black; storke-width:1; fill:rgb(255,255,255);\" > </rect>" + "\n"
         );
 
-       return "";
+        svgSpærText.append("<rect x=\""+(length - 10)+"\" y=\""+0+"\" width=\""+spærTykkelse+"\"" +
+                " height=\""+width+"\" " +
+                "style=\"stroke:black; storke-width:1; fill:rgb(255,255,255);\" > </rect>" + "\n"
+        );
+
+
+
+        return svgSpærText.toString();
     }
-
-
 }
 
 

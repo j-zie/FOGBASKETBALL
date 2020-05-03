@@ -2,6 +2,11 @@ package SVG;
 
 public class SvgCarport {
 
+    private Tag tag = new Tag();
+    private Spær spær = new Spær();
+    private Rem rem = new Rem();
+    private Stolper stolper = new Stolper();
+    private Pile pile = new Pile();
 
     private int spærTykkelse = 6;
 
@@ -10,74 +15,24 @@ public class SvgCarport {
 
     public String Build(int lenght, int width){
 
-        StartSvg();
-        drawBase(lenght,width);
+        startSvg(lenght,width);
+
+        SvgCarportText.append(tag.draw(lenght,width));
+        SvgCarportText.append(spær.draw(lenght,width));
+        SvgCarportText.append(rem.draw(lenght,width));
+        SvgCarportText.append(stolper.draw(lenght,width));
+
         EndSvg();
         return SvgCarportText.toString();
     }
 
-        private void StartSvg(){
-            SvgCarportText.append("<svg width=\"80%\" height=\"60%\" viewBox=\"0 0 850 850\">" + "\n");
-        }
+private void startSvg(int length, int width){
+    SvgCarportText.append("<svg width=\"80%\" height=\"70%\" viewBox=\"0 0 "+(length + 40)+ " "+ (width + 40 ) +"\" >" + "\n");
+    SvgCarportText.append(pile.draw(length,width));
+    SvgCarportText.append("<svg width=\"90%\" height=\"90%\" x=\"20\" y=\"20\" viewBox=\"0 0 "+length+ " "+ width+"\" preserveAspectRatio=\"xMinYMin\">" + "\n");
 
-        private void drawBase(int length, int width){
+}
 
-            // Vandrette spær
-            SvgCarportText.append("<rect x=\"20\" y=\"20\" width=\""+length+"\" " +
-                    "height=\""+spærTykkelse+"\" " +
-                    "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-            );
-            SvgCarportText.append("<rect x=\"20\" y=\""+width+"\" width=\""+length+"\"" +
-                    " height=\""+spærTykkelse+"\" " +
-                    "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-            );
-
-            // Lodrette spær
-            int x = 20 - spærTykkelse;
-            SvgCarportText.append("<rect x=\""+x+"\" y=\"5\" width=\"6\" height=\""+(width+30)+ "\" " +
-                    "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-            );
-            SvgCarportText.append("<rect x=\""+(20 + length)+"\" y=\"5\" width=\"6\" height=\""+(width+30)+"\" " +
-                    "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-            );
-
-            drawRem(length,width);
-            drawStolper(length,width);
-          //  drawPile(length, width);
-        }
-
-        private void drawRem(int length, int width){
-        int x1 = (int) (length / 4);
-            int x2 = (int) (length / 1.4);
-            SvgCarportText.append(" <line x1=\""+x1+"\" y1=\"20\" x2=\""+x2+"\" y2=\""+width+"\" style=\"stroke:black;stroke-width:2;stroke-dasharray:5,5\" />\n" +
-                    "\n");
-            SvgCarportText.append(" <line x1=\""+x2+"\" y1=\"20\" x2=\""+x1+"\" y2=\""+width+"\" style=\"stroke:black;stroke-width:2;stroke-dasharray:5,5\" />\n" +
-                    "\n");
-        }
-
-
-        private void drawStolper(int length, int width){
-            int userinput = (int) length;
-            int AfstandprBjælke = 180;
-            //int N = 180; Udhæng skal det være der eller ej?
-            int minimumsøjler = 2;
-            int minimumLængdefor4søjler = userinput-360;
-            int AntalB = (minimumLængdefor4søjler/*-N*/)/AfstandprBjælke;
-            int ExtraB = (AntalB+1);
-            int Resultat = (minimumsøjler+ExtraB);
-
-            int x = 40;
-            for (int i = 0; i < Resultat; i++){
-
-                SvgCarportText.append("<rect x=\""+x+"\" y=\"19\" width=\"8\" height=\"8\" " +
-                        "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-                );
-                SvgCarportText.append("<rect x=\""+x+"\" y=\""+ (width - 1) +"\" width=\"8\" height=\"8\" " +
-                        "style=\"stroke:black; storke-width:1; fill-opacity:0.0;\" > </rect>" + "\n"
-                );
-                x += 180;
-            }
-        }
 
         private void drawPile(int length, int width){
 
@@ -122,6 +77,7 @@ public class SvgCarport {
 
         private void EndSvg(){
         SvgCarportText.append("</svg>");
+            SvgCarportText.append("</svg>");
       }
 
 }
