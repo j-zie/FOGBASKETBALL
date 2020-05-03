@@ -20,7 +20,7 @@ public class Pile implements Draw {
 
     private String lodretPil(int width){
 
-        int y2 = width;
+        int y2 = width + 20;
 
         return  ("<line x1=\"0\" " +
                 "y1=\"20\"" +
@@ -43,7 +43,7 @@ public class Pile implements Draw {
 
     private String vandretpil(int length, int width){
 
-        int x2 = length;
+        int x2 = length + 20;
 
         return ("<line x1=\"20\"" +
                 " y1=\""+(width + 25)+"\"" +

@@ -47,7 +47,9 @@ public class QuickByg extends Command{
                 SvgCarport svg = new SvgCarport();
                 int bredde = Integer.parseInt(request.getParameter("Bredde"));
                 int længde = Integer.parseInt(request.getParameter("Længde"));
-               request.setAttribute("svgCarport", svg.Build(længde, bredde));
+                int skurbredde = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
+                int skurlængde = Integer.parseInt(request.getParameter("Redskabsrum_længde"));
+               request.setAttribute("svgCarport", svg.Build(længde, bredde, skurbredde, skurlængde));
 
                 return "QuickByg/Bekræftelse";
 
