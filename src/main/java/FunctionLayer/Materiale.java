@@ -8,11 +8,24 @@ public class Materiale {
     private int materialeID;
     private String materialeNavn;
     private Double pris;
+    private String beskrivelse;
+    private String tag;
 
     public Materiale(int materialeID, String materialeNavn, Double pris) {
         this.materialeID = materialeID;
         this.materialeNavn = materialeNavn;
         this.pris = pris;
+        this.tag = null;
+        this.beskrivelse = null;
+    }
+
+    public Materiale(int materialeID, String materialeNavn, Double pris, String beskrivelse,
+                     String tag) {
+        this.materialeID = materialeID;
+        this.materialeNavn = materialeNavn;
+        this.pris = pris;
+        this.beskrivelse = beskrivelse;
+        this.tag = tag;
     }
 
     public int getMaterialeID() {

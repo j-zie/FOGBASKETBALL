@@ -34,26 +34,12 @@ public class MaterialeMapper {
 
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return materialeListe;
     }
-
-    public static void opretMateriale(int materialeID, String materialeNavn, double pris, String billedeNavn, ) {
-
-
-
-
-
-
-
-    }
-
-    }
+}
 
 
 
