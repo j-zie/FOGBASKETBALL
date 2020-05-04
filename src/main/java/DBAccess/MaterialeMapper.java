@@ -11,6 +11,11 @@ import java.util.Scanner;
 public class MaterialeMapper {
 
 
+    /**
+     * Metode henter alle Materialer fra DB, smider dem ned i et ArrayList og printer dem
+     * @Materiale er et objekt af klassen med samme navn.
+     */
+
     public static ArrayList<Materiale> getAlleMaterialer() {
 
         ArrayList<Materiale> materialeListe = new ArrayList<>();
@@ -43,11 +48,18 @@ public class MaterialeMapper {
         }
         return materialeListe;
     }
+
+    /**
+     * Metoden opretter et materiale vha. scanner, og indsætter det dernæst i DB´en
+
+     */
+
+
     public void opretMateriale() throws SQLException, ClassNotFoundException {
 
         Connection con = Connector.connection();
         Scanner sc = new Scanner(System.in);
-       
+
 
         String materialeNavn = sc.next();
         String materialeBeskrivelse = sc.next();
