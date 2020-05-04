@@ -6,6 +6,7 @@ import FunctionLayer.Materiale;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MaterialeMapper {
 
@@ -42,7 +43,31 @@ public class MaterialeMapper {
         }
         return materialeListe;
     }
-}
+    public void opretMateriale() throws SQLException, ClassNotFoundException {
+
+        Connection con = Connector.connection();
+        Scanner sc = new Scanner(System.in);
+       
+
+        String materialeNavn = sc.next();
+        String materialeBeskrivelse = sc.next();
+        String tag = sc.next();
+        double materialePris = sc.nextDouble();
+
+        try {
+            String SQL = "INSERT INTO materialer (materialeID, materialeNavn, materialeBeskrivelse, tag, pris, billedeNavn, billede) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            // ps.setInt(1, materialeID;
+            ps.setString(2, materialeNavn);
+            ps.setString(3, materialeBeskrivelse);
+            ps.setString(4, tag);
+            ps.setDouble(5, materialePris);
+            ps.executeUpdate();
 
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+    }
+    }
