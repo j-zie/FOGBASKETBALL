@@ -48,6 +48,8 @@ public class Navigation extends Command {
                 return "AdminStyklisteRefpage";
             case "register":
                 return "register";
+            case "SkabMateriale":
+                return "SkabMateriale";
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
                 return "main";
