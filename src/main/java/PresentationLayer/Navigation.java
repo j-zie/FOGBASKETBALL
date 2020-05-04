@@ -28,6 +28,9 @@ public class Navigation extends Command {
 
         switch (nav) {
             case "Katalog":
+
+
+
                 // Her kan der kaldes metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
             case "QuickByg":
