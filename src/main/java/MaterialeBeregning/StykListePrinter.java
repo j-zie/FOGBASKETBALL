@@ -35,7 +35,7 @@ public class StykListePrinter {
         startTable();
         insertElement(17.95, materialer.getMaterialeBytag("stolpe").getMaterialeNavn(),
                 mængder.antalStolper());
-        insertElement(21.55, materialer.getMaterialeBytag("spær").getMaterialeNavn(),
+            insertElement(21.55, materialer.getMaterialeBytag("spær").getMaterialeNavn(),
                  mængder.antalSpaer());
 
         // Ikke flere hardcodede ting 
@@ -77,7 +77,7 @@ public class StykListePrinter {
 
 
     public void orderInfoHeader() {
-        textToScreen.append("<h4> Carport til: ");
+        textToScreen.append("<h4> Carport til: </h4>");
         textToScreen.append(ordre.getUser().getNavn());
         textToScreen.append(" (");
         textToScreen.append(ordre.getUser().getTelefon());
