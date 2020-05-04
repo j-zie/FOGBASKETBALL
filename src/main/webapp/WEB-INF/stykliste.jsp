@@ -32,4 +32,5 @@ ${sessionScope.page}
 <br>
 <br>
 <br>
+
 <%@ include file = "../includes/footer.jsp" %>

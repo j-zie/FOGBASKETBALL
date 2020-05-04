@@ -21,7 +21,7 @@
                 </form> </a>
     </c:forEach>
 
-
+    </div>
 </div>
 
 <br>
