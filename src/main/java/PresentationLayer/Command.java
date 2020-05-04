@@ -20,6 +20,7 @@ abstract class Command {
         commands.put( "quickByg", new QuickByg() );
         commands.put( "nav", new Navigation() );
         commands.put("stykliste", new lavStykListe());
+        commands.put("SkabMateriale", new SkabMateriale());
 
     }
 
