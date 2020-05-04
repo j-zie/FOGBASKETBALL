@@ -38,7 +38,10 @@ public class LogicFacade {
     }
     }
 
-
+    /**
+     * Denne metode looper henter alle ordre
+     *  getAlleoOrdre fra @OrdreMapper bliver her kaldt og loopet igennem og smidt ned i et Array
+     */
     public static ArrayList<Ordre> hentAlleOrdre(){
         try {
 
