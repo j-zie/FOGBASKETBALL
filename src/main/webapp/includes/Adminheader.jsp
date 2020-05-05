@@ -21,7 +21,8 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="tab white-text" href="#email">${sessionScope.user.email}</a></li>
           <li><a class="tab white-text" href="FrontController?target=nav&Nav=kurv"> <i class="material-icons">shopping_cart</i></a></li>
-
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Odrer</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
         </ul>
       </div>
       <div class="nav-content">
