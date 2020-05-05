@@ -6,6 +6,11 @@ import FunctionLayer.LoginSampleException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+/**
+ * Denne klasse tager input fra en form på jsp siden og sender dem ned i opretMateriale metoden i MaterialeMapperen.
+ * Derfra kommer de så i databasen og et nyt materiale er oprettet
+ * Materialet bLiver skabt pt. Med Navn, Beskrivelse, "Tag" (engelske ord) og Pris.TODO:: Få billeder med ned?
+ **/
 
 public class SkabMateriale extends Command {
     @Override
