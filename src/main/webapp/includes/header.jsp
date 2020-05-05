@@ -14,7 +14,7 @@
   <body>
 
   <!-- Nav bar -->
-    <nav class="nav-extended" style="background-image: linear-gradient(to right, #164886, #00B0FF)">
+    <nav class="nav-extended" style="background-image: linear-gradient(to right, #164886, #00B0FF); position: -webkit-sticky; position: sticky; top: 0; z-index: 9;">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo"><img src="resources/fog.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>

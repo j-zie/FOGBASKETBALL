@@ -74,7 +74,7 @@
             </div>
             <div class="card-content">
                 <span class="card-subtitle activator grey-text text-darken-4">Carport 3,60X7,20M med redskabsrum 3,20X2,20M</span>
-                <p><a href="#">Læg i kurv</a></p>
+                <p><a href="#">Læg i kurv </a></p>
             </div>
         </div>
 
