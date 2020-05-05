@@ -16,11 +16,11 @@
         <img class="activator" src="resources/background4.jpg">
     </div>
     <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Din forspørgelse er sendt afsted til en Fog medarbejder. <i class="material-icons right">more_vert</i></span>
+        <span class="card-title activator grey-text text-darken-4">Din forespørgelse er sendt afsted til en Fog medarbejder. <i class="material-icons right">more_vert</i></span>
         <p>Tryk på Billedet for at gennemse din ordre</p>
     </div>
     <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"> Din forspørgelse er sendt afsted til en Fog medarbejder.<i class="material-icons right">close</i></span>
+        <span class="card-title grey-text text-darken-4"> Din forespørgelse er sendt afsted til en Fog medarbejder.<i class="material-icons right">close</i></span>
         <p> Tillykke du har bestilt en carport.</p>
         <p> Med følgende dimensioner</p>
         <p> Bredde: ${requestScope.Bredde}</p>
