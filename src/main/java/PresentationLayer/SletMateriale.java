@@ -11,23 +11,19 @@ public class SletMateriale extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         MaterialeMapper mp = new MaterialeMapper();
-        String MaterialeNavn = request.getParameter("materialeNavn");
-        String MaterialeBeskrivelse = request.getParameter("materialeBeskrivelse");
-        String tag = request.getParameter("tag");
-        Double MaterialePris = Double.parseDouble(request.getParameter("pris"));
-        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag,MaterialePris,request) == false){
-            return "SletMateriale";
-        }
-        try {
-            mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
 
+        String materialeIdd = request.getParameter("materialeId");
+        int materialeId = Integer.parseInt(materialeIdd);
+        try {
+
+            mp.sletMateriale(materialeId);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return "SletMateriale";
+        return "main";
     }
     public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, Double MaterialePris,HttpServletRequest request){
         if(MaterialeNavn.equals("")){

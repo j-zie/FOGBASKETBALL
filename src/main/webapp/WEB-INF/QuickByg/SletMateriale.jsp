@@ -61,8 +61,8 @@
 
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Materiale Id / Varekode">
-                        <label class="active" for="materialeNavn">Materiale Id:</label>
+                        <input type="integer" id="materialeId" name="materialeId" placeholder="Materiale Id / Varekode">
+                        <label class="active" for="materialeId">Materiale Id:</label>
                         <p id="errorteksttt">${requestScope.errorNavn}</p>
                     </div>
                 </div>

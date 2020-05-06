@@ -78,7 +78,7 @@ public class MaterialeMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "DELETE FROM materialer Where materialeId = " + "'" +materialeId+ "'" ;
+            String SQL = "DELETE FROM materialer Where materialeId = " + "" +materialeId+ "" ;
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.executeUpdate();
         } catch ( ClassNotFoundException | SQLException ex ) {
