@@ -20,15 +20,13 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="tab white-text" href="#email">${sessionScope.user.email}</a></li>
-          <li><a class="tab white-text" href="FrontController?target=nav&Nav=kurv"> <i class="material-icons">shopping_cart</i></a></li>
-          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Odrer</a></li>
-          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
         </ul>
       </div>
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
           <li class="tab hoverable"><a class="active" href="admin.jsp" >Admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Ordrer</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
 

@@ -79,6 +79,7 @@ public class LogicFacade {
                 antal++;
             }
         }
+        System.out.println(antal);
        return antal;
     }
 }
