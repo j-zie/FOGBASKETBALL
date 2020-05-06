@@ -23,7 +23,7 @@ public class SletMateriale extends Command {
             e.printStackTrace();
         }
 
-        return "main";
+        return "admin";
     }
     public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, Double MaterialePris,HttpServletRequest request){
         if(MaterialeNavn.equals("")){

@@ -21,7 +21,7 @@ public class SkabMateriale extends Command {
         String tag = request.getParameter("tag");
         Double MaterialePris = Double.parseDouble(request.getParameter("pris"));
         if(validering(MaterialeNavn, MaterialeBeskrivelse,tag,MaterialePris,request) == false){
-            return "SkabMateriale";
+            return "admin";
         }
         try {
             mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
