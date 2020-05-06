@@ -50,7 +50,7 @@ public class MaterialeMapper {
     }
 
     /**
-     * Metoden opretter et materiale vha. scanner, og indsætter det dernæst i DB´en
+     * Metoden indsætter et materiale i DB´en
 
      */
 
@@ -61,7 +61,7 @@ public class MaterialeMapper {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO materialer (materialeNavn,materialeBeskrivelse,tag,pris) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL);
-            // ps.setInt(1, materialeID;
+
             ps.setString(1, materialeNavn);
             ps.setString(2, materialeBeskrivelse);
             ps.setString(3, tag);
