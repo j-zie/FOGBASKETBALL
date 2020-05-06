@@ -44,7 +44,7 @@ public class SkabMateriale extends Command {
                 e.printStackTrace();
             }
 
-            return "main";
+            return "admin";
         }
         public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse, String tag, HttpServletRequest
         request){
