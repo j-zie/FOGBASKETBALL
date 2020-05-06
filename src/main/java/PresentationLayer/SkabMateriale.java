@@ -21,44 +21,48 @@ public class SkabMateriale extends Command {
         String MaterialeBeskrivelse = request.getParameter("materialeBeskrivelse");
         String tag = request.getParameter("tag");
 
+
+
         try {
-            MaterialePris = Double.parseDouble(request.getParameter("pris"));
-        }catch (NumberFormatException e){
-            request.setAttribute("errorPris","Ugyldig Pris");
-            return "SkabMateriale";
+                MaterialePris = Double.parseDouble(request.getParameter("pris"));
+            } catch (NumberFormatException e) {
+                request.setAttribute("errorPris", "Ugyldig Pris");
+                return "SkabMateriale";
 
+            }
+
+            if (validering(MaterialeNavn, MaterialeBeskrivelse, tag, request) == false) {
+                return "SkabMateriale";
+
+            }
+            try {
+                mp.opretMateriale(MaterialeNavn, MaterialeBeskrivelse, tag, MaterialePris);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            return "admin";
+        }
+        public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse, String tag, HttpServletRequest
+        request){
+            if (MaterialeNavn.equals("")) {
+                request.setAttribute("errorNavn", "Ugyldigt Materiale Navn");
+                return false;
+            }
+            if (MaterialeBeskrivelse.equals("")) {
+                request.setAttribute("errorBeskrivelse", "Ugyldigt Materiale Beskrivelse");
+                return false;
+            }
+
+            if (tag.equals("")) {
+                request.setAttribute("errorTag", "Ugyldigt Materialegruppering");
+                return false;
+            }
+
+            return true;
         }
 
-        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag, request) == false){
-            return "SkabMateriale";
-        }
-        try {
-            mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return "main";
     }
-    public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, HttpServletRequest request){
-    if(MaterialeNavn.equals("")){
-        request.setAttribute("errorNavn","Ugyldigt Materiale Navn");
-        return false;
-        }
-        if(MaterialeBeskrivelse.equals("")){
-            request.setAttribute("errorBeskrivelse","Ugyldigt Materiale Beskrivelse");
-            return false;
-        }
-
-        if(Tag.equals("")){
-            request.setAttribute("errorTag","Ugyldigt Materialegruppering");
-            return false;
-        }
-
-        return true;
-    }
-
-}
