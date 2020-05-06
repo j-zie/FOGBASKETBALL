@@ -20,51 +20,49 @@ public class SkabMateriale extends Command {
         String MaterialeNavn = request.getParameter("materialeNavn");
         String MaterialeBeskrivelse = request.getParameter("materialeBeskrivelse");
         String tag = request.getParameter("tag");
-<<<<<<< HEAD
-        Double MaterialePris = Double.parseDouble(request.getParameter("pris"));
-        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag,MaterialePris,request) == false){
-            return "admin";
-=======
+
+
 
         try {
-            MaterialePris = Double.parseDouble(request.getParameter("pris"));
-        }catch (NumberFormatException e){
-            request.setAttribute("errorPris","Ugyldig Pris");
-            return "SkabMateriale";
+                MaterialePris = Double.parseDouble(request.getParameter("pris"));
+            } catch (NumberFormatException e) {
+                request.setAttribute("errorPris", "Ugyldig Pris");
+                return "SkabMateriale";
 
+            }
+
+            if (validering(MaterialeNavn, MaterialeBeskrivelse, tag, request) == false) {
+                return "SkabMateriale";
+
+            }
+            try {
+                mp.opretMateriale(MaterialeNavn, MaterialeBeskrivelse, tag, MaterialePris);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            return "main";
+        }
+        public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse, String tag, HttpServletRequest
+        request){
+            if (MaterialeNavn.equals("")) {
+                request.setAttribute("errorNavn", "Ugyldigt Materiale Navn");
+                return false;
+            }
+            if (MaterialeBeskrivelse.equals("")) {
+                request.setAttribute("errorBeskrivelse", "Ugyldigt Materiale Beskrivelse");
+                return false;
+            }
+
+            if (tag.equals("")) {
+                request.setAttribute("errorTag", "Ugyldigt Materialegruppering");
+                return false;
+            }
+
+            return true;
         }
 
-        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag, request) == false){
-            return "SkabMateriale";
->>>>>>> 5675fda806e83b56e2fb7d588b144475147bb447
-        }
-        try {
-            mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return "main";
     }
-    public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, HttpServletRequest request){
-    if(MaterialeNavn.equals("")){
-        request.setAttribute("errorNavn","Ugyldigt Materiale Navn");
-        return false;
-        }
-        if(MaterialeBeskrivelse.equals("")){
-            request.setAttribute("errorBeskrivelse","Ugyldigt Materiale Beskrivelse");
-            return false;
-        }
-
-        if(Tag.equals("")){
-            request.setAttribute("errorTag","Ugyldigt Materialegruppering");
-            return false;
-        }
-
-        return true;
-    }
-
-}
