@@ -21,6 +21,7 @@ abstract class Command {
         commands.put( "nav", new Navigation() );
         commands.put("stykliste", new lavStykListe());
         commands.put("SkabMateriale", new SkabMateriale());
+        commands.put("SletMateriale", new SletMateriale());
 
     }
 
