@@ -41,7 +41,7 @@ public class QuickByg extends Command{
                 return "QuickByg/FladtTagpage";
             }
                 Carport carport = sammenSætCarport(request, Tag.Fladt);
-                 User kunde = (User) session.getAttribute("user");
+                User kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 return "QuickByg/Bekræftelse";
 
@@ -118,6 +118,7 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         String redskabsrum_bredde = request.getParameter("Redskabsrum_bredde");
         String redskabsrum_længde = request.getParameter("Redskabsrum_længde");
 
+        // Sætter alle sammen op på request scopet, så kunden ikke behøver indtaste det hele igen.
         request.setAttribute("Bredde", bredde);
         request.setAttribute("Længde", længde );
         request.setAttribute("tagtype", tagtype);

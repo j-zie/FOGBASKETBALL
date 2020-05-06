@@ -28,7 +28,9 @@ public class Navigation extends Command {
 
         switch (nav) {
             case "Katalog":
-
+                System.out.println(request.getPathInfo());
+                System.out.println(request.getContextPath());
+                System.out.println(request.getRequestURI());
 
 
                 // Her kan der kaldes metode til evt. at hente alle carporte fra db.
