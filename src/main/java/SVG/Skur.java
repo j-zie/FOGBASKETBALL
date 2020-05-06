@@ -13,12 +13,13 @@ public class Skur implements Draw {
     @Override
     public String draw(int length, int width) {
 
-        int x = length - skurLængde;
-        return ("<rect x=\""+x+"\" y=\"0\" width=\""+skurLængde+"\" " +
+        int x = length - skurLængde + 40;
+        return ("<rect x=\""+x+"\" y=\"80\" width=\""+skurLængde+"\" " +
                 "height=\""+skurBredde+"\" " +
                 "style=\"stroke:black;" +
                 " storke-width:2; " +
                 "stroke-dasharray:2,2;" +
+                "fill-opacity:0.0;" +
                 "fill:white;\" >" +
                 " </rect>" +
                 "\n");

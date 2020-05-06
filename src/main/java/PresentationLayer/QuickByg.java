@@ -7,6 +7,8 @@ import SVG.SvgCarport;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
+
 /**
  * TODO(Jonathan) PATRICK: nice skrevet! især de klasse private metoder, det glemmer jeg ofte. fix lige indents og white space, please
  * QuickByg modtager http request fra formen under quickbyg siden, kontrollere input og
@@ -122,7 +124,8 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         Boolean fejfundet = false;
         String bredde = request.getParameter("Bredde");
         String længde = request.getParameter("Længde");
-        int tagtype = Integer.parseInt(request.getParameter("tagtype"));
+
+        String tagtype = request.getParameter("tagtype");
         String redskabsrum_bredde = request.getParameter("Redskabsrum_bredde");
         String redskabsrum_længde = request.getParameter("Redskabsrum_længde");
 
@@ -132,20 +135,34 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         request.setAttribute("Redskabsrum_bredde", redskabsrum_bredde );
         request.setAttribute("Redskabsrum_længde", redskabsrum_længde );
 
+
         if (bredde.length() < 2) {
             request.setAttribute("breddeError", "Udfyld venligst felt");
            fejfundet = true;
+            return fejfundet;
         }
+
         if (længde.length() < 2) {
             request.setAttribute("længdeError", "Udfyld venligst felt");
             fejfundet = true;
+            return fejfundet;
         }
-        if (tagtype < 1) {
+        if (!tagtype.equals("1")) {
             request.setAttribute("tagError", "Udfyld venligst felt");
+            fejfundet = true;
+            return fejfundet;
+        }
+
+
+        if ((Integer.parseInt(redskabsrum_bredde) + 90) > Integer.parseInt(bredde)) {
+            request.setAttribute("skurBreddeError", "Skur for stort til carport");
+            fejfundet = true;
+        }
+        if ((Integer.parseInt(redskabsrum_længde) + 30)  > Integer.parseInt(længde)) {
+            request.setAttribute("skurLængdeError", "Skur for stort til carport");
             fejfundet = true;
         }
 
-       // OBS VI SKAL LIGE TJEKKE OM REDSKABSRUMMET ER I EN valid størelse.
 
 
         return fejfundet;

@@ -3,13 +3,13 @@ package SVG;
 public class Stolper implements Draw {
 
     int stolpeBredde = 12;
-    int y1 = 29;
+    int y1 = 29 + 40;
 
     @Override
     public String draw(int length, int width) {
     StringBuilder stolpeText = new StringBuilder();
 
-        int y2 = width - 60 + stolpeBredde - 3;
+        int y2 = width - 60 + stolpeBredde - 3 + 40;
 
 
         int userinput = (int) length;
@@ -18,10 +18,11 @@ public class Stolper implements Draw {
         int minimumsøjler = 2;
         int minimumLængdefor4søjler = userinput-360;
         int AntalB = (minimumLængdefor4søjler/*-N*/)/AfstandprBjælke;
-        int ExtraB = (AntalB+1);
+        int ExtraB = (AntalB);
         int Resultat = (minimumsøjler+ExtraB);
 
-        int x = 40;
+        int overskud = (length - (AfstandprBjælke * (Resultat - 1)));
+        int x = 35 + (overskud / 2);
         for (int i = 0; i < Resultat; i++){
 
             stolpeText.append("<rect x=\""+x+"\" y=\""+y1+"\" width=\"12\" height=\"12\" " +
