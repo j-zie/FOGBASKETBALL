@@ -19,8 +19,16 @@
     <h5 style="display: inline-block; margin-left: 10%;" class="white-text">${sessionScope.antalOrdre}</h5>
     <h6 style="margin-left: 35%" class="white-text">Antal Ordre</h6>
 </div>
+
+    <div style="background-image: linear-gradient(yellow, darkseagreen);opacity: 0.7; margin: 20px; height: 150px; width: 300px; border-radius: 20px; display: inline-block;">
+        <i style="display: inline-block; margin: 10px" class="medium material-icons white-text">move_to_inbox</i>
+        <h5 style="display: inline-block; margin-left: 10%;" class="white-text"><a href="FrontController?target=nav&Nav=custom">nye regler</a></h5>
+        <h6 style="margin-left: 35%" class="white-text">INSANE AST</h6>
+    </div>
 </div>
     <%-- BR's TO FILL THE PAGE --%>
+
+
 <br>
 <br>
 <br>
