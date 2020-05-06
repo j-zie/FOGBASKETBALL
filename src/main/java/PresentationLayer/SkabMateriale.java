@@ -20,7 +20,9 @@ public class SkabMateriale extends Command {
         String MaterialeBeskrivelse = request.getParameter("materialeBeskrivelse");
         String tag = request.getParameter("tag");
         Double MaterialePris = Double.parseDouble(request.getParameter("pris"));
-
+        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag,MaterialePris,request) == false){
+            return "SkabMateriale";
+        }
         try {
             mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
 
@@ -32,4 +34,21 @@ public class SkabMateriale extends Command {
 
         return "main";
     }
+    public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, Double MaterialePris,HttpServletRequest request){
+    if(MaterialeNavn.equals("")){
+        request.setAttribute("errorNavn","Ugyldigt Materiale Navn");
+        return false;
+        }
+        if(MaterialeBeskrivelse.equals("")){
+            request.setAttribute("errorBeskrivelse","Ugyldigt Materiale Beskrivelse");
+            return false;
+        }
+
+        if(Tag.equals("")){
+            request.setAttribute("errorTag","Ugyldigt Materialegruppering");
+            return false;
+        }
+        return true;
+    }
+
 }
