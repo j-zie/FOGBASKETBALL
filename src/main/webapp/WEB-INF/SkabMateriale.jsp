@@ -45,7 +45,9 @@
             box-shadow: 0 1px 0 0 #000;
             background-color: green;
         }
-
+        #errortekst{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -61,12 +63,15 @@
                     <div class="input-field">
                         <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Trykimprægnerede stolpe 100x100mm">
                         <label class="active" for="materialeNavn">Materiale Navn:</label>
+                        <p id="errortekst">${requestScope.errorNavn}</p>
                     </div>
                 </div>
                 <div class="col s12">
                     <div class="input-field">
                         <input type="text" id="materialeBeskrivelse" name="materialeBeskrivelse" placeholder="Imprægneret stolpe til hegn, plankeværk eller andre udendørs byggeprojekter der kræver modstandsdygtigt og slidstærkt træ.'">
                         <label class="active" for="materialeBeskrivelse">Materiale Beskrivelse:</label>
+                        <p id="errortekst">${requestScope.errorBeskrivelse}</p>
+
                     </div>
                 </div>
 
@@ -75,11 +80,15 @@
                     <input id=pris type="number" name="pris" min="0" step="0.01" placeholder="76.99" >
                     <i>Kr.</i>
                     <label class="active" for="pris">Indtast pris pr. styk</label>
+                    <p id="errortekst">${requestScope.errorPris}</p>
+
                 </div>
                 <div class="col s6 center">
                     <div class="input-field">
                         <input type="text" id="tag" name="tag" placeholder="Spær, Stolpe, Beklædning osv.">
                         <label class="active" for="tag">Materialegruppering:</label>
+                        <p id="errortekst">${requestScope.errorTag}</p>
+
                     </div>
                 </div>
 

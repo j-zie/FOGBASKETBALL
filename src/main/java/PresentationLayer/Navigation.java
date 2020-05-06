@@ -52,6 +52,8 @@ public class Navigation extends Command {
                 return "register";
             case "SkabMateriale":
                 return "SkabMateriale";
+            case "SletMateriale":
+                return "QuickByg/SletMateriale";
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
                 return "main";

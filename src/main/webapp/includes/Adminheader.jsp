@@ -27,9 +27,9 @@
           <li class="tab hoverable"><a class="active" href="admin.jsp" >Admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Ordrer</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SletMateriale">Slet materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
-
 
 
         </ul>
