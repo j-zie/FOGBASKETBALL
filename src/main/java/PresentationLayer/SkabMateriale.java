@@ -15,13 +15,28 @@ import java.sql.SQLException;
 public class SkabMateriale extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+        Double MaterialePris;
         MaterialeMapper mp = new MaterialeMapper();
         String MaterialeNavn = request.getParameter("materialeNavn");
         String MaterialeBeskrivelse = request.getParameter("materialeBeskrivelse");
         String tag = request.getParameter("tag");
+<<<<<<< HEAD
         Double MaterialePris = Double.parseDouble(request.getParameter("pris"));
         if(validering(MaterialeNavn, MaterialeBeskrivelse,tag,MaterialePris,request) == false){
             return "admin";
+=======
+
+        try {
+            MaterialePris = Double.parseDouble(request.getParameter("pris"));
+        }catch (NumberFormatException e){
+            request.setAttribute("errorPris","Ugyldig Pris");
+            return "SkabMateriale";
+
+        }
+
+        if(validering(MaterialeNavn, MaterialeBeskrivelse,tag, request) == false){
+            return "SkabMateriale";
+>>>>>>> 5675fda806e83b56e2fb7d588b144475147bb447
         }
         try {
             mp.opretMateriale(MaterialeNavn,MaterialeBeskrivelse,tag,MaterialePris);
@@ -34,7 +49,7 @@ public class SkabMateriale extends Command {
 
         return "main";
     }
-    public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, Double MaterialePris,HttpServletRequest request){
+    public boolean validering(String MaterialeNavn, String MaterialeBeskrivelse,String Tag, HttpServletRequest request){
     if(MaterialeNavn.equals("")){
         request.setAttribute("errorNavn","Ugyldigt Materiale Navn");
         return false;
@@ -48,6 +63,7 @@ public class SkabMateriale extends Command {
             request.setAttribute("errorTag","Ugyldigt Materialegruppering");
             return false;
         }
+
         return true;
     }
 

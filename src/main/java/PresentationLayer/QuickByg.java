@@ -1,11 +1,14 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
+import SVG.SvgCarport;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
+
 /**
  * TODO(Jonathan) PATRICK: nice skrevet! især de klasse private metoder, det glemmer jeg ofte. fix lige indents og white space, please
  * QuickByg modtager http request fra formen under quickbyg siden, kontrollere input og
@@ -41,8 +44,15 @@ public class QuickByg extends Command{
                 return "QuickByg/FladtTagpage";
             }
                 Carport carport = sammenSætCarport(request, Tag.Fladt);
-                 User kunde = (User) session.getAttribute("user");
+                User kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
+                SvgCarport svg = new SvgCarport();
+                int bredde = Integer.parseInt(request.getParameter("Bredde"));
+                int længde = Integer.parseInt(request.getParameter("Længde"));
+                int skurbredde = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
+                int skurlængde = Integer.parseInt(request.getParameter("Redskabsrum_længde"));
+               request.setAttribute("svgCarport", svg.Build(længde, bredde, skurbredde, skurlængde));
+
                 return "QuickByg/Bekræftelse";
 
             case "RejsningTagOrdrebekræft":
@@ -114,30 +124,46 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         Boolean fejfundet = false;
         String bredde = request.getParameter("Bredde");
         String længde = request.getParameter("Længde");
-        int tagtype = Integer.parseInt(request.getParameter("tagtype"));
+
+        String tagtype = request.getParameter("tagtype");
         String redskabsrum_bredde = request.getParameter("Redskabsrum_bredde");
         String redskabsrum_længde = request.getParameter("Redskabsrum_længde");
 
+        // Sætter alle sammen op på request scopet, så kunden ikke behøver indtaste det hele igen.
         request.setAttribute("Bredde", bredde);
         request.setAttribute("Længde", længde );
         request.setAttribute("tagtype", tagtype);
         request.setAttribute("Redskabsrum_bredde", redskabsrum_bredde );
         request.setAttribute("Redskabsrum_længde", redskabsrum_længde );
 
+
         if (bredde.length() < 2) {
             request.setAttribute("breddeError", "Udfyld venligst felt");
            fejfundet = true;
+            return fejfundet;
         }
+
         if (længde.length() < 2) {
             request.setAttribute("længdeError", "Udfyld venligst felt");
             fejfundet = true;
+            return fejfundet;
         }
-        if (tagtype < 1) {
+        if (!tagtype.equals("1")) {
             request.setAttribute("tagError", "Udfyld venligst felt");
+            fejfundet = true;
+            return fejfundet;
+        }
+
+
+        if ((Integer.parseInt(redskabsrum_bredde) + 90) > Integer.parseInt(bredde)) {
+            request.setAttribute("skurBreddeError", "Skur for stort til carport");
+            fejfundet = true;
+        }
+        if ((Integer.parseInt(redskabsrum_længde) + 30)  > Integer.parseInt(længde)) {
+            request.setAttribute("skurLængdeError", "Skur for stort til carport");
             fejfundet = true;
         }
 
-       // OBS VI SKAL LIGE TJEKKE OM REDSKABSRUMMET ER I EN valid størelse.
 
 
         return fejfundet;

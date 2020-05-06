@@ -123,7 +123,7 @@
 </select>
 
 
-<label for="redskabsRumBredde">Redskabsrum bredde</label>
+<label for="redskabsRumBredde">Redskabsrum bredde  <c:if test="${requestScope.skurBreddeError != null}"> <p style="color: red; display: inline">${requestScope.skurBreddeError} </p> </c:if> </label>
 <select id="redskabsRumBredde" name="Redskabsrum_bredde">
     <option selected="selected" value="0"> Ønsker ikke redskabsrum  </option>
     <option value="240">240 cm</option>
@@ -148,7 +148,7 @@
 </select>
 
 
-<label for="redskabsRumLængde">Redskabsrum længde</label>
+<label for="redskabsRumLængde">Redskabsrum længde  <c:if test="${requestScope.skurLængdeError != null}"> <p style="color: red; display: inline">${requestScope.skurLængdeError} </p> </c:if></label>
 <select id="redskabsRumLængde" name="Redskabsrum_længde">
     <option selected="selected" value="0"> Ønsker ikke redskabsrum</option>
     <option value="240">240 cm</option>
@@ -174,34 +174,6 @@
 <div id="seperator"></div>
 
     </form>
-        <!--
-        <div id="KundeDiv">
 
-
-        Navn: <c:if test="${requestScope.navnError != null}"> <p style="color: red; display: inline">${requestScope.navnError}</p> </c:if>
-        <br>
-        <input type="text" name="Navn" value="${requestScope.Navn}">
-        <br>
-        Adresse: <c:if test="${requestScope.adresseError != null}"> <p style="color: red; display: inline">${requestScope.adresseError}</p> </c:if>
-        <br>
-        <input type="text" name="Adresse" value="${requestScope.Adresse}">
-        <br>
-        Postnummer og by: <c:if test="${requestScope.byError != null}"> <p style="color: red; display: inline">${requestScope.byError}</p> </c:if>
-        <br>
-        <input type="text" name="Postnummer" value="${requestScope.Postnummer}">
-        <br>
-        Telefon: <c:if test="${requestScope.telefonError != null}"> <p style="color: red; display: inline">${requestScope.telefonError}</p> </c:if>
-        <br>
-        <input type="text" name="Telefon" value="${requestScope.Telefon}">
-        <br>
-        E-email adresse: <c:if test="${requestScope.emailError != null}"> <p style="color: red; display: inline">${requestScope.emailError}</p> </c:if>
-        <br>
-        <input type="text" name="Email" value="${requestScope.Email}">
-        <br>
-
-        <input id="SubButton" type="submit" value="Send forespørgsel ">
-        </div>
-
--->
 
 <%@ include file = "/includes/footer.jsp" %>

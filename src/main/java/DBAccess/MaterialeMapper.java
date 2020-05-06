@@ -49,7 +49,11 @@ public class MaterialeMapper {
         return materialeListe;
     }
 
+
     /**
+
+     * Metoden opretter et materiale vha. scanner, og indsætter det dernæst i DB´en
+    public static void opretMateriale(int materialeID, String materialeNavn, double pris, String billedeNavn ) {
      * Metoden indsætter et materiale i DB´en
 
      */

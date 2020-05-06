@@ -80,6 +80,8 @@
                     <input id=pris type="number" name="pris" min="0" step="0.01" placeholder="76.99" >
                     <i>Kr.</i>
                     <label class="active" for="pris">Indtast pris pr. styk</label>
+                    <p id="errortekst">${requestScope.errorPris}</p>
+
                 </div>
                 <div class="col s6 center">
                     <div class="input-field">
