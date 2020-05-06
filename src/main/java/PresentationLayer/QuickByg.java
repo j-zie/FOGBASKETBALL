@@ -65,6 +65,8 @@ public class QuickByg extends Command{
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 return "QuickByg/Bekræftelse";
 
+
+
         }
 
         return "fail"; // Lav error handle

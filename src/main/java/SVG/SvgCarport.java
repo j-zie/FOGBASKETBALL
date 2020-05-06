@@ -29,13 +29,11 @@ public class SvgCarport {
     }
 
 private void startSvg(int length, int width){
-//    SvgCarportText.append("<svg width=\"80%\" height=\"70%\" viewBox=\"0 0 "+(length + 40)+ " "+ (width + 40 ) +"\" preserveAspectRatio=\"xMinYMin\" style=\"margin-left: auto;\">" + "\n");
-   // SvgCarportText.append(pile.draw(length,width));
     SvgCarportText.append("<svg width=\"90%\" height=\"90%\" x=\"20\" y=\"20\" viewBox=\"0 0 "+1000+ " "+ 1000+"\" preserveAspectRatio=\"xMinYMin\">" + "\n");
 
 }
         private void EndSvg(){
-     //   SvgCarportText.append("</svg>");
+
             SvgCarportText.append("</svg>");
       }
 
