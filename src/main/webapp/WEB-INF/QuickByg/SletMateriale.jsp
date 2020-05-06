@@ -61,46 +61,11 @@
 
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Trykimprægnerede stolpe 100x100mm">
-                        <label class="active" for="materialeNavn">Materiale Navn:</label>
+                        <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Materiale Id / Varekode">
+                        <label class="active" for="materialeNavn">Materiale Id:</label>
                         <p id="errorteksttt">${requestScope.errorNavn}</p>
                     </div>
                 </div>
-                <div class="col s12">
-                    <div class="input-field">
-                        <input type="text" id="materialeBeskrivelse" name="materialeBeskrivelse" placeholder="Imprægneret stolpe til hegn, plankeværk eller andre udendørs byggeprojekter der kræver modstandsdygtigt og slidstærkt træ.'">
-                        <label class="active" for="materialeBeskrivelse">Materiale Beskrivelse:</label>
-                        <p id="errortekst">${requestScope.errorBeskrivelse}</p>
-
-                    </div>
-                </div>
-
-
-                <div class="input-field col s6">
-                    <input id=pris type="number" name="pris" min="0" step="0.01" placeholder="76.99" >
-                    <i>Kr.</i>
-                    <label class="active" for="pris">Indtast pris pr. styk</label>
-                </div>
-                <div class="col s6 center">
-                    <div class="input-field">
-                        <input type="text" id="tag" name="tag" placeholder="Spær, Stolpe, Beklædning osv.">
-                        <label class="active" for="tag">Materialegruppering:</label>
-                        <p id="errortekstt">${requestScope.errorTag}</p>
-
-                    </div>
-                </div>
-
-                <div class="col s12 center">
-                    <button type="submit" value="Submit" class="btn btn-large waves-effect waves-light blue">Send til DB<i class="material-icons right">send</i></button>
-                </div>
-
-                <form>
-                    <div class="form-group">
-                        <label for="fil">Indsæt Billede til Materialet</label>
-                        <input type="file" class="form-control-file" id="fil">
-                    </div>
-                </form>
-
 
             </form>
         </div>
