@@ -73,4 +73,16 @@ public class MaterialeMapper {
         }
 
     }
+
+    public void sletMateriale(int materialeId) throws SQLException, ClassNotFoundException {
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM materialer Where materialeId = " + "'" +materialeId+ "'" ;
+            PreparedStatement ps = con.prepareStatement( SQL );
+            ps.executeUpdate();
+        } catch ( ClassNotFoundException | SQLException ex ) {
+            System.out.println(ex);
+        }
+    }
     }
