@@ -56,7 +56,7 @@ public class QuickByg extends Command{
                 return "QuickByg/Bekræftelse";
 
             case "RejsningTagOrdrebekræft":
-                 fejlFundet = tjekFelter(request);
+                 fejlFundet = tjekFelterRejsning(request);
                 if (fejlFundet == true) {
                     return "QuickByg/RejsningTagpage";
                 }
@@ -167,12 +167,57 @@ private Carport sammenSætCarport(HttpServletRequest request, Tag tag){
         }
 
 
-
         return fejfundet;
     }
 
 
+    private Boolean tjekFelterRejsning(HttpServletRequest request) throws LoginSampleException {
+        Boolean fejfundet = false;
+        String bredde = request.getParameter("Bredde");
+        String længde = request.getParameter("Længde");
 
+        String tagtype = request.getParameter("tagtype");
+        String redskabsrum_bredde = request.getParameter("Redskabsrum_bredde");
+        String redskabsrum_længde = request.getParameter("Redskabsrum_længde");
+
+        // Sætter alle sammen op på request scopet, så kunden ikke behøver indtaste det hele igen.
+        request.setAttribute("Bredde", bredde);
+        request.setAttribute("Længde", længde );
+        request.setAttribute("tagtype", tagtype);
+        request.setAttribute("Redskabsrum_bredde", redskabsrum_bredde );
+        request.setAttribute("Redskabsrum_længde", redskabsrum_længde );
+
+
+        if (bredde.length() < 2) {
+            request.setAttribute("breddeError", "Udfyld venligst felt");
+            fejfundet = true;
+            return fejfundet;
+        }
+
+        if (længde.length() < 2) {
+            request.setAttribute("længdeError", "Udfyld venligst felt");
+            fejfundet = true;
+            return fejfundet;
+        }
+        if (tagtype.equals("0")) {
+            request.setAttribute("tagError", "Udfyld venligst felt");
+            fejfundet = true;
+            return fejfundet;
+        }
+
+
+        if ((Integer.parseInt(redskabsrum_bredde) + 90) > Integer.parseInt(bredde)) {
+            request.setAttribute("skurBreddeError", "Skur for stort til carport");
+            fejfundet = true;
+        }
+        if ((Integer.parseInt(redskabsrum_længde) + 30)  > Integer.parseInt(længde)) {
+            request.setAttribute("skurLængdeError", "Skur for stort til carport");
+            fejfundet = true;
+        }
+
+
+        return fejfundet;
+    }
 
 
 }
