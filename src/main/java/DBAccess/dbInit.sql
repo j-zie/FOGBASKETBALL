@@ -1,4 +1,4 @@
-- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`materialer` (
   `tag` VARCHAR(100) NULL DEFAULT NULL,
   `pris` DOUBLE NULL DEFAULT NULL,
   `billedeNavn` VARCHAR(100) NULL DEFAULT NULL,
-  `billede` varbinary(20000),
+  `billede` mediumblob,
   PRIMARY KEY (`materialeID`)
   )
 
