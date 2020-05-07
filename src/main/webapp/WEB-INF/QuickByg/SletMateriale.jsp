@@ -1,3 +1,4 @@
+<%@ include file = "/includes/Adminheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +63,7 @@
                 <div class="col s12">
                     <div class="input-field">
                         <input type="integer" id="materialeId" name="materialeId" placeholder="Materiale Id / Varekode">
-                        <label class="active" for="materialeId">Materiale Id:</label>
+                        <label class="active" for="materialeId"></label>
                         <p id="errorteksttt">${requestScope.errorNavn}</p>
                     </div>
                 </div>
