@@ -22,6 +22,7 @@ abstract class Command {
         commands.put("stykliste", new lavStykListe());
         commands.put("SkabMateriale", new SkabMateriale());
         commands.put("SletMateriale", new SletMateriale());
+        commands.put("tilføjCarport", new TilføjCarport());
 
     }
 

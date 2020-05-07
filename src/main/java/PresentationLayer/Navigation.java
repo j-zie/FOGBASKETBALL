@@ -59,6 +59,8 @@ public class Navigation extends Command {
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
                 return "main";
+            case "tilføjCarport":
+                return "TilføjCarport";
         }
         return nav + "page";
     }
