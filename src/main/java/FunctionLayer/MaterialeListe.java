@@ -28,4 +28,10 @@ public class MaterialeListe {
         }
         return null;
     }
+
+    public int getTotalPrice() {
+
+    }
+
+
 }
