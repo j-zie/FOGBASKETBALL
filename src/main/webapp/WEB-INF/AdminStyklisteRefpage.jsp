@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file = "../includes/header.jsp" %>
+<%@ include file = "../includes/Adminheader.jsp" %>
 
 </body>
 <h2 class="light-blue-text center"> Odrer oversigt </h2>

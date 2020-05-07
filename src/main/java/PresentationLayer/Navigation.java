@@ -44,10 +44,12 @@ public class Navigation extends Command {
                 return "login";
             case "kurv":
                 return "Kurvpage";
-            case "admin":
+            case "ordrer":
                 ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();
                 session.setAttribute("alleOrdre", alleOrdre);
                 return "AdminStyklisteRefpage";
+            case "admin":
+                return "admin";
             case "register":
                 return "register";
             case "SkabMateriale":
