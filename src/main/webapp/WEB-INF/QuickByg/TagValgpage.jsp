@@ -14,12 +14,12 @@
 <h1 class="Overskrift1"> QUICKBYG</h1>
 
 <div class="tagvalg">
-    <h2> Tag med fladt tag</h2>
+    <h2> Carport med fladt tag</h2>
     <a href="FrontController?target=quickByg&to=Fladt"><img src="resources/Fladttag.png" ></a>
 </div>
 
 <div class="tagvalg">
-    <h2> Tag med rejsning</h2>
+    <h2> Carport med rejst tag</h2>
     <a href="FrontController?target=quickByg&to=Rejsning"> <img src="resources/Rejsning.png"></a>
 </div>
 
