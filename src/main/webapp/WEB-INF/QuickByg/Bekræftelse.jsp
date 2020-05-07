@@ -1,4 +1,4 @@
-<%--
+<%@ page import="DBAccess.MaterialeMapper" %><%--
   Created by IntelliJ IDEA.
   User: Patrick
   Date: 21/04/2020
@@ -25,7 +25,10 @@
         <p> Med følgende dimensioner</p>
         <p> Bredde: ${requestScope.Bredde}</p>
         <p> Højde:  ${requestScope.Længde}</p>
-        <p> Tagtype: ${requestScope.tagtype}</p>
+        <p> Tagtype: ${requestScope.tagtypeNavn}</p>
+        <c:if test="${requestScope.taghældning != 0}">
+            <p> Taghældning: ${requestScope.taghældning}&deg;</p>
+        </c:if>
         <c:if test="${requestScope.Redskabsrum_bredde != 0}">
             <p> Redskabsrum Bredde: ${requestScope.Redskabsrum_bredde}</p>
         </c:if>
@@ -33,6 +36,7 @@
             <p> Redskabsrum Længde: ${requestScope.Redskabsrum_længde}</p>
         </c:if>
         <p> Hvis disse informationer er forkert. Så oplys venligst dette til medarbejderen der snarest tager kontakt til dig.</p>
+        <div> ${requestScope.svgCarport} </div>
 
     </div>
 </div>
@@ -42,7 +46,7 @@
 </div>
 <br>
 <br>
-<div style="width: 100%; text-align: center; align-content: center"> ${requestScope.svgCarport} </div>
+
 
 <br>
 <br>

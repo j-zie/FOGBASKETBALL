@@ -117,7 +117,6 @@
                     <option selected="selected" value="0"> Vælg tagtype</option>
                 </c:otherwise>
             </c:choose>
-
             <option value="2">Betontag-rød</option>
             <option value="3">Betontag-sort</option>
             <option value="4">EternittagB6-Sort</option>
