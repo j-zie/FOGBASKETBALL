@@ -127,7 +127,7 @@
         </select>
 
 
-        <label for="Taghældning">Taghældning</label>
+        <label for="Taghældning">Taghældning </label>
         <select id="taghældning" name="Taghældning">
             <option selected="selected" value="15"> 15 grader</option>
             <option value="20"> 20 grader</option>
@@ -139,7 +139,7 @@
         </select>
 
 
-        <label for="redskabsRumBredde">Redskabsrum bredde</label>
+        <label for="redskabsRumBredde">Redskabsrum bredde  <c:if test="${requestScope.skurBreddeError != null}"> <p style="color: red; display: inline">${requestScope.skurBreddeError} </p> </c:if></label>
         <select id="redskabsRumBredde" name="Redskabsrum_bredde">
             <option selected="selected" value="0"> Ønsker ikke redskabsrum  </option>
             <option value="240">240 cm</option>
@@ -164,7 +164,7 @@
         </select>
 
 
-        <label for="redskabsRumLængde">Redskabsrum længde</label>
+        <label for="redskabsRumLængde">Redskabsrum længde  <c:if test="${requestScope.skurLængdeError != null}"> <p style="color: red; display: inline">${requestScope.skurLængdeError} </p> </c:if></label>
         <select id="redskabsRumLængde" name="Redskabsrum_længde">
             <option selected="selected" value="0"> Ønsker ikke redskabsrum</option>
             <option value="240">240 cm</option>

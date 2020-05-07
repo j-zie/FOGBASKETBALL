@@ -26,6 +26,7 @@
         <ul class="tabs tabs-transparent">
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=admin">Admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=ordrer">Ordrer</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj Carport</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SletMateriale">Slet materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register admin</a></li>
@@ -35,11 +36,7 @@
         </ul>
       </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="sass.html">test</a></li>
-      <li><a href="badges.html">test</a></li>
-      <li><a href="collapsible.html">test</a></li>
-    </ul>
+
 
 
   <!-- Nav bar slut-->
