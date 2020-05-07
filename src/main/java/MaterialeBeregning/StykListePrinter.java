@@ -3,8 +3,6 @@ package MaterialeBeregning;
 import FunctionLayer.MaterialeListe;
 import FunctionLayer.Ordre;
 import FunctionLayer.OrdreListe;
-import FunctionLayer.OrdreRetrivalException;
-import javafx.scene.paint.Material;
 
 /**
  * Denne klasse kræver et ordreNr til blive instansieret. Da bliver så hentet en ordre med det pågældende Ordrennummer fra DB'en.
@@ -19,6 +17,8 @@ public class StykListePrinter {
     StringBuilder textToScreen = new StringBuilder();
     MængdeBeregner mængder;
     MaterialeListe materialer;
+    double totalPrice = 0;
+
     public StykListePrinter(int orderNum){ // eh
         generatedLists = new OrdreListe();
         ordre = generatedLists.getOrderFromOrderNumber(orderNum);
@@ -33,10 +33,13 @@ public class StykListePrinter {
     public String printFladtTag() {
         orderInfoHeader();
         startTable();
-        insertElement(17.95, materialer.getMaterialeBytag("stolpe").getMaterialeNavn(),
-                mængder.antalStolper());
-            insertElement(21.55, materialer.getMaterialeBytag("spær").getMaterialeNavn(),
-                 mængder.antalSpaer());
+        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("stolpe").getPris(),
+                      materialer.getMaterialeBytag("stolpe").getMaterialeNavn(),
+                      mængder.antalStolper());
+
+        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("spær").getPris(),
+                      materialer.getMaterialeBytag("spær").getMaterialeNavn(),
+                      mængder.antalSpaer());
 
         // Ikke flere hardcodede ting 
         //    insertElement(184.00, "Trapezplader", 6);
@@ -52,16 +55,16 @@ public class StykListePrinter {
     public String printTagMedHældning() {
         orderInfoHeader();
         startTable();
-        insertElement(17.95, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
-        insertElement(21.55, "Spær", mængder.antalSpaer());
-        insertElement(3.75, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
-        insertElement(33.25, "Cement", 1);
-        insertElement(39.90, "Stolpesko", mængder.antalStolper());
+        insertElementAndAddToTotalCost(17.95, "Trykimprægnerede stolper 100x100mm", mængder.antalStolper());
+        insertElementAndAddToTotalCost(21.55, "Spær", mængder.antalSpaer());
+        insertElementAndAddToTotalCost(3.75, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
+        insertElementAndAddToTotalCost(33.25, "Cement", 1);
+        insertElementAndAddToTotalCost(39.90, "Stolpesko", mængder.antalStolper());
 
         // Vi skal lave den lidt anderledes
-        insertElement(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
-        insertElement(167.65, "Rem", 4);
-        insertElement(15.25, "Sternbræt", 4);
+        insertElementAndAddToTotalCost(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
+        insertElementAndAddToTotalCost(167.65, "Rem", 4);
+        insertElementAndAddToTotalCost(15.25, "Sternbræt", 4);
 
 
         endTable();
@@ -100,10 +103,15 @@ public class StykListePrinter {
 
     public void endTable() {
         textToScreen.append("        </tbody>\n" +
-                "      </table>");
+                "      </table>" +
+                "<br>" +
+                "<h5>Din carports materiale pris er: " + totalPrice + " kr");
     }
 
-    public void insertElement(double pris, String item, int antal) {
+    public void insertElementAndAddToTotalCost(double pris, String item, int antal) {
+        //Adds to the total price an effect
+        totalPrice += pris*antal;
+
         textToScreen.append("          <tr>\n" +
                 "            <td>" + antal+ "</td>\n" +
                 "            <td>" + item + "</td>\n" +
