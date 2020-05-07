@@ -20,8 +20,7 @@ public class lavStykListe extends Command {
         StykListePrinter printer = new StykListePrinter(Integer.parseInt(ordernumber));
         String msg = printer.roofPicker();
         MaterialeListe xs = new MaterialeListe();
-        xs.debugPrint();
-        session.setAttribute("testyo", xs.canIShow());
+
         session.setAttribute("page", msg);
         return "stykliste";
     }
