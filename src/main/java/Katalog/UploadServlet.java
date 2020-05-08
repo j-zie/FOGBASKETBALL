@@ -16,7 +16,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet("/uploadd")
+@WebServlet("/upload")
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
 
@@ -57,7 +57,7 @@ public class UploadServlet extends HttpServlet {
                 System.out.println("Connection cannot be closed?");
                 e.printStackTrace();
             }
-            request.getRequestDispatcher("/WEB-INF/" + "main" + ".jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/" + "tilføjCarport" + ".jsp").forward(request, response);
         }
     }
 }
