@@ -17,9 +17,19 @@
                 <form action="FrontController" method="post" style="text-align:center">
                     <input type="hidden" name="target" value="stykliste" >
                     <button class="waves-effect waves-teal btn-flat" name="ordrenr" value="${ordre.ordreNr}">Vis Styk-liste</button>
-                    <button class="waves-effect waves-teal btn-flat" name="dunnoyet" value="${ordre.ordreNr}">Slet Ordre</button>
-                </form> </a>
+
+                </form>
+
+
+            <form action="FrontController" method="post" style="text-align:center">
+            <input type="hidden" name="target" value="SletOrdre" >
+        <button class="waves-effect waves-teal btn-flat" name="ordrenr" value="${ordre.ordreNr}">Slet Ordre</button>
+            </form> </a>
     </c:forEach>
+
+
+
+
 
     </div>
 </div>

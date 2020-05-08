@@ -67,7 +67,7 @@
                 </div>
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="password" name="password2" placeholder="Password again*">
+                        <input type="password" name="password2" placeholder="Bekræft password*">
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="text" name="telefon" placeholder="Intast Telefon*">
+                        <input type="text" name="telefon" placeholder="Indtast Telefon*">
                     </div>
                 </div>
 

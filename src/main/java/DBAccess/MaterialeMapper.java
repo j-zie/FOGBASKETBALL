@@ -89,4 +89,23 @@ public class MaterialeMapper {
             System.out.println(ex);
         }
     }
+
+    public String getTagNavn(int tagtypeNr) throws SQLException, ClassNotFoundException {
+        String navn = "";
+        try {
+            Connection con = Connector.connection();
+            String SQL = "select tagtypeNavn from tagtyper Where tagtypeNr =? ";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, tagtypeNr);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                navn = rs.getString("tagtypeNavn");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
+        }
+        return navn;
+    }
 }
+

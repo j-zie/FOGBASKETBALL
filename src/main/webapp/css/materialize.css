@@ -4,19 +4,6 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
-#sidefilter{
- position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-@media (max-width: 400px){
-  #sidefilter{
-    position: relative;
-    position: relative;
-  }
-}
-
 .materialize-red {
   background-color: #e51c23 !important;
 }
