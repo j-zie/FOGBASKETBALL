@@ -93,6 +93,21 @@ public class OrdreMapper {
             throw new OrdreRetrivalException( ex.getMessage() );
         }
     }
+    public static void sletOrdre(int ordreNr) throws OrdreRetrivalException {
 
 
-}
+
+            try {
+                Connection con = Connector.connection();
+                String SQL = "DELETE FROM ordre Where ordreNr = " + ordreNr;
+                PreparedStatement ps = con.prepareStatement( SQL );
+                ps.executeUpdate();
+            } catch ( ClassNotFoundException | SQLException ex ) {
+                System.out.println(ex);
+            }
+        }
+
+    }
+
+
+

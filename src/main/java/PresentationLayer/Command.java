@@ -24,7 +24,7 @@ abstract class Command {
         commands.put("SletMateriale", new SletMateriale());
         commands.put("tilføjCarport", new TilføjCarport());
         commands.put("lægIkurv", new TilføjTilKurv());
-
+        commands.put("SletOrdre", new SletOrdre());
 
     }
 
@@ -36,7 +36,7 @@ abstract class Command {
         return commands.getOrDefault(targetName, new UnknownCommand() );   // unknowncommand er default.
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute(HttpServletRequest request, HttpServletResponse response )
             throws LoginSampleException;
 
 }

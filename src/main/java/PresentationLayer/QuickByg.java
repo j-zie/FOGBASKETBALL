@@ -7,7 +7,6 @@ import SVG.SvgCarport;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Optional;
 
 /**
  * TODO(Jonathan) PATRICK: nice skrevet! især de klasse private metoder, det glemmer jeg ofte. fix lige indents og white space, please
