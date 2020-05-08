@@ -47,7 +47,7 @@ public class Navigation extends Command {
             case "ordrer":
                 ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();
                 session.setAttribute("alleOrdre", alleOrdre);
-                return "AdminStyklisteRefpage";
+                return "ordre";
             case "admin":
                 return "admin";
             case "register":
