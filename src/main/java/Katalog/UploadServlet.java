@@ -54,6 +54,7 @@ public class UploadServlet extends HttpServlet {
             System.out.println(fileName);
             System.out.println("Dispatched");
             request.getRequestDispatcher("/WEB-INF/" + "TilføjCarport" + ".jsp").forward(request, response);
-
+            String current = new java.io.File(savePath).getCanonicalPath();
+            System.out.println(current);
         }
 }
