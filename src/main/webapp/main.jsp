@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-
+<img src="${pageContext.request.contextPath}/resources/Carporte/1586676111242.png" alt="Girl in a jacket">
 <div class="row">
     <div style="float: left; width: 33.33%; padding:5px;">
         <img src="resources/choppingboard.jpg" alt="Snow" style="width:100%">
@@ -38,13 +38,6 @@
         <img src="resources/knife.jpg" alt="Mountains" style="width:100%">
     </div>
 </div>
-
-
-<form action="uploadd" method="post" enctype="multipart/form-data">
-    <input type="text" name="description" />
-    <input type="file" name="file" />
-    <input type="submit" />
-</form>
 
 
 <br>
