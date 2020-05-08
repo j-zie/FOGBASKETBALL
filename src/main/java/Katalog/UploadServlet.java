@@ -11,53 +11,49 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import java.io.File;
+
+
 @WebServlet("/upload")
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
 
-    public static final String QUERY = "INSERT INTO materialer(materialeNavn, pris, billede) VALUES (?, ?, ?)";
+        private static final String SAVE_DIR = "uploadFiles";
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String carportNavn = request.getParameter("carportNavn");
-        double pris = Double.parseDouble(request.getParameter("pris"));
-        Part filePart = request.getPart("billede");
-        InputStream fileContent = filePart.getInputStream();
-        System.out.println("herehere");
-        Connection connection = null;
-        try {
-            connection = Connector.connection();
-            PreparedStatement statement = null;
-            try {
-                statement = connection.prepareStatement(QUERY);
-                statement.setString(1, carportNavn);
-                statement.setDouble(2, pris);
-                statement.setBlob(3, fileContent);
-                statement.execute();
-            } catch (SQLException e) {
-                System.out.println("State cannot be executed!");
-                e.printStackTrace();
-                return;
-            } finally {
-                statement.close();
+
+            // gets absolute path of the web application
+            String appPath = request.getServletContext().getRealPath("");
+            // constructs path of the directory to save uploaded file
+            String savePath = appPath + "../" + SAVE_DIR;
+
+
+            System.out.println("first print: " + savePath);
+            // creates the save directory if it does not exists
+            File fileSaveDir = new File(savePath);
+            if (!fileSaveDir.exists()) {
+                fileSaveDir.mkdir();
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            System.out.println("Connection Failed!");
-            e.printStackTrace();
-            return;
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Connection cannot be closed?");
-                e.printStackTrace();
-            }
-            request.getRequestDispatcher("/WEB-INF/" + "tilføjCarport" + ".jsp").forward(request, response);
+
+            String carportNavn = request.getParameter("carportNavn");
+            double pris = Double.parseDouble(request.getParameter("pris"));
+            Part filePart = request.getPart("billede");
+            String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+            InputStream fileContent = filePart.getInputStream();
+            /* ... (do your job here) */
+
+            filePart.write(savePath + "/" + fileName);
+            System.out.println(fileName);
+            System.out.println("Dispatched");
+            request.getRequestDispatcher("/WEB-INF/" + "TilføjCarport" + ".jsp").forward(request, response);
+
         }
-    }
 }
