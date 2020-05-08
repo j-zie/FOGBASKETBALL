@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file = "/includes/header.jsp" %>
+<%@ page import="FunctionLayer.MaterialeListe" %>
 
 
 <div class="row">
@@ -83,17 +84,18 @@
                 <img class="activator" src="resources/Carporte/Carport2.png">
             </div>
             <div class="card-content">
-                <span class="card-subtitle activator grey-text text-darken-4">Carport enkelt 3,60X5,40M med Høj rejsning</span>
+                    <span class="card-subtitle activator grey-text text-darken-4">Carport enkelt 3,60X5,40M med Høj rejsning</span>
                 <p><a href="#">Læg i kurv</a></p>
             </div>
         </div>
 
-        <div class="card" style="width: 220px; height: 260px; display: inline-block; margin: 15px; ">
+        <div class="card" style="width: 220px; height: 300px; display: inline-block; margin: 15px; ">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="resources/Carporte/Carport3.png">
             </div>
             <div class="card-content">
                 <span class="card-subtitle activator grey-text text-darken-4">Carport 3,90X7,80M med redskabsrum 2,40X3,30M</span>
+                <p>Pris: 300</p>
                 <p><a href="#">Læg i kurv</a></p>
             </div>
         </div>
@@ -103,7 +105,7 @@
                 <img class="activator" src="resources/Carporte/Carport4.png">
             </div>
             <div class="card-content">
-                <span class="card-subtitle activator grey-text text-darken-4">Carport 3,60X8,10M med redskabsrum 3,05X3,20M</span>
+                    <span class="card-subtitle activator grey-text text-darken-4">Carport 3,60X8,10M med redskabsrum 3,05X3,20M</span>
                 <p><a href="#">Læg i kurv</a></p>
             </div>
         </div>
@@ -117,6 +119,12 @@
                 <p><a href="#">Læg i kurv</a></p>
             </div>
         </div>
+
+        <c:forEach var="ordre" items="${sessionScope.carportski}">
+           Ordre: ${ordre.materialeNavn}
+                
+        </c:forEach>
+
 
 
     </div>

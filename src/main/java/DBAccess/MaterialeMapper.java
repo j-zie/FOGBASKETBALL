@@ -35,9 +35,10 @@ public class MaterialeMapper {
                 Double pris = rs.getDouble("pris");
                 String tag = rs.getString("tag");
                 String beskrivelse = rs.getString("materialeBeskrivelse");
+                String path = rs.getString("path");
 
-                Materiale materiale = new Materiale(materialeID, materialeNavn, pris,
-                                                    beskrivelse, tag);
+                Materiale materiale = new Materiale(materialeID, materialeNavn, pris, tag,
+                                                    beskrivelse, path);
 
                 materialeListe.add(materiale);
 
@@ -79,7 +80,6 @@ public class MaterialeMapper {
     }
 
     public void sletMateriale(int materialeId) throws SQLException, ClassNotFoundException {
-
         try {
             Connection con = Connector.connection();
             String SQL = "DELETE FROM materialer Where materialeId = " + "" +materialeId+ "" ;
@@ -89,4 +89,4 @@ public class MaterialeMapper {
             System.out.println(ex);
         }
     }
-    }
+}

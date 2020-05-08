@@ -1,8 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.Ordre;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,9 +29,10 @@ public class Navigation extends Command {
                 System.out.println(request.getPathInfo());
                 System.out.println(request.getContextPath());
                 System.out.println(request.getRequestURI());
-
-
-                // Her kan der kaldes metode til evt. at hente alle carporte fra db.
+                MaterialeListe x = new MaterialeListe();
+                ArrayList<Materiale> xs = x.getCarporte();
+                session.setAttribute("carportski", xs);
+                // Her kan der kaldes   metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {

@@ -16,9 +16,6 @@ public class MaterialeListe {
             System.out.println(matListe.get(i).getMaterialeNavn());
         }
     }
-    public String canIShow() {
-        return matListe.get(0).getMaterialeNavn();
-    }
 
     public Materiale getMaterialeBytag(String tag) {
         for (int i = 0; i < matListe.size(); i++) {
@@ -27,6 +24,12 @@ public class MaterialeListe {
             }
         }
         return null;
+    }
+
+    public ArrayList<Materiale> getCarporte() {
+        ArrayList<Materiale> retVal = matListe;
+        retVal.removeIf(x -> !(x.getTag().equals("carport")));
+        return retVal;
     }
 
 

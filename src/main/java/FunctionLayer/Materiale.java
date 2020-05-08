@@ -10,6 +10,7 @@ public class Materiale {
     private Double pris;
     private String beskrivelse;
     private String tag;
+    private String path;
 
     public Materiale(int materialeID, String materialeNavn, Double pris) {
         this.materialeID = materialeID;
@@ -17,6 +18,7 @@ public class Materiale {
         this.pris = pris;
         this.tag = null;
         this.beskrivelse = null;
+        path = null;
     }
 
     public Materiale(int materialeID, String materialeNavn, Double pris, String beskrivelse,
@@ -26,7 +28,19 @@ public class Materiale {
         this.pris = pris;
         this.beskrivelse = beskrivelse;
         this.tag = tag;
+        path = null;
     }
+    public Materiale(int materialeID, String materialeNavn, Double pris, String tag,
+                     String beskrivelse, String path) {
+        this.materialeID = materialeID;
+        this.materialeNavn = materialeNavn;
+        this.pris = pris;
+        this.path = path;
+        this.tag = tag;
+        this.beskrivelse = beskrivelse;
+    }
+
+
 
     public int getMaterialeID() {
         return materialeID;
