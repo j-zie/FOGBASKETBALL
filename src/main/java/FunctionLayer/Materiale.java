@@ -78,4 +78,8 @@ public class Materiale {
                 ", pris=" + pris +
                 '}';
     }
+
+    public String getPath() {
+        return path;
+    }
 }
