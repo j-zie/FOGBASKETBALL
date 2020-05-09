@@ -1,4 +1,4 @@
--    MySQL Workbench Forward Engineering
+--    MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -106,10 +106,9 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
-
+-- Some stuff to fill the pages
 insert into tagtyper (tagtypeNavn,dækningsgrad) values ("Plasttrapezplade-fladtag",0.35), ("Betontag-Rød",8.9) ,("Betontag-Sort", 8.9),("EternittagB6-Sort", 0.92),("EternittagB6-Rødbrun",0.92),("EternittagB7-Sort", 2.3),("EternittagB7-Mokka",2.3);
-
-
+insert into bruger(email, password, rolle) values("admin", "admin", "Admin");
 insert into materialer(materialeNavn, materialeBeskrivelse, tag, pris)
 values ("Trykimprægnerede stolpe 100x100mm", "Imprægneret stolpe til hegn, plankeværk eller andre
 		udendørs byggeprojekter der kræver modstandsdygtigt og slidstærkt træ.",
@@ -121,6 +120,16 @@ values ("Trykimprægnerede stolpe 100x100mm", "Imprægneret stolpe til hegn, pla
         "spær", 61.50),
         ("TRAPEZPLADE BLÅTONET 109X600CM PLASTMO ECOLITE TAGPLADE PVC", "Perfekt til udestuen og carporten. Blåtonet. 109 x 240 cm",
         "bekældning", 250.00);
+
+
+insert into materialer(materialeNavn, pris, path, tag)
+values("Carport 3,60X7,20M med redskabsrum 3,20X2,20M", 13447, "resources/Carporte/Carport1.png", "carport"),
+	("Carport enkelt 3,60X5,40M med Høj rejsning", 39213, "resources/Carporte/Carport2.png", "carport"),
+	("Carport 3,90X7,80M med redskabsrum 2,40X3,30M", 40000, "resources/Carporte/Carport3.png", "carport"),
+	("Carport 3,60X8,10M med redskabsrum 3,05X3,20M", 11111, "resources/Carporte/Carport4.png", "carport"),
+	("Carport 3,00X4,80M med Fladt tag", 19231, "resources/Carporte/Carport5.png", "carport");
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
