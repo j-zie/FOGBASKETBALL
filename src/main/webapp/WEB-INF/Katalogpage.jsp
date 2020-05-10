@@ -86,8 +86,8 @@
                     <p>Pris: ${ordre.pris.toString()}</p>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="lægIkurv" >
-                        <input  type="hidden" name="beskrivelse" value="Carport 3,00X4,80M med Fladt tag">
-                        <input  type="hidden" name="billede" value="resources/Carporte/Carport5.png">
+                        <input  type="hidden" name="beskrivelse" value=${ordre.materialeNavn}>
+                        <input  type="hidden" name="billede" value=${ordre.path}>
                         <input  type="hidden" name="pris" value=${ordre.pris.toString()}>
                         <button type="submit" value="Submit" class="btn btn-small waves-effect waves-light blue">Læg i kurv</button>
                     </form>
