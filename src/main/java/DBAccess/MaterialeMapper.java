@@ -78,6 +78,26 @@ public class MaterialeMapper {
         }
 
     }
+    public void opretCarport(String materialeNavn, double pris, String path) throws SQLException, ClassNotFoundException {
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO materialer (materialeNavn, pris, path, tag) VALUES (?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(SQL);
+
+            ps.setString(1, materialeNavn);
+            ps.setDouble(2, pris);
+            ps.setString(3, path);
+            ps.setString(4, "carport");
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
     public void sletMateriale(int materialeId) throws SQLException, ClassNotFoundException {
         try {

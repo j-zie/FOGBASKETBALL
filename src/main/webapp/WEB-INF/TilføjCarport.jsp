@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Patrick
-  Date: 07/05/2020
-  Time: 13.41
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,12 +56,10 @@
     <div class="row card hoverable">
         <div class="card-content ">
             <h4 class="center blue-text">Tilføj ny carport til katalog</h4>
-            <form class="row s12" action="FrontController" method="POST">
-                <input type="hidden" name="target" value="tilføjCarport" >
-
+            <form class="row s12" action="upload" enctype="multipart/form-data" method="post">
                 <div class="col s12">
                     <div class="input-field">
-                        <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Carport 3,60X7,20M med redskabsrum 3,20X2,20M">
+                        <input type="text" id="materialeNavn" name="carportNavn" placeholder="Carport 3,60X7,20M med redskabsrum 3,20X2,20M">
                         <label class="active" for="materialeNavn">Carport beskrivelse:</label>
                         <p id="errortekst">${requestScope.errorNavn}</p>
                     </div>
@@ -90,12 +81,6 @@
                 <div class="col s12 center">
                     <button type="submit" value="Submit" class="btn btn-large waves-effect waves-light blue">Tilføj<i class="material-icons right">send</i></button>
                 </div>
-
-
-
-
-
-
             </form>
         </div>
     </div>

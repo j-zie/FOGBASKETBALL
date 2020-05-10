@@ -76,8 +76,6 @@
     </div>
 
     <div class="col s12 m8 l10" style="margin-top: 20px;">
-
-
         <c:forEach var="ordre" items="${sessionScope.carportski}">
             <div class="card" style="width: 240px; height: 300px; display: inline-block; margin: 15px; ">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -85,21 +83,17 @@
                 </div>
                 <div class="card-content">
                     <span class="card-subtitle activator grey-text text-darken-4">${ordre.materialeNavn}</span>
-                    <p>Pris: 18.000 kr</p>
+                    <p>Pris: ${ordre.pris.toString()}</p>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="lægIkurv" >
                         <input  type="hidden" name="beskrivelse" value="Carport 3,00X4,80M med Fladt tag">
                         <input  type="hidden" name="billede" value="resources/Carporte/Carport5.png">
                         <input  type="hidden" name="pris" value=${ordre.pris.toString()}>
                         <button type="submit" value="Submit" class="btn btn-small waves-effect waves-light blue">Læg i kurv</button>
-
                     </form>
                 </div>
             </div>
         </c:forEach>
-
-
-
     </div>
 
 </div>
