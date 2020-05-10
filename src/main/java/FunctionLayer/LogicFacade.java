@@ -1,8 +1,6 @@
 package FunctionLayer;
 
 import DBAccess.*;
-import DBAccess.UserMapper;
-
 import java.util.ArrayList;
 
 /**
@@ -82,4 +80,9 @@ public class LogicFacade {
         System.out.println(antal);
        return antal;
     }
+
+
+
+
+
 }

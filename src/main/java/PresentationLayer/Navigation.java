@@ -26,9 +26,6 @@ public class Navigation extends Command {
 
         switch (nav) {
             case "Katalog":
-                System.out.println(request.getPathInfo());
-                System.out.println(request.getContextPath());
-                System.out.println(request.getRequestURI());
                 MaterialeListe x = new MaterialeListe();
                 ArrayList<Materiale> xs = x.getCarporte();
                 session.setAttribute("carportski", xs);
@@ -42,6 +39,11 @@ public class Navigation extends Command {
             case "login":
                 return "login";
             case "kurv":
+                if (request.getParameter("item") != null) {
+                    KurvItems.removeItem(request.getParameter("item"));
+                   }
+
+
                 return "Kurvpage";
             case "ordrer":
                 ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();

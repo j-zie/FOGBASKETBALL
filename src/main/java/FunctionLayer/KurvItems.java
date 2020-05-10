@@ -26,6 +26,20 @@ public class KurvItems {
         kurvListe.add(new KurvItems(beskrivelse,imgPath, pris));
     }
 
+    public static void removeItem(String imgPath){
+      int x = 0;
+      System.out.println(imgPath);
+        for (KurvItems item : getItemList()) {
+            if (item.imgPath.equals(imgPath)) {
+                kurvListe.remove(x);
+                return;
+                  } else {
+                x++;
+            }
+
+            }
+    }
+
     public static ArrayList<KurvItems> getItemList(){
         return kurvListe;
     }
