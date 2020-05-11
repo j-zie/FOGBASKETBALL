@@ -32,5 +32,11 @@ public class MaterialeListe {
         return retVal;
     }
 
+    public ArrayList<Materiale> getKomponenter() {
+        ArrayList<Materiale> retVal = matListe;
+        retVal.removeIf(x -> (x.getTag().equals("carport")));
+        return retVal;
+    }
+
 
 }
