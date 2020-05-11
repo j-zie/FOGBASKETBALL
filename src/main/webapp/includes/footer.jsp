@@ -1,5 +1,8 @@
 <%@ page pageEncoding="UTF-8"%>
-<footer class="page-footer blue">
+</main>
+</body>
+<footer class="page-footer blue" id="footer">
+
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -38,6 +41,4 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
-  </body>
 </html>

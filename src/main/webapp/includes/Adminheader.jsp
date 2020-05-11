@@ -1,6 +1,18 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-  <html lang="en">
+<style>
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+</style>
+<body>
+ <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,7 +23,9 @@
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   </head>
-  <body>
+  <main>
+
+
 
   <!-- Nav bar -->
     <nav class="nav-extended" style="background-image: linear-gradient(to right, #164886, #00B0FF);  position: -webkit-sticky; position: sticky; top: 0; z-index: 9;">
