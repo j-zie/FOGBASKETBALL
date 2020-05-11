@@ -29,8 +29,10 @@
           <li class="tab hoverable"><a class="active" href="main.jsp" >Hjem</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=Katalog" >Katalog</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=QuickByg">QuickByg</a></li>
+          <c:if test="${sessionScope.user == null}" >
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login" >Login</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Registrer</a></li>
+          </c:if>
           <c:if test="${sessionScope.user != null}" >
             <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
           </c:if>
