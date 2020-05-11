@@ -23,17 +23,17 @@
         <span class="card-title grey-text text-darken-4"> Din forespørgelse er sendt afsted til en Fog medarbejder.<i class="material-icons right">close</i></span>
         <p> Tillykke du har bestilt en carport.</p>
         <p> Med følgende dimensioner</p>
-        <p> Bredde: ${requestScope.Bredde}</p>
-        <p> Højde:  ${requestScope.Længde}</p>
+        <p> Bredde: ${requestScope.Bredde} cm</p>
+        <p> Højde:  ${requestScope.Længde} cm</p>
         <p> Tagtype: ${requestScope.tagtypeNavn}</p>
-        <c:if test="${requestScope.taghældning != 0}">
+        <c:if test="${requestScope.taghældning != null}">
             <p> Taghældning: ${requestScope.taghældning}&deg;</p>
         </c:if>
         <c:if test="${requestScope.Redskabsrum_bredde != 0}">
-            <p> Redskabsrum Bredde: ${requestScope.Redskabsrum_bredde}</p>
+            <p> Redskabsrum Bredde: ${requestScope.Redskabsrum_bredde} cm</p>
         </c:if>
         <c:if test="${requestScope.Redskabsrum_længde != 0}">
-            <p> Redskabsrum Længde: ${requestScope.Redskabsrum_længde}</p>
+            <p> Redskabsrum Længde: ${requestScope.Redskabsrum_længde} cm</p>
         </c:if>
         <p> Hvis disse informationer er forkert. Så oplys venligst dette til medarbejderen der snarest tager kontakt til dig.</p>
         <div> ${requestScope.svgCarport} </div>
