@@ -24,7 +24,7 @@
         <br><br>
         <h1 class="header center white-text text-lighten-2" style="font-weight: bolder;">TRÆLAST <br>& BYGGECENTER</h1>
         <div class="row center">
-          <a href="main.jsp" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
+          <a href="FrontController?target=nav&Nav=hjem" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Kig ind!</a>
         </div>
       </div>
     </div>

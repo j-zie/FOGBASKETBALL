@@ -28,12 +28,15 @@ public class SvgCarport {
         return SvgCarportText.toString();
     }
 
+
+
+
+
 private void startSvg(int length, int width){
     SvgCarportText.append("<svg width=\"90%\" height=\"90%\" x=\"20\" y=\"20\" viewBox=\"0 0 "+1000+ " "+ 1000+"\" preserveAspectRatio=\"xMinYMin\">" + "\n");
 
 }
         private void EndSvg(){
-
             SvgCarportText.append("</svg>");
       }
 

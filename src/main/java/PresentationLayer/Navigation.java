@@ -1,7 +1,6 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -29,7 +28,6 @@ public class Navigation extends Command {
                 MaterialeListe x = new MaterialeListe();
                 ArrayList<Materiale> xs = x.getMatListe();
                 session.setAttribute("matListe", xs);
-                // Her kan der kaldes   metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {
@@ -42,8 +40,6 @@ public class Navigation extends Command {
                 if (request.getParameter("item") != null) {
                     KurvItems.removeItem(request.getParameter("item"));
                    }
-
-
                 return "Kurvpage";
             case "ordrer":
                 ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();
@@ -62,6 +58,8 @@ public class Navigation extends Command {
                 return "main";
             case "tilføjCarport":
                 return "TilføjCarport";
+            case "hjem":
+                return "main";
         }
         return nav + "page";
     }

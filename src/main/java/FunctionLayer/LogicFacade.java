@@ -58,6 +58,11 @@ public class LogicFacade {
         return null;
     }
 
+
+    /**
+     * Denne metode bruges til at finde finde antallet af admins der er registeret.
+     *  getAllUseres fra @UserMapper bliver her kaldt og loopet igennem og retunere antalet af admins
+     */
     public static int getAntalAdmin() throws LoginSampleException {
         ArrayList<User> userliste = UserMapper.getAllUsers();
         int antal = 0;
@@ -68,7 +73,10 @@ public class LogicFacade {
         }
         return antal;
     }
-
+    /**
+     * Denne metode bruges til at finde finde antallet af kunder der er registeret.
+     *  getAllUseres fra @UserMapper bliver her kaldt og loopet igennem og retunere antallet af kunder
+     */
     public static int getAntalKunder() throws LoginSampleException {
         ArrayList<User> userliste = UserMapper.getAllUsers();
         int antal = 0;
