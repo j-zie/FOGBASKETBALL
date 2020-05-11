@@ -93,9 +93,12 @@ public class OrdreMapper {
             throw new OrdreRetrivalException( ex.getMessage() );
         }
     }
+
+    /**
+     * Metode sletter ordre fra databasen
+     * @param ordreNr bruges til at identificere hvilken ordre der skal fjernes fra DB'en
+     */
     public static void sletOrdre(int ordreNr) throws OrdreRetrivalException {
-
-
 
             try {
                 Connection con = Connector.connection();

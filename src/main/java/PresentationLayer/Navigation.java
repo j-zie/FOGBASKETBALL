@@ -1,7 +1,10 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
+import javafx.application.Application;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -29,7 +32,8 @@ public class Navigation extends Command {
                 MaterialeListe x = new MaterialeListe();
                 ArrayList<Materiale> xs = x.getCarporte();
                 session.setAttribute("carportski", xs);
-                // Her kan der kaldes   metode til evt. at hente alle carporte fra db.
+              
+                // Her kan der kaldes metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {

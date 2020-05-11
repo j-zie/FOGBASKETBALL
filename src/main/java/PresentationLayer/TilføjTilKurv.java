@@ -11,6 +11,13 @@ import java.util.ArrayList;
 public class TilføjTilKurv  extends Command{
 
 
+    /**
+     * Denne klasse indsætter det indtastede oplysing ind i kurvitems og opdatere sessionscopet.
+     * @param request
+     * @param response
+     * @return
+     * @throws LoginSampleException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 

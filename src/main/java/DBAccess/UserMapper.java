@@ -12,10 +12,15 @@ import java.util.ArrayList;
 /**
  The purpose of UserMapper is to...
 
- @author kasper
  */
 public class UserMapper {
 
+    /**
+     * Metoden er bruges til at indsæte et User objekt i DB'en.
+     * @param user angiver hvilken user der skal indsættes i DB'en
+     * @return Retunere et nyt User object, nu med de ID den har inde i DB'en.
+     * @throws LoginSampleException
+     */
     public static User createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -40,6 +45,14 @@ public class UserMapper {
         }
     }
 
+
+    /**
+     * Denne metode finder og henter en user ved hjælp af Email og password.
+     * @param email
+     * @param password
+     * @return retunere så et user object.
+     * @throws LoginSampleException
+     */
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -71,7 +84,11 @@ public class UserMapper {
         }
     }
 
-
+    /**
+     * Denne metode henter alle users ned fra DB'en
+     * @return Retunere en Arraylist med alle users.
+     * @throws LoginSampleException
+     */
     public static ArrayList<User> getAllUsers() throws LoginSampleException {
 
         ArrayList<User> userList = new ArrayList();
