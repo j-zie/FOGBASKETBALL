@@ -66,6 +66,8 @@ public class Navigation extends Command {
                 return "main";
             case "tilføjCarport":
                 return "TilføjCarport";
+            case "hjem":
+                return "main";
         }
         return nav + "page";
     }
