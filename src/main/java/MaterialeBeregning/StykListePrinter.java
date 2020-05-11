@@ -60,7 +60,7 @@ public class StykListePrinter {
         insertElementAndAddToTotalCost(3.75, "vinkelbeslag, 50x50x1,5x35mm", mængder.antalSpaer()*2);
         insertElementAndAddToTotalCost(33.25, "Cement", 1);
         insertElementAndAddToTotalCost(39.90, "Stolpesko", mængder.antalStolper());
-
+    
         // Vi skal lave den lidt anderledes
         insertElementAndAddToTotalCost(5555.00, "b7 skifer tagpap", (int)(mængder.antalTagsten()));
         insertElementAndAddToTotalCost(167.65, "Rem", 4);

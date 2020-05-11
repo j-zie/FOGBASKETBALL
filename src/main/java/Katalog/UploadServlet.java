@@ -42,9 +42,13 @@ public class UploadServlet extends HttpServlet {
             fileSaveDir.mkdir();
         }
 
+
+        // Get the stuff from request scope
         String carportNavn = request.getParameter("carportNavn");
         double pris = Double.parseDouble(request.getParameter("pris"));
         Part filePart = request.getPart("billede");
+
+
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
         InputStream fileContent = filePart.getInputStream();
         filePart.write(savePath + "/" + fileName);
