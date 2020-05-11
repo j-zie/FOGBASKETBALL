@@ -1,6 +1,7 @@
 package DBAccess;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Notification;
 import FunctionLayer.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -115,11 +116,48 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
 
-
-
-
     }
 
+
+    public static ArrayList<Notification> getUsersNotifications(User user) throws LoginSampleException {
+
+        ArrayList<Notification> notiList = new ArrayList();
+        try {
+            Connection con = Connector.connection();
+            int brugerID = user.getId();
+            String SQL = "SELECT * FROM notificationer WHERE brugerId = " + brugerID;
+
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+
+            ResultSet rs = ps.executeQuery();
+            while ( rs.next() ) {
+                String beskrivelse = rs.getString( "beskrivelse" );
+                int notificationsID = rs.getInt( "notificationId" );
+                Boolean ny = rs.getBoolean("ny");
+                Notification noti = new Notification(user.getId(), beskrivelse);
+                noti.setNotificationID(notificationsID);
+                noti.setNy(ny);
+                notiList.add(noti);
+
+
+            }
+            return notiList;
+        } catch ( ClassNotFoundException | SQLException ex ) {
+            throw new LoginSampleException(ex.getMessage());
+        }
+    }
+
+
+    public static void resetNotificationer( User user ) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE notificationer SET ny = 0 WHERE brugerId = " + user.getId();
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.executeUpdate();
+        } catch ( SQLException | NumberFormatException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 
 
 }

@@ -1,6 +1,8 @@
 package FunctionLayer;
 
 import DBAccess.*;
+import com.sun.tools.corba.se.idl.constExpr.Not;
+
 import java.util.ArrayList;
 
 /**
@@ -90,7 +92,32 @@ public class LogicFacade {
     }
 
 
+    public static ArrayList<Notification> getNotificationer(User user) throws LoginSampleException {
+       return UserMapper.getUsersNotifications(user);
+    }
 
+    public static int antalNyeNotificationer( ArrayList<Notification> notiList){
+        int antal = 0;
+        if (notiList != null) {
+            for (Notification noti : notiList) {
+                if (noti.getNy() == true) {
+                    antal++;
+                }
+            }
+        }
+        return antal;
+    }
+
+    public static ArrayList<Notification> resetNotiss(User user, ArrayList<Notification> notiList) throws LoginSampleException {
+        if (notiList != null) {
+            UserMapper.resetNotificationer(user);
+            for (Notification noti : notiList) {
+                noti.setNy(false);
+            }
+            return notiList;
+        }
+     return null;
+    }
 
 
 }

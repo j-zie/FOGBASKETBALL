@@ -106,6 +106,25 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
+
+-- -----------------------------------------------------
+-- Table `fog_db`.`notificationer`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `fog_db`.`notificationer` (
+  `notificationId` int(11) NOT NULL AUTO_INCREMENT,
+    `brugerId` INT(11) NOT NULL,
+  `beskrivelse` varchar(5000) NULL DEFAULT NULL,
+   `ny` Boolean  DEFAULT true,
+  PRIMARY KEY (`notificationId`, `brugerId`),
+   CONSTRAINT `brugerId2`
+    FOREIGN KEY (`brugerId`)
+    REFERENCES `fog_db`.`bruger` (`brugerId`)
+  )
+
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
 -- Some stuff to fill the pages
 insert into tagtyper (tagtypeNavn,dækningsgrad) values ("Plasttrapezplade-fladtag",0.35), ("Betontag-Rød",8.9) ,("Betontag-Sort", 8.9),("EternittagB6-Sort", 0.92),("EternittagB6-Rødbrun",0.92),("EternittagB7-Sort", 2.3),("EternittagB7-Mokka",2.3);
 insert into bruger(email, password, rolle) values("admin", "admin", "Admin");
@@ -121,7 +140,7 @@ values ("Trykimprægnerede stolpe 100x100mm", "Imprægneret stolpe til hegn, pla
         ("TRAPEZPLADE BLÅTONET 109X600CM PLASTMO ECOLITE TAGPLADE PVC", "Perfekt til udestuen og carporten. Blåtonet. 109 x 240 cm",
         "bekældning", 250.00, "resources/Komponenter/blatonet-trapezplade-naturel-310-cm.jpg");
 
-insert into materialer(materialeNavn, pris, path, tag) 
+insert into materialer(materialeNavn, pris, path, tag)
 values("Carport 3,60X7,20M med redskabsrum 3,20X2,20M", 13447, "resources/Carporte/Carport1.png", "carport"),
 	("Carport enkelt 3,60X5,40M med Høj rejsning", 39213, "resources/Carporte/Carport2.png", "carport"),
 	("Carport 3,90X7,80M med redskabsrum 2,40X3,30M", 40000, "resources/Carporte/Carport3.png", "carport"),
