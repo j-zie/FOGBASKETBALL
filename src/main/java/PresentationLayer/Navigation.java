@@ -27,8 +27,8 @@ public class Navigation extends Command {
         switch (nav) {
             case "Katalog":
                 MaterialeListe x = new MaterialeListe();
-                ArrayList<Materiale> xs = x.getCarporte();
-                session.setAttribute("carportski", xs);
+                ArrayList<Materiale> xs = x.getMatListe();
+                session.setAttribute("matListe", xs);
                 // Her kan der kaldes   metode til evt. at hente alle carporte fra db.
                 return "Katalogpage";
             case "QuickByg":

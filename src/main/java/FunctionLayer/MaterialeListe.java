@@ -26,6 +26,10 @@ public class MaterialeListe {
         return null;
     }
 
+    public ArrayList<Materiale> getMatListe() {
+        return matListe;
+    }
+
     public ArrayList<Materiale> getCarporte() {
         ArrayList<Materiale> retVal = matListe;
         retVal.removeIf(x -> !(x.getTag().equals("carport")));
@@ -37,6 +41,4 @@ public class MaterialeListe {
         retVal.removeIf(x -> (x.getTag().equals("carport")));
         return retVal;
     }
-
-
 }
