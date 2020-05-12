@@ -1,7 +1,10 @@
 package PresentationLayer;
 
 import DBAccess.MaterialeMapper;
+import DBAccess.OrdreMapper;
+import DBAccess.StykListeMapper;
 import FunctionLayer.*;
+import MaterialeBeregning.MængdeBeregner;
 import SVG.SvgCarport;
 
 
@@ -49,7 +52,18 @@ public class QuickByg extends Command{
                 MaterialeMapper mp = new MaterialeMapper();
                 Carport carport = sammenSætCarport(request, Tag.Fladt);
                 User kunde = (User) session.getAttribute("user");
-                LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
+
+                //Lav en ordre og smid den i databasen
+                int keyVal = OrdreMapper.createOrderReturnItsID(new Ordre(carport, kunde));
+
+                //Lav stykliste på ordre og smid den i databasen
+                OrdreListe ordre = new OrdreListe();
+                MængdeBeregner calc = new MængdeBeregner(ordre.getOrderFromOrderNumber(keyVal));
+                calc.indsætStykListeIDB();
+
+                //Stykliste metoder der tager en ordre kan indsættes her.
+
+
                 SvgCarport svg = new SvgCarport();
                 int bredde = Integer.parseInt(request.getParameter("Bredde"));
                 int længde = Integer.parseInt(request.getParameter("Længde"));
