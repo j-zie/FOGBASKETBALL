@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LavSelectFormHTML {
 
-    public String fåSelectFormForBrugere() throws LoginSampleException {
+    public String fåSelectFormForBrugerepåID() throws LoginSampleException {
         ArrayList<User> arrayList = UserMapper.getAllUsers();
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<div class=\"input-field col s12\" id=\"dropper\">\n" +
@@ -28,7 +28,7 @@ public class LavSelectFormHTML {
         return stringBuilder.toString();
     }
 
-    public String fåSelectFormForMaterialer() throws LoginSampleException {
+    public String fåSelectFormForMaterialerpåID() throws LoginSampleException {
         ArrayList<Materiale> arrayList = MaterialeMapper.getAlleMaterialer();
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<div class=\"input-field col s12\" id=\"dropper\">\n" +

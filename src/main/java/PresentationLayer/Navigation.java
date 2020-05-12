@@ -56,7 +56,7 @@ public class Navigation extends Command {
             case "SkabMateriale":
                 return "SkabMateriale";
             case "SletMateriale":
-                request.setAttribute("html",html.fåSelectFormForMaterialer());
+                request.setAttribute("html",html.fåSelectFormForMaterialerpåID());
                 return "QuickByg/SletMateriale";
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
@@ -66,7 +66,7 @@ public class Navigation extends Command {
             case "hjem":
                 return "main";
             case "SletBruger":
-                request.setAttribute("html",html.fåSelectFormForBrugere());
+                request.setAttribute("html",html.fåSelectFormForBrugerepåID());
                 return "SletBruger";
         }
 
