@@ -1,72 +1,58 @@
 <%@ include file = "/includes/Adminheader.jsp" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Slet Materiale</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        background: #ddd;
+    }
+    .btn{
+        margin-top: 10px;
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    }
+    .container{
+        margin:100px auto;
+        width: 80%;
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style type="text/css">
-        body{
-            padding: 0;
-            margin: 0;
-            background: #ddd;
-        }
-        .btn{
-            margin-top: 10px;
-
-        }
+    }
+    @media(max-width: 952px){
         .container{
-            margin:100px auto;
+            width: 60%;
+        }
+    }
+    @media(max-width: 475px){
+        .container{
             width: 80%;
+        }
+    }
+    /* invalid color */
+    .input-field input[type=text].invalid {
+        border-bottom: 1px solid #000;
+        box-shadow: 0 1px 0 0 #000;
+        background-color: red;
+    }
 
-        }
-        @media(max-width: 952px){
-            .container{
-                width: 60%;
-            }
-        }
-        @media(max-width: 475px){
-            .container{
-                width: 80%;
-            }
-        }
-        /* invalid color */
-        .input-field input[type=text].invalid {
-            border-bottom: 1px solid #000;
-            box-shadow: 0 1px 0 0 #000;
-            background-color: red;
-        }
-
-        .input-field input[type=text].valid {
-            border-bottom: 1px solid #000;
-            box-shadow: 0 1px 0 0 #000;
-            background-color: green;
-        }
-        #errortekst{
-            color: red;
-        }
-    </style>
-</head>
-<body>
+    .input-field input[type=text].valid {
+        border-bottom: 1px solid #000;
+        box-shadow: 0 1px 0 0 #000;
+        background-color: green;
+    }
+    #errortekst{
+        color: red;
+    }
+</style>
 
 <div class="container">
     <div class="row card hoverable">
         <div class="card-content ">
-            <h4 class="center blue-text">Slet Materiale fra DB</h4>
+            <h4 class="center blue-text">Slet Kunde Konto</h4>
+            <p>Vælg id og slet en kundes konto</p>
             <form class="row s12" action="FrontController" method="POST">
-                <input type="hidden" name="target" value="SletMateriale" >
+                <input type="hidden" name="target" value="SletMateriale">
+                ${requestScope.html}
 
-                <div class="col s12">
-                    <div class="input-field">
-                        <input type="integer" id="materialeId" name="materialeId" placeholder="Materiale Id / Varekode">
-                        <label class="active" for="materialeId"></label>
-                        <p id="errorteksttt">${requestScope.errorNavn}</p>
-                    </div>
-                </div>
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Slet
+                    <i class="material-icons right">send</i>
+                </button>
 
             </form>
         </div>

@@ -48,8 +48,6 @@ public class QuickByg extends Command{
                 String tagtypeNavn = "";
                 MaterialeMapper mp = new MaterialeMapper();
                 Carport carport = sammenSætCarport(request, Tag.Fladt);
-                LavSelectFormHTML html = new LavSelectFormHTML();
-                request.setAttribute("html",html.fåSelectForm());
                 User kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 SvgCarport svg = new SvgCarport();

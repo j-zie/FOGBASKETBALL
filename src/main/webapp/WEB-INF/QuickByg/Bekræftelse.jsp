@@ -37,7 +37,6 @@
         </c:if>
         <p> Hvis disse informationer er forkert. Så oplys venligst dette til medarbejderen der snarest tager kontakt til dig.</p>
         <div> ${requestScope.svgCarport} </div>
-        ${requestScope.html}
     </div>
 </div>
 

@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import DBAccess.MaterialeMapper;
 import DBAccess.UserMapper;
 import FunctionLayer.*;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,8 @@ public class Navigation extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
         String nav = request.getParameter("Nav");
+        LavSelectFormHTML html = new LavSelectFormHTML();
+
 
         switch (nav) {
             case "Katalog":
@@ -53,6 +56,7 @@ public class Navigation extends Command {
             case "SkabMateriale":
                 return "SkabMateriale";
             case "SletMateriale":
+                request.setAttribute("html",html.fåSelectFormForMaterialer());
                 return "QuickByg/SletMateriale";
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
@@ -62,8 +66,7 @@ public class Navigation extends Command {
             case "hjem":
                 return "main";
             case "SletBruger":
-                LavSelectFormHTML html = new LavSelectFormHTML();
-                request.setAttribute("html",html.fåSelectForm());
+                request.setAttribute("html",html.fåSelectFormForBrugere());
                 return "SletBruger";
         }
 
