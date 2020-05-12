@@ -14,12 +14,11 @@ public class SletMateriale extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         MaterialeMapper mp = new MaterialeMapper();
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        String materialeIdd = request.getParameter("materialeId");
-        int materialeId = Integer.parseInt(materialeIdd);
         try {
 
-            mp.sletMateriale(materialeId);
+            mp.sletMateriale(id);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
