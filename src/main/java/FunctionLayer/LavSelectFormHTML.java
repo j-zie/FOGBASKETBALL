@@ -33,7 +33,7 @@ public class LavSelectFormHTML {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<div class=\"input-field col s12\" id=\"dropper\">\n" +
                 "    <select name =\"id\">\n" +
-                "      <option value=\"\" disabled selected>Vælg MaterialeID</option\n");
+                "      <option value=\"\" disabled selected>Vælg MaterialeId</option\n");
 
         for (int i = 0; i < arrayList.size(); i++) {
             String tempStreng = arrayList.subList(0, arrayList.size()).get(i).toString();
