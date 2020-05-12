@@ -147,7 +147,6 @@ public class UserMapper {
         }
     }
 
-<<<<<<< HEAD
 
     public static void resetNotificationer( User user ) throws LoginSampleException {
         try {
@@ -160,7 +159,6 @@ public class UserMapper {
         }
     }
 
-=======
     public void sletUser(int Id) throws SQLException, ClassNotFoundException {
         try {
             Connection con = Connector.connection();
@@ -171,6 +169,6 @@ public class UserMapper {
             System.out.println(ex);
         }
     }
->>>>>>> 7c5a7626897a4eaad7433e5cd49b7dccb291b664
+
 
 }

@@ -3,6 +3,7 @@ package PresentationLayer;
 import DBAccess.MaterialeMapper;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Materiale;
+import FunctionLayer.MaterialeListe;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -19,12 +20,12 @@ public class KatalogFilter extends Command {
         HttpSession session = request.getSession();
         ServletContext applicaitonScope = request.getServletContext();
 
-        ArrayList<Materiale> OGlist = (ArrayList<Materiale>) applicaitonScope.getAttribute("matListeA");
+        ArrayList<Materiale> OGlist = new MaterialeListe().getMatListe();
         ArrayList<Materiale> matlist = OGlist;
 
         String filter = request.getParameter("filter");
         matlist.removeIf(x -> !x.getTag().equals(filter));
-
+        session.setAttribute("matListe",matlist);
 
         return "Katalogpage";
     }
