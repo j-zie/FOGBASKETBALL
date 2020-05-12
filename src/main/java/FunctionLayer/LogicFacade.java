@@ -87,13 +87,19 @@ public class LogicFacade {
                 antal++;
             }
         }
-        System.out.println(antal);
        return antal;
     }
 
 
     public static ArrayList<Notification> getNotificationer(User user) throws LoginSampleException {
-       return UserMapper.getUsersNotifications(user);
+
+        ArrayList<Notification> notifications = UserMapper.getUsersNotifications(user);
+
+        if (notifications.isEmpty()) {
+            return null;
+        }
+
+       return notifications;
     }
 
     public static int antalNyeNotificationer( ArrayList<Notification> notiList){

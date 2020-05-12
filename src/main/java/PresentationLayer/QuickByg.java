@@ -29,7 +29,6 @@ public class QuickByg extends Command{
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         HttpSession session = request.getSession();
-
         String to = request.getParameter("to");
 
         switch (to) {

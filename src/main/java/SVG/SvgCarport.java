@@ -17,7 +17,6 @@ public class SvgCarport {
         startSvg(lenght,width);
 
         SvgCarportText.append(tag.draw(lenght,width));
-
         SvgCarportText.append(spær.draw(lenght,width));
         SvgCarportText.append(rem.draw(lenght,width));
         SvgCarportText.append(stolper.draw(lenght,width));

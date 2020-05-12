@@ -18,7 +18,7 @@ public class Notificationer extends Command {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         ArrayList<Notification> notificationer = (ArrayList<Notification>) session.getAttribute("notificationer");
-      System.out.println(notificationer);
+
        notificationer = LogicFacade.resetNotiss(user, notificationer);
 
        session.setAttribute("notificationer", notificationer);

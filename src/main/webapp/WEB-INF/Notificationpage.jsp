@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file = "/includes/header.jsp" %>
 
-
 <ul class="collection with-header shadow" style="width: 60%; margin-left: auto; margin-right: auto">
     <li class="collection-header"><h4>Notificationer</h4></li>
 

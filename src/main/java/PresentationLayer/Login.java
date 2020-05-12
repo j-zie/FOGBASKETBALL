@@ -26,12 +26,9 @@ public class Login extends Command {
         if (user == null) {
             return "login"; // Should be a page with a login error..
         }
-
-
-
         ArrayList<Notification> notificationer = LogicFacade.getNotificationer(user);
         int antalNotis = LogicFacade.antalNyeNotificationer(notificationer);
-
+        ;
         HttpSession session = request.getSession();
 
         session.setAttribute( "user", user );
