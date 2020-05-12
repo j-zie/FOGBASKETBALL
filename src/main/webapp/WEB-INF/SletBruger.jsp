@@ -44,10 +44,10 @@
 <div class="container">
     <div class="row card hoverable">
         <div class="card-content ">
-            <h4 class="center blue-text">Slet Materiale</h4>
-            <p>Vælg MaterialeID og slet et Materiale</p>
+            <h4 class="center blue-text">Slet Kunde Konto</h4>
+            <p>Vælg id og slet en kundes konto</p>
             <form class="row s12" action="FrontController" method="POST">
-                <input type="hidden" name="target" value="SletMateriale">
+                <input type="hidden" name="target" value="SletBruger">
                 ${requestScope.html}
 
                 <button class="btn waves-effect waves-light blue" type="submit" name="action">Slet

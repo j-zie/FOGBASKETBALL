@@ -24,7 +24,7 @@ public class KatalogFilter extends Command {
 
         String filter = request.getParameter("filter");
         matlist.removeIf(x -> !x.getTag().equals(filter));
-        
+
 
         return "Katalogpage";
     }

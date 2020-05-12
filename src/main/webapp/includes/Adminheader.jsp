@@ -43,6 +43,7 @@
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=tilføjCarport">Tilføj Carport</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SkabMateriale">Tilføj materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SletMateriale">Slet materiale</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=SletBruger">Slet Bruger</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
 
