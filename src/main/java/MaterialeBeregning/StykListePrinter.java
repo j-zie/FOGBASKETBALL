@@ -33,12 +33,12 @@ public class StykListePrinter {
     public String printFladtTag() {
         orderInfoHeader();
         startTable();
-        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("stolpe").getPris(),
-                      materialer.getMaterialeBytag("stolpe").getMaterialeNavn(),
+        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("default_stolpe").getPris(),
+                      materialer.getMaterialeBytag("default_stolpe").getMaterialeNavn(),
                       mængder.antalStolper());
 
-        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("spær").getPris(),
-                      materialer.getMaterialeBytag("spær").getMaterialeNavn(),
+        insertElementAndAddToTotalCost(materialer.getMaterialeBytag("default_spær").getPris(),
+                      materialer.getMaterialeBytag("default_spær").getMaterialeNavn(),
                       mængder.antalSpaer());
 
         // Ikke flere hardcodede ting 
