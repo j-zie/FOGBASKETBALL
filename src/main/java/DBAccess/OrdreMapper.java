@@ -108,9 +108,39 @@ public class OrdreMapper {
             } catch ( ClassNotFoundException | SQLException ex ) {
                 System.out.println(ex);
             }
-        }
-
     }
+    /**
+     * Metode gemmer ordre til databasen
+     * @param ordre er af typen ordreobjekt, hvis tilstand skal indeholde et CarportObejkt og Userobjekt.
+     */
+    public static int createOrderReturnItsID(Ordre ordre)  {
+        try {
+            Connection con = Connector.connection();
+
+            String SQL = "INSERT INTO ordre (brugerid, carportLængde, carportBredde, redskabsrumLængde, redskabsrumBredde, tagTypeNr, hældning) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setInt(1, ordre.getUser().getId());
+            ps.setDouble( 2, ordre.getcarport().getCarportLængde());
+            ps.setDouble( 3, ordre.getcarport().getCarportBredde());
+            ps.setDouble( 4, ordre.getcarport().getRedskabsrumLængde());
+            ps.setDouble( 5, ordre.getcarport().getGetRedskabsrumBredde());
+            ps.setDouble( 6,  ordre.getcarport().getTagtypeID());
+            ps.setDouble( 7,  ordre.getcarport().getHældning());
+            ps.executeUpdate();
+            ResultSet keys = ps.getGeneratedKeys();
+            keys.next();
+            int newKey = keys.getInt(1);
+            return newKey;
+        } catch ( Exception e ) {
+            e.printStackTrace();
+        }
+        return -1; //
+    }
+
+
+
+
+}
 
 
 
