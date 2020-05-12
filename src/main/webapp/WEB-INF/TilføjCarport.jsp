@@ -57,6 +57,7 @@
         <div class="card-content ">
             <h4 class="center blue-text">Tilføj ny carport til katalog</h4>
             <form class="row s12" action="upload" enctype="multipart/form-data" method="post">
+                <input type="hidden" name="bool" value="car" >
                 <div class="col s12">
                     <div class="input-field">
                         <input type="text" id="materialeNavn" name="carportNavn" placeholder="Carport 3,60X7,20M med redskabsrum 3,20X2,20M">

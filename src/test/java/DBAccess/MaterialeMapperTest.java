@@ -55,7 +55,7 @@ public class MaterialeMapperTest {
      */
     @Test
     public void opretMateriale() throws  SQLException, ClassNotFoundException {
-        materialeMapper.opretMateriale("test","test","test",1);
+        materialeMapper.opretMateriale("test","test","test",1, "/");
         assertTrue(MaterialeMapper.getAlleMaterialer().size() > 1);
     }
 
