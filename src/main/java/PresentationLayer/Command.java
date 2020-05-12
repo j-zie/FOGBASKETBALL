@@ -25,6 +25,7 @@ abstract class Command {
         commands.put("lægIkurv", new TilføjTilKurv());
         commands.put("SletOrdre", new SletOrdre());
         commands.put("Notification", new Notificationer());
+        commands.put("filter", new KatalogFilter());
 
     }
 

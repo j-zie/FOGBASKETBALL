@@ -32,9 +32,9 @@
 
         <div class="section">
             <h5>Carport type</h5>
-            <p><a style="cursor: pointer">Vis spær</a></p>
-            <p><a style="cursor: pointer">Vis Stolpe</a></p>
-            <p><a style="cursor: pointer">Vis Carporte</a></p>
+            <p><a href="FrontController?target=filter&filter=spær" style="cursor: pointer">Vis spær</a></p>
+            <p><a href="FrontController?target=filter&filter=stolpe" style="cursor: pointer">Vis Stolpe</a></p>
+            <p><a href="FrontController?target=filter&filter=carport"style="cursor: pointer">Vis Carporte</a></p>
         </div>
 
         <div class="divider"></div>

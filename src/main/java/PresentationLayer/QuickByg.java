@@ -1,7 +1,7 @@
 package PresentationLayer;
 
 import DBAccess.MaterialeMapper;
-import DBAccess.OrdreMapper;
+import DBAccess.*;
 import DBAccess.StykListeMapper;
 import FunctionLayer.*;
 import MaterialeBeregning.MængdeBeregner;
@@ -62,14 +62,12 @@ public class QuickByg extends Command{
 
                 //Stykliste metoder der tager en ordre kan indsættes her.
 
-
                 SvgCarport svg = new SvgCarport();
                 int bredde = Integer.parseInt(request.getParameter("Bredde"));
                 int længde = Integer.parseInt(request.getParameter("Længde"));
                 int skurbredde = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
                 int skurlængde = Integer.parseInt(request.getParameter("Redskabsrum_længde"));
                 request.setAttribute("tagtypeNavn",getTagNavnudFraTagNrQuickBygLokalMetode(Integer.parseInt(request.getParameter("tagtype"))));
-
                 request.setAttribute("svgCarport", svg.Build(længde, bredde, skurbredde, skurlængde));
 
                 return "QuickByg/Bekræftelse";

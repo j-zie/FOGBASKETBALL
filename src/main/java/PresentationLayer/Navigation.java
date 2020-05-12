@@ -1,6 +1,8 @@
 package PresentationLayer;
 
 import FunctionLayer.*;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,12 +23,14 @@ public class Navigation extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
+        ServletContext applicationScope = request.getServletContext();
         String nav = request.getParameter("Nav");
 
         switch (nav) {
             case "Katalog":
                 MaterialeListe x = new MaterialeListe();
                 ArrayList<Materiale> xs = x.getMatListe();
+                applicationScope.setAttribute("matListeA", xs);
                 session.setAttribute("matListe", xs);
                 return "Katalogpage";
             case "QuickByg":
