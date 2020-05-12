@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import DBAccess.UserMapper;
 import FunctionLayer.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,7 +61,12 @@ public class Navigation extends Command {
                 return "TilføjCarport";
             case "hjem":
                 return "main";
+            case "SletBruger":
+                LavSelectFormHTML html = new LavSelectFormHTML();
+                request.setAttribute("html",html.fåSelectForm());
+                return "SletBruger";
         }
+
         return nav + "page";
     }
 }

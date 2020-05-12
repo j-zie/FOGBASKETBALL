@@ -120,6 +120,15 @@ public class UserMapper {
 
     }
 
-
+    public void sletUser(int Id) throws SQLException, ClassNotFoundException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM bruger Where brugerId = " + "" +Id+ "" ;
+            PreparedStatement ps = con.prepareStatement( SQL );
+            ps.executeUpdate();
+        } catch ( ClassNotFoundException | SQLException ex ) {
+            System.out.println(ex);
+        }
+    }
 
 }

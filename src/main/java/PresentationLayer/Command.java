@@ -24,6 +24,7 @@ abstract class Command {
         commands.put("SletMateriale", new SletMateriale());
         commands.put("lægIkurv", new TilføjTilKurv());
         commands.put("SletOrdre", new SletOrdre());
+        commands.put("SletBruger", new SletBruger());
 
     }
 
