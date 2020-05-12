@@ -1,5 +1,8 @@
 package MaterialeBeregning;
 
+import DBAccess.StykListeMapper;
+import FunctionLayer.Materiale;
+import FunctionLayer.MaterialeListe;
 import FunctionLayer.Ordre;
 
 import java.util.Scanner;
@@ -14,22 +17,22 @@ import java.util.Scanner;
 
 
 public class MængdeBeregner {
+    Ordre ordre;
     double height;
     double width;
     double angle;
     double tagSten;
-
-
-
+    int ordreID;
 
     public MængdeBeregner(Ordre ordre) {
         width = ordre.getcarport().getCarportBredde();
         height = ordre.getcarport().getCarportLængde();
         angle = ordre.getcarport().getHældning();
         tagSten = ordre.getcarport().getTagtypeID();
+        ordreID = ordre.getOrdreNr();
+        this.ordre = ordre;
     }
 
-    // TODO: 21/04/2020 !find ud af hvordan input skal ind i den her slags metoder, scanner skal væk!
 
     
     public int antalStolper(){
@@ -67,4 +70,18 @@ public class MængdeBeregner {
 
         return TotalRes;
     }
+
+
+    public void indsætStykListeIDB() {
+        MaterialeListe alom = new MaterialeListe();
+        //Stolper
+        Materiale stolpe = alom.getMaterialeBytag("default_stolpe");
+        StykListeMapper.insætStykListeElement(ordre, stolpe, antalStolper());
+
+        //Spær
+        Materiale spær = alom.getMaterialeBytag("default_spær");
+        StykListeMapper.insætStykListeElement(ordre, spær, antalSpaer());
+
+    }
+
 }

@@ -20,11 +20,6 @@
     <h6 style="margin-left: 35%" class="white-text">Antal Ordre</h6>
 </div>
 </div>
-    <%-- BR's TO FILL THE PAGE --%>
-<br>
-<br>
-<br>
-
 
 
 <%@ include file = "../includes/footer.jsp" %>

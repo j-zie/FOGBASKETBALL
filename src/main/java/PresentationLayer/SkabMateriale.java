@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * Derfra kommer de så i databasen og et nyt materiale er oprettet
  * Materialet bLiver skabt pt. Med Navn, Beskrivelse, "Tag" (engelske ord) og Pris.TODO:: Få billeder med ned?
  **/
-
+/*
 public class SkabMateriale extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
@@ -66,3 +66,4 @@ public class SkabMateriale extends Command {
         }
 
     }
+*/

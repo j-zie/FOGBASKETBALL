@@ -52,7 +52,9 @@ public class MaterialeListe {
         retVal.removeIf(x -> !(x.getTag().equals("carport")));
         return retVal;
     }
-
+    /**
+     *  Denne metode henter alle carport ved at fjerne alle Materialer fra listen hvor tag ikke er lig med carport.
+     */
     public ArrayList<Materiale> getKomponenter() {
         ArrayList<Materiale> retVal = matListe;
         retVal.removeIf(x -> (x.getTag().equals("carport")));

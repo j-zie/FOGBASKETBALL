@@ -60,17 +60,19 @@ public class MaterialeMapper {
      */
 
 
-    public void opretMateriale(String materialeNavn, String materialeBeskrivelse, String tag, double materialePris) throws SQLException, ClassNotFoundException {
+    public void opretMateriale(String materialeNavn, String materialeBeskrivelse, String tag, double materialePris, String path) throws SQLException, ClassNotFoundException {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO materialer (materialeNavn,materialeBeskrivelse,tag,pris) VALUES (?, ?, ?, ?)";
+            String SQL = "INSERT INTO materialer (materialeNavn,materialeBeskrivelse,tag,pris,path) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ps.setString(1, materialeNavn);
             ps.setString(2, materialeBeskrivelse);
             ps.setString(3, tag);
             ps.setDouble(4, materialePris);
+            ps.setString(5, path);
+
             ps.executeUpdate();
 
         } catch (Exception e) {

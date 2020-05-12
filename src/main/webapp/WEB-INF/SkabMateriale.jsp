@@ -56,9 +56,9 @@
     <div class="row card hoverable">
         <div class="card-content ">
             <h4 class="center blue-text">Indsæt nyt materiale i databasen</h4>
-            <form class="row s12" action="FrontController" method="POST">
+            <form class="row s12" action="upload" enctype="multipart/form-data" method="post">
                 <input type="hidden" name="target" value="SkabMateriale" >
-
+                <input type="hidden" name="bool" value="komp" >
                 <div class="col s12">
                     <div class="input-field">
                         <input type="text" id="materialeNavn" name="materialeNavn" placeholder="Trykimprægnerede stolpe 100x100mm">
@@ -99,7 +99,7 @@
                 <form>
                     <div class="form-group">
                         <label for="fil">Indsæt Billede til Materialet</label>
-                        <input type="file" class="form-control-file" id="fil">
+                        <input type="file" name="billede" class="form-control-file" id="fil">
                     </div>
                 </form>
 
