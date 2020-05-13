@@ -88,7 +88,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `fog_db`.`stykliste`
 -- -----------------------------------------------------
-select * from notificationer;
+
 CREATE TABLE `stykliste` (
     `ordre` INT NOT NULL,
     `materialer` INT NOT NULL,
