@@ -1,4 +1,3 @@
---    MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -58,7 +57,6 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
-
 -- -----------------------------------------------------
 -- Table `fog_db`.`ordre`
 -- -----------------------------------------------------
@@ -81,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`ordre` (
     FOREIGN KEY (`tagtypeNr`)
     REFERENCES `fog_db`.`tagtyper` (`tagtypeNr`)
     )
-    
+
 
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -90,7 +88,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `fog_db`.`stykliste`
 -- -----------------------------------------------------
-
+select * from notificationer;
 CREATE TABLE `stykliste` (
     `ordre` INT NOT NULL,
     `materialer` INT NOT NULL,
@@ -115,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`materialer` (
   `materialeID` INT(11) NOT NULL AUTO_INCREMENT,
   `materialeNavn` VARCHAR(100) NULL DEFAULT NULL,
   `materialeBeskrivelse` varchar(5000) NULL DEFAULT NULL,
-  `antal` INT NULL DEFAULT NULL, 
+  `antal` INT NULL DEFAULT NULL,
   `tag` VARCHAR(100) NULL DEFAULT NULL,
   `pris` DOUBLE NULL DEFAULT NULL,
   `path` VARCHAR(150) NULL DEFAULT NULL,
@@ -132,6 +130,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `fog_db`.`notificationer` (
   `notificationId` int(11) NOT NULL AUTO_INCREMENT,
     `brugerId` INT(11) NOT NULL,
+    `ordreId` INT(11) NOT NULL,
   `beskrivelse` varchar(5000) NULL DEFAULT NULL,
    `ny` Boolean  DEFAULT true,
   PRIMARY KEY (`notificationId`, `brugerId`),
@@ -161,30 +160,30 @@ values ("Trykimprægnerede stolpe 100x100mm", "Imprægneret stolpe til hegn, pla
         "default_spær", 61.50, "resources/Komponenter/HoevletSpaerTrae45x145.png"),
         ("TRAPEZPLADE BLÅTONET 109X600CM PLASTMO ECOLITE TAGPLADE PVC", "Perfekt til udestuen og carporten. Blåtonet. 109 x 240 cm",
         "default_bekældning", 250.00, "resources/Komponenter/blatonet-trapezplade-naturel-310-cm.jpg"),
-        ("Beton tegltagsten - Rød", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark. 
+        ("Beton tegltagsten - Rød", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark.
         Dantegl er et helt igennem dansk naturprodukt, der bygger på stolte håndværksmæssige traditioner, der går mere end 1.000 år tilbage i tiden.",
         "bekældning", 72.85, "resources/Komponenter/beton-roed.jpg"),
-        ("Beton tegltagsten - Sort", "En moderne tegltagsten. Formen og den smukke sorte farve er et billede af verdens forfald. 
+        ("Beton tegltagsten - Sort", "En moderne tegltagsten. Formen og den smukke sorte farve er et billede af verdens forfald.
         Dantegl er et helt igennem dansk naturprodukt, der bygger på stolte håndværksmæssige traditioner, der går mere end en milliard år tilbage i tiden.",
         "bekældning", 72.85, "resources/Komponenter/beton-sort.jpg"),
-		("EternittagB6 - Sort", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark. 
+		("EternittagB6 - Sort", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark.
         Dantegl er et helt igennem dansk naturprodukt, der bygger på stolte håndværksmæssige traditioner, der går mere end 1.000 år tilbage i tiden.",
         "bekældning", 30.50, "resources/Komponenter/beton-sort.jpg"),
-		("EternittagB6 - Rødbrun", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark. 
+		("EternittagB6 - Rødbrun", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark.
         Dantegl er et helt igennem dansk naturprodukt, der bygger på stolte håndværksmæssige traditioner, der går mere end 1.000 år tilbage i tiden.",
         "bekældning", 30.50, "resources/Komponenter/beton-roed.jpg"),
-		("EternittagB7 - Mokka", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark. 
+		("EternittagB7 - Mokka", "Den klassiske danske tegltagsten. Formen og den smukke røde farve er et billede på Danmark.
         Dantegl er et helt igennem dansk naturprodukt, der bygger på stolte håndværksmæssige traditioner, der går mere end 1.000 år tilbage i tiden.",
         "bekældning", 30.50, "resources/Komponenter/beton-sort.jpg");
-        
-insert into materialer(materialeNavn, pris, path, tag) 
+
+insert into materialer(materialeNavn, pris, path, tag)
 values("Carport 3,60X7,20M med redskabsrum 3,20X2,20M", 13447, "resources/Carporte/Carport1.png", "carport"),
 	("Carport enkelt 3,60X5,40M med Høj rejsning", 39213, "resources/Carporte/Carport2.png", "carport"),
 	("Carport 3,90X7,80M med redskabsrum 2,40X3,30M", 40000, "resources/Carporte/Carport3.png", "carport"),
 	("Carport 3,60X8,10M med redskabsrum 3,05X3,20M", 11111, "resources/Carporte/Carport4.png", "carport"),
 	("Carport 3,00X4,80M med Fladt tag", 19231, "resources/Carporte/Carport5.png", "carport");
 
-insert into materialer(materialeNavn, pris, path, tag) 
+insert into materialer(materialeNavn, pris, path, tag)
 values("Plasttrapezplade-fladtag", 13447, "resources/Carporte/Carport1.png", "carport"),
 	("Carport enkelt 3,60X5,40M med Høj rejsning", 39213, "resources/Carporte/Carport2.png", "carport"),
 	("Carport 3,90X7,80M med redskabsrum 2,40X3,30M", 40000, "resources/Carporte/Carport3.png", "carport"),

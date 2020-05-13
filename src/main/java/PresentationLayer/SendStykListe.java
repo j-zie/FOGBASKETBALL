@@ -14,6 +14,7 @@ public class SendStykListe extends Command {
 
         LogicFacade.sendStykliste(Integer.parseInt(request.getParameter("oid")), Integer.parseInt(request.getParameter("bid")));
 
+
         return "ordre";
     }
 }
