@@ -81,6 +81,16 @@ public class QuickByg extends Command{
                 kunde = (User) session.getAttribute("user");
                 LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 SvgCarport svg2 = new SvgCarport();
+
+                //Lav en ordre og smid den i databasen
+                int key = OrdreMapper.createOrderReturnItsID(new Ordre(carport, kunde));
+
+                //Lav stykliste på ordre og smid den i databasen
+                OrdreListe ordreList = new OrdreListe();
+                MængdeBeregner inserter = new MængdeBeregner(ordreList.getOrderFromOrderNumber(key));
+                inserter.indsætStykListeIDB();
+
+
                 int bredde2 = Integer.parseInt(request.getParameter("Bredde"));
                 int længde2 = Integer.parseInt(request.getParameter("Længde"));
                 int skurbredde2 = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
