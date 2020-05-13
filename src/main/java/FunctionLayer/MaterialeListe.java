@@ -2,8 +2,9 @@ package FunctionLayer;
 
 import DBAccess.MaterialeMapper;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class MaterialeListe {
+public class MaterialeListe implements Iterable<Materiale> {
 
     /**
      * Denne klasse bruges til at hente alle materialer og carporte ned.
@@ -56,6 +57,10 @@ public class MaterialeListe {
         return matListe;
     }
 
+    public void emptyIt() {
+        matListe.clear();
+    }
+
     /**
      *  Denne metode henter alle carport ved at fjerne alle Materialer fra listen hvor tag ikke er lig med carport.
      */
@@ -73,6 +78,30 @@ public class MaterialeListe {
         return retVal;
     }
 
+    public void addToList(Materiale val) {
+        matListe.add(val);
+    }
+
+    public MaterialeListe getMaterialeListFromOrder(ArrayList<Integer> IDsFromOrder) {
+        MaterialeListe retVal = new MaterialeListe();
+        retVal.emptyIt();
+
+        for (int i = 0; i < IDsFromOrder.size(); i++) {
+            System.out.println(IDsFromOrder.get(i).toString());
+        }
 
 
+        for (Materiale i: matListe) {
+            if (IDsFromOrder.contains(i.getMaterialeID())) {
+                System.out.println("idsfromorder contains: " + i.getMaterialeID());
+                retVal.addToList(i);
+            }
+        }
+        return retVal;
+    }
+
+    @Override
+    public Iterator<Materiale> iterator() {
+        return matListe.iterator();
+    }
 }

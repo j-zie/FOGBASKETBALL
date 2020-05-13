@@ -1,10 +1,9 @@
 package DBAccess;
 
-import FunctionLayer.Materiale;
-import FunctionLayer.Ordre;
+import FunctionLayer.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class StykListeMapper {
 
@@ -25,6 +24,23 @@ public class StykListeMapper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
+    public static ArrayList<Integer> getIDOfComponents(Ordre order) {
+            ArrayList<Integer> listOfIDs = new ArrayList();
+            try {
+                Connection con = Connector.connection();
+                int orderNr = order.getOrdreNr();
+                String SQL = "SELECT materialer FROM stykliste WHERE ordre = " + orderNr;
+                PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+                ResultSet rs = ps.executeQuery();
+                while ( rs.next() ) {
+                    listOfIDs.add(rs.getInt("materialer"));
+                }
+                return listOfIDs;
+            } catch ( Exception ex ) {
+                ex.getMessage();
+            }
+            return listOfIDs;
+        }
 }

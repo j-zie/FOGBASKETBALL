@@ -79,6 +79,10 @@ public class Materiale {
                 '}';
     }
 
+    @Override
+    public boolean equals (Object object) {
+        return this.materialeID == (int)object;
+    }
     public String getPath() {
         return path;
     }

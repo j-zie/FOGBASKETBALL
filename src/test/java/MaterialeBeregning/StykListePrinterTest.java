@@ -31,13 +31,13 @@ public class StykListePrinterTest {
     @Test
     public void printFladtTag() {
         StykListePrinter s = new StykListePrinter(1);
-        assertTrue(s.printFladtTag() != null);
+        assertTrue(s.print() != null);
         }
 
     @Test
     public void printRejsningsTag() {
         StykListePrinter s = new StykListePrinter(1);
-        assertTrue(s.printTagMedHældning() != null);
+        assertTrue(s.print() != null);
     }
 
 }
