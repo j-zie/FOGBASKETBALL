@@ -16,6 +16,7 @@
         <a href="#!" class="collection-item center">Ordre: ${ordre.ordreNr} ${ordre.user.navn}
                 <form action="FrontController" method="post" style="text-align:center">
                     <input type="hidden" name="target" value="stykliste" >
+                    <input type="hidden" name="bid" value="${ordre.user.id}" >
                     <button class="waves-effect waves-teal btn-flat" name="ordrenr" value="${ordre.ordreNr}">Vis Styk-liste</button>
 
                 </form>

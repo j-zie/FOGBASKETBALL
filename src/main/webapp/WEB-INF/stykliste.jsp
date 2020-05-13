@@ -22,7 +22,12 @@
 ${sessionScope.page}
 
 
+
 <br>
+<br>
+
+<a class="btn center" href="FrontController?target=sendstkliste&oid=${requestScope.oid}&bid=${requestScope.bid}" > Send tilbud til kunde</a>
+
 <br>
 <br>
 <br>

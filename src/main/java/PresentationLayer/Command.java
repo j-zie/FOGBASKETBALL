@@ -27,6 +27,7 @@ abstract class Command {
         commands.put("Notification", new Notificationer());
         commands.put("filter", new KatalogFilter());
         commands.put("SletBruger", new SletBruger());
+        commands.put("sendstkliste", new SendStykListe());
 
 
     }

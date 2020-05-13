@@ -43,4 +43,26 @@ public class StykListeMapper {
             }
             return listOfIDs;
         }
+
+
+        public static void sendstykliste(int OdreID, int brugerID) {
+            try {
+                Connection con = Connector.connection();
+                String SQL = "INSERT INTO notificationer(brugerId, ordreId, beskrivelse) VALUES (?, ?, ?)";
+                PreparedStatement ps = con.prepareStatement(SQL);
+                int ordreID = OdreID;
+               int brugerId = brugerID;
+               String beskrivelse = "Tilbud på forspørgsle af custom carport";
+
+                ps.setInt(1, brugerId);
+                ps.setInt(2, ordreID);
+                ps.setString(3, beskrivelse);
+                ps.executeUpdate();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        }
 }

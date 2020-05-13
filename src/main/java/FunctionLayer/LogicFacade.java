@@ -125,5 +125,10 @@ public class LogicFacade {
      return null;
     }
 
+        public static void  sendStykliste(int oid, int bid){
+
+        StykListeMapper.sendstykliste(oid,bid);
+
+        }
 
 }
