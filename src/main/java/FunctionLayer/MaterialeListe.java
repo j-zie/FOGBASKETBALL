@@ -39,7 +39,19 @@ public class MaterialeListe {
         }
         return null;
     }
-
+    /**
+     *  Denne metode retunere et enkelt Materiale object via et String parameter
+     * @param navn Bruges til at indetificere og finde det matriale man vil have i listen
+     * @return returnere endten et Materiale object eller null hvis parameret angivet ikke findes i DB'en
+     */
+    public Materiale getMaterialeByNavn(String navn) {
+        for (int i = 0; i < matListe.size(); i++) {
+            if (matListe.get(i).getMaterialeNavn().equals(navn)) {
+                return matListe.get(i);
+            }
+        }
+        return null;
+    }
     public ArrayList<Materiale> getMatListe() {
         return matListe;
     }

@@ -100,7 +100,6 @@ public class MaterialeMapper {
     }
 
 
-
     public void sletMateriale(int materialeId) throws SQLException, ClassNotFoundException {
         try {
             Connection con = Connector.connection();
@@ -112,7 +111,7 @@ public class MaterialeMapper {
         }
     }
 
-    public String getTagNavn(int tagtypeNr) throws SQLException, ClassNotFoundException {
+    public static String getTagNavn(int tagtypeNr) {
         String navn = "";
         try {
             Connection con = Connector.connection();
@@ -128,6 +127,24 @@ public class MaterialeMapper {
             ex.printStackTrace();
         }
         return navn;
+    }
+
+    public static Double getDækningsgrad(int tagtypeNr) {
+        double res = 0;
+        try {
+            Connection con = Connector.connection();
+            String SQL = "select dækningsgrad from tagtyper Where tagtypeNr =? ";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, tagtypeNr);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                res = rs.getDouble("dækningsgrad");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
+        }
+        return res;
     }
 }
 

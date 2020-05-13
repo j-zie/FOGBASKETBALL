@@ -1,10 +1,12 @@
 package MaterialeBeregning;
 
+import DBAccess.MaterialeMapper;
 import DBAccess.StykListeMapper;
 import FunctionLayer.Materiale;
 import FunctionLayer.MaterialeListe;
 import FunctionLayer.Ordre;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 
@@ -21,14 +23,14 @@ public class MængdeBeregner {
     double height;
     double width;
     double angle;
-    double tagSten;
+    int tagStenID;
     int ordreID;
 
     public MængdeBeregner(Ordre ordre) {
         width = ordre.getcarport().getCarportBredde();
         height = ordre.getcarport().getCarportLængde();
         angle = ordre.getcarport().getHældning();
-        tagSten = ordre.getcarport().getTagtypeID();
+        tagStenID = ordre.getcarport().getTagtypeID();
         ordreID = ordre.getOrdreNr();
         this.ordre = ordre;
     }
@@ -62,13 +64,14 @@ public class MængdeBeregner {
         double længde = width;;
         double heldning = angle;
         heldning = Math.toRadians(heldning);
-        double Resultat = (længde/100) * ((bredde/100) / Math.cos(heldning));
-        System.out.println("Indtast tagstens størrelse");
+        double resultat = (længde/100) * ((bredde/100) / Math.cos(heldning));
         // vi skal lige have en tagsten klasse.. deafulter til b7
-        double tagstenPrKvadratMeter = 2.7;
-        double TotalRes = Resultat*tagstenPrKvadratMeter;
+        double tagstenPrKvadratMeter = 0;
 
-        return TotalRes;
+        tagstenPrKvadratMeter = MaterialeMapper.getDækningsgrad(ordreID);
+
+        return resultat*tagstenPrKvadratMeter;
+
     }
 
 
@@ -77,11 +80,17 @@ public class MængdeBeregner {
         //Stolper
         Materiale stolpe = alom.getMaterialeBytag("default_stolpe");
         StykListeMapper.insætStykListeElement(ordre, stolpe, antalStolper());
+        System.out.println("indsatte stolper");
 
         //Spær
         Materiale spær = alom.getMaterialeBytag("default_spær");
         StykListeMapper.insætStykListeElement(ordre, spær, antalSpaer());
 
+        //Tag ehh
+        System.out.println(MaterialeMapper.getTagNavn(tagStenID));
+        Materiale tag = alom.getMaterialeByNavn(MaterialeMapper.getTagNavn(tagStenID));
+        System.out.println(tag);
+        // Tagsten metoden burde nok retunere en integer.
+        StykListeMapper.insætStykListeElement(ordre, tag, (int)antalTagsten());
     }
-
 }

@@ -249,9 +249,7 @@ public class QuickByg extends Command{
         MaterialeMapper mp = new MaterialeMapper();
         try {
             return mp.getTagNavn(tagtypeNr);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "";

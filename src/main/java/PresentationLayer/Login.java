@@ -28,7 +28,6 @@ public class Login extends Command {
         }
         ArrayList<Notification> notificationer = LogicFacade.getNotificationer(user);
         int antalNotis = LogicFacade.antalNyeNotificationer(notificationer);
-        ;
         HttpSession session = request.getSession();
 
         session.setAttribute( "user", user );
@@ -40,11 +39,11 @@ public class Login extends Command {
         if (user.getRole().equals("Admin")){
            OrdreListe ordre = new OrdreListe();
            int antalKunder = LogicFacade.getAntalKunder();
-            int antalAdmins = LogicFacade.getAntalAdmin();
+           int antalAdmins = LogicFacade.getAntalAdmin();
            session.setAttribute("antalOrdre", ordre.getSize());
-            session.setAttribute("antalKunder", antalKunder);
-            session.setAttribute("antalAdmins", antalAdmins);
-            return "admin";
+           session.setAttribute("antalKunder", antalKunder);
+           session.setAttribute("antalAdmins", antalAdmins);
+           return "admin";
         }
         return "main";
     }
