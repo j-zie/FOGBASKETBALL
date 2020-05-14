@@ -55,7 +55,9 @@ public class StykListePrinter {
 
 
         for (Materiale i : materialerTilPrint) {
-            insertElementAndAddToTotalCost(i.getPris(), i.getMaterialeNavn(), 4);
+            System.out.println(ordre.getOrdreNr());
+            System.out.println(i.getMaterialeID());
+            insertElementAndAddToTotalCost(i.getPris(), i.getMaterialeNavn(), StykListeMapper.getAntal(ordre.getOrdreNr(),i.getMaterialeID()));
         }
 
         // Ikke flere hardcodede ting 

@@ -45,6 +45,26 @@ public class StykListeMapper {
         }
 
 
+    public static int getAntal(int ordreID, int materialeID) {
+        // TO PK's som input
+        int x = 0;
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT antal FROM stykliste WHERE ordre = " + ordreID +
+                    " AND materialer = " + materialeID;
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ResultSet rs = ps.executeQuery();
+            while ( rs.next() ) {
+                return rs.getInt("antal");
+            }
+        } catch ( Exception ex ) {
+            System.out.println("ayyayyaya:");
+            System.out.println(ex.getMessage());
+        }
+        return x;
+    }
+
+
         public static void sendstykliste(int OdreID, int brugerID) {
             try {
                 Connection con = Connector.connection();
