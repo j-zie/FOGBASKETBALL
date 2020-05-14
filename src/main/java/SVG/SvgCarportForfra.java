@@ -11,14 +11,14 @@ public class SvgCarportForfra {
         //billede størrelse
 SvgCarportText.append("<svg width=\"1000\" height=\"1000\">");
 //skur
-      SvgCarportText.append("<rect x=\"50\" y=\"100\" rx=\"0\" ry=\"0\" width=\""+skurBredde+"\" height=\""+150+"\" style=\"fill:blue;stroke:black;stroke-width:3;opacity:1\" />");
+      SvgCarportText.append("<rect x=\"50\" y=\"100\" rx=\"0\" ry=\"0\" width=\""+skurBredde+"\" height=\""+150+"\" style=\"fill:grey;stroke:black;stroke-width:1;opacity:1\" />");
 
       //side og top bjælker
-  SvgCarportText.append("<rect x=\"40\" y=\"85\" rx=\"0\" ry=\"0\" width=\"170\" height=\"15\" style=\"fill:white;stroke:black;stroke-width:3;opacity:1\" />");
-  SvgCarportText.append("<rect x=\"50\" y=\"100\" rx=\"0\" ry=\"0\" width=\"15\" height=\"150\" style=\"fill:white;stroke:black;stroke-width:3;opacity:1\" />");
-  SvgCarportText.append("<rect x=\"185\" y=\"100\" rx=\"0\" ry=\"0\" width=\"15\" height=\"150\" style=\"fill:white;stroke:black;stroke-width:3;opacity:1\" />");
+  SvgCarportText.append("<rect x=\"40\" y=\"85\" rx=\"0\" ry=\"0\" width=\"170\" height=\"15\" style=\"fill:white;stroke:black;stroke-width:1;opacity:1\" />");
+  SvgCarportText.append("<rect x=\"50\" y=\"100\" rx=\"0\" ry=\"0\" width=\"15\" height=\"150\" style=\"fill:white;stroke:black;stroke-width:1;opacity:1\" />");
+  SvgCarportText.append("<rect x=\"185\" y=\"100\" rx=\"0\" ry=\"0\" width=\"15\" height=\"150\" style=\"fill:white;stroke:black;stroke-width:1;opacity:1\" />");
         //tag
-  SvgCarportText.append("<polygon points=\"120,5 210,85 40,85\" style=\"fill:white;stroke:black;stroke-width:3\" />");
+  SvgCarportText.append("<polygon points=\"120,5 210,85 40,85\" style=\"fill:white;stroke:black;stroke-width:1\" />");
         //måle enheder
   SvgCarportText.append("<text x=\"80\" y=\"265\" fill=\"red\" transform=\"rotate(0 20,40)\">Skur Bredde</text>");
   SvgCarportText.append("<line x1=\"50\" y1=\"290\" x2=\"200\" y2=\"290\" style=\"stroke:rgb(0,0,0);stroke-width:1\" />");
