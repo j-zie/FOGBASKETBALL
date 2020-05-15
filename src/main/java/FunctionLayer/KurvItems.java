@@ -15,17 +15,18 @@ public class KurvItems {
     private String beskrivelse;
     private String imgPath;
     private String pris;
-
+    private String tag;
 
     private static ArrayList<KurvItems> kurvListe;
 
     /**
      * En simpel contructor til at danne et nyt kurv object
      */
-    private KurvItems(String beskrivelse, String imgPath, String pris){
+    private KurvItems(String beskrivelse, String imgPath, String pris, String tag){
         this.beskrivelse = beskrivelse;
         this.imgPath = imgPath;
         this.pris = pris;
+        this.tag = tag;
     }
 
 
@@ -33,11 +34,11 @@ public class KurvItems {
      * Denne metode instansiere kurvlisten hvis den ikke er blevet det før.
      * Og så til føjer den et kurvListe object til listen.
      */
-    public static void addItems(String beskrivelse, String imgPath, String pris ){
+    public static void addItems(String beskrivelse, String imgPath, String pris, String tag ){
         if (kurvListe ==  null){
             kurvListe = new ArrayList<>();
         }
-        kurvListe.add(new KurvItems(beskrivelse,imgPath, pris));
+        kurvListe.add(new KurvItems(beskrivelse,imgPath, pris, tag));
     }
 
 
@@ -74,5 +75,6 @@ public class KurvItems {
         return imgPath;
     }
     public String getPris() { return pris;  }
+    public String getTag() { return tag;  }
 
 }

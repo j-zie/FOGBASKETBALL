@@ -24,7 +24,8 @@ public class Login extends Command {
         User user = LogicFacade.login( email, password );
 
         if (user == null) {
-            return "login"; // Should be a page with a login error..
+            request.setAttribute("loginErro","Error: Email or password is wrong");
+            return "login";
         }
         ArrayList<Notification> notificationer = LogicFacade.getNotificationer(user);
         int antalNotis = LogicFacade.antalNyeNotificationer(notificationer);

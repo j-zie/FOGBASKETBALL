@@ -28,10 +28,10 @@ public class KurvItemsTest {
      */
     @Test
     public void addItems() {
-        KurvItems.addItems("Carport...","imagePath/image","20.00");
+        KurvItems.addItems("Carport...","imagePath/image","20.00", "tag");
         ArrayList<KurvItems> liste = KurvItems.getItemList();
         int size = liste.size();
-        KurvItems.addItems("Carport2...","imagePath/image2","20.00");
+        KurvItems.addItems("Carport2...","imagePath/image2","20.00","tag");
         ArrayList<KurvItems> liste2 = KurvItems.getItemList();
         assertTrue(size < liste2.size());
     }
@@ -56,7 +56,7 @@ public class KurvItemsTest {
      */
     @Test
     public void getListPostiveTest(){
-        KurvItems.addItems("Carport2...","imagePath/image2","20.00");
+        KurvItems.addItems("Carport2...","imagePath/image2","20.00", "tag");
         ArrayList<KurvItems> liste = KurvItems.getItemList();
       assertNotEquals(null, liste);
     }

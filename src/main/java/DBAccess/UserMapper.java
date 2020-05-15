@@ -118,7 +118,12 @@ public class UserMapper {
 
     }
 
-
+    /**
+     * Denne metode henter en kundes notificationer via databasen.
+     * @param user den bruger notificationerne skal hentes for.
+     * @return retunere en liste med alle brugerens notificatioenr.
+     * @throws LoginSampleException
+     */
     public static ArrayList<Notification> getUsersNotifications(User user) throws LoginSampleException {
 
         ArrayList<Notification> notiList = new ArrayList();
@@ -147,7 +152,11 @@ public class UserMapper {
         }
     }
 
-
+    /**
+     * Denne metode opdatere en kundes notificationer således, at de ikke står som nye mere.
+     * @param user brugeren hvis notifikationer der skal opdateres.
+     * @throws LoginSampleException
+     */
     public static void resetNotificationer( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -159,6 +168,12 @@ public class UserMapper {
         }
     }
 
+    /**
+     * Denne metode bruges til at slette en bruger fra databasen.
+     * @param Id den pågældenes id, der bruges til at finde hvem der skal fjernes.
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public void sletUser(int Id) throws SQLException, ClassNotFoundException {
         try {
             Connection con = Connector.connection();

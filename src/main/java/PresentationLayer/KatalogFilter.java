@@ -13,7 +13,11 @@ import java.util.ArrayList;
 
 public class KatalogFilter extends Command {
 
-
+    /**
+     * Klassen bygger på command klassen
+     * Denne metode opdataere kataloget således at kun de valgte typer kommer frem.
+     * @return retunere samme side som den kom fra - kataloget.
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 

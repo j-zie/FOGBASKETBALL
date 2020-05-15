@@ -32,9 +32,12 @@
 
         <div class="section">
             <h5>Carport type</h5>
-            <p><a href="FrontController?target=filter&filter=spær" style="cursor: pointer">Vis spær</a></p>
-            <p><a href="FrontController?target=filter&filter=stolpe" style="cursor: pointer">Vis Stolpe</a></p>
+            <p><a href="FrontController?target=filter&filter=default_spær" style="cursor: pointer">Vis spær</a></p>
+            <p><a href="FrontController?target=filter&filter=default_stolpe" style="cursor: pointer">Vis Stolper</a></p>
+            <p><a href="FrontController?target=filter&filter=bekældning"style="cursor: pointer">Vis Beklædning</a></p>
             <p><a href="FrontController?target=filter&filter=carport"style="cursor: pointer">Vis Carporte</a></p>
+
+
         </div>
 
         <div class="divider"></div>
@@ -95,9 +98,10 @@
                     <p>Pris: ${ordre.pris.toString()}</p>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="lægIkurv" >
-                        <input  type="hidden" name="beskrivelse" value=${ordre.materialeNavn}>
+                        <input  type="hidden" name="beskrivelse" value="${ordre.materialeNavn}">
                         <input  type="hidden" name="billede" value=${ordre.path}>
                         <input  type="hidden" name="pris" value=${ordre.pris.toString()}>
+                        <input  type="hidden" name="tag" value=${ordre.tag}>
                         <button type="submit" value="Submit" class="btn btn-small waves-effect waves-light blue">Læg i kurv</button>
                     </form>
                 </div>

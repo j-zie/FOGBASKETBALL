@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +47,7 @@
                 <input type="hidden" name="target" value="login" >
 
                 <div class="col s12">
+                    <c:if test="${requestScope.loginErro != null}"><p style="color: red">${requestScope.loginErro}</p></c:if>
                     <div class="input-field">
                         <input type="text" name="email" placeholder="Username*">
                     </div>

@@ -26,8 +26,9 @@ public class TilføjTilKurv  extends Command{
         String beskrivelse = request.getParameter("beskrivelse");
         String imgPath = request.getParameter("billede");
         String pris = request.getParameter("pris");
+        String tag = request.getParameter("tag");
 
-        KurvItems.addItems(beskrivelse,imgPath,pris);
+        KurvItems.addItems(beskrivelse,imgPath,pris, tag);
         ArrayList<KurvItems> kurvItems = KurvItems.getItemList();
      
         session.setAttribute("itemListe", kurvItems);

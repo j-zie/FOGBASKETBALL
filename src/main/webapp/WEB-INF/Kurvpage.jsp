@@ -16,7 +16,7 @@
         <ul class="collection hoverable" style="width: 60%; margin-left: auto; margin-right: auto">
             <li class="collection-item avatar">
                 <img src="${item.imgPath}" alt="" class="circle">
-                <span class="title">Enkelt carport</span>
+                <span class="title">${item.tag}</span>
                 <p>${item.beskrivelse} <br>
                     Pris: ${item.pris} kr.
                 </p>
