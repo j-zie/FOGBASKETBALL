@@ -90,7 +90,12 @@ public class LogicFacade {
        return antal;
     }
 
-
+    /**
+     * Denne metode bruges til at hente alle notificationer for en kunde, via vores @UserMapper
+     * @param user den pågældene hvis notificationer der skal hentes.
+     * @return retunere en liste af notifications objecter.
+     * @throws LoginSampleException
+     */
     public static ArrayList<Notification> getNotificationer(User user) throws LoginSampleException {
 
         ArrayList<Notification> notifications = UserMapper.getUsersNotifications(user);
@@ -102,6 +107,11 @@ public class LogicFacade {
        return notifications;
     }
 
+    /**
+     * Finder antallet af nye notificationer, ved at løbe en kundes liste af notificationer igennem.
+     * @param notiList listen der skal løbes tjekkes.
+     * @return retunere en int der beskriver antallet af nye notificationer
+     */
     public static int antalNyeNotificationer( ArrayList<Notification> notiList){
         int antal = 0;
         if (notiList != null) {
@@ -114,6 +124,13 @@ public class LogicFacade {
         return antal;
     }
 
+    /**
+     * Denne metode opdatere en kundens notifications liste så de ikke længere står som nye.
+     * @param user
+     * @param notiList
+     * @return
+     * @throws LoginSampleException
+     */
     public static ArrayList<Notification> resetNotiss(User user, ArrayList<Notification> notiList) throws LoginSampleException {
         if (notiList != null) {
             UserMapper.resetNotificationer(user);
@@ -125,6 +142,11 @@ public class LogicFacade {
      return null;
     }
 
+    /**
+     * Denne metode sender en stykliste til en kunde via klassen @StyklisteMapper
+     * @param oid
+     * @param bid
+     */
         public static void  sendStykliste(int oid, int bid){
 
         StykListeMapper.sendstykliste(oid,bid);
