@@ -65,13 +65,15 @@ public class QuickByg extends Command{
 
                 SvgCarport svg = new SvgCarport();
                 int bredde = Integer.parseInt(request.getParameter("Bredde"));
+                double bredde3 = Double.parseDouble(request.getParameter("Bredde"));
+                System.out.println(String.valueOf(bredde3));
                 int længde = Integer.parseInt(request.getParameter("Længde"));
                 int skurbredde = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
                 int skurlængde = Integer.parseInt(request.getParameter("Redskabsrum_længde"));
                 request.setAttribute("tagtypeNavn",getTagNavnudFraTagNrQuickBygLokalMetode(Integer.parseInt(request.getParameter("tagtype"))));
                 request.setAttribute("svgCarport", svg.Build(længde, bredde, skurbredde, skurlængde));
                 SvgCarportForfra svgForfra = new SvgCarportForfra();
-                request.setAttribute("svgCarportForfra", svgForfra.Build(længde, bredde, skurbredde, skurlængde));
+                request.setAttribute("svgCarportForfra", svgForfra.Build(længde, bredde, skurbredde, skurlængde, svgForfra.gavlBeregner(0, bredde3)));
 
                 return "QuickByg/Bekræftelse";
 
@@ -95,12 +97,16 @@ public class QuickByg extends Command{
 
 
                 int bredde2 = Integer.parseInt(request.getParameter("Bredde"));
+                double bredde4 = Double.parseDouble(request.getParameter("Bredde"));
                 int længde2 = Integer.parseInt(request.getParameter("Længde"));
                 int skurbredde2 = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
                 int skurlængde2 = Integer.parseInt(request.getParameter("Redskabsrum_længde"));
                 request.setAttribute("tagtypeNavn",getTagNavnudFraTagNrQuickBygLokalMetode(Integer.parseInt(request.getParameter("tagtype"))));
                 request.setAttribute("taghældning",request.getParameter("Taghældning"));
                 request.setAttribute("svgCarport", svg2.Build(længde2, bredde2, skurbredde2, skurlængde2));
+                double gavlHøjde = Double.parseDouble(request.getParameter("Taghældning"));
+                SvgCarportForfra svgForfra1 = new SvgCarportForfra();
+                request.setAttribute("svgCarportForfra", svgForfra1.Build(længde2, bredde2, skurbredde2, skurlængde2, svgForfra1.gavlBeregner(gavlHøjde, bredde4)));
                 return "QuickByg/Bekræftelse";
 
 
