@@ -34,6 +34,6 @@ public class TilføjTilKurv  extends Command{
         session.setAttribute("itemListe", kurvItems);
 
         request.setAttribute("popUp", "yes");
-        return "Katalogpage";
+        return "katalogpage";
     }
 }

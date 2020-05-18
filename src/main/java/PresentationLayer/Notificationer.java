@@ -25,6 +25,6 @@ public class Notificationer extends Command {
         int antalNotis = LogicFacade.antalNyeNotificationer(notificationer);
        session.setAttribute("antalNoti", antalNotis);
 
-        return "Notificationpage";
+        return "notificationpage";
     }
 }

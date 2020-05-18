@@ -31,6 +31,6 @@ public class KatalogFilter extends Command {
         matlist.removeIf(x -> !x.getTag().equals(filter));
         session.setAttribute("matListe",matlist);
 
-        return "Katalogpage";
+        return "katalogpage";
     }
 }

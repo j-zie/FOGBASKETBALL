@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
  * lavStykListe bruger command til at få oplysninger til styklisten hvorefter den returner styklisten
  */
 
-public class lavStykListe extends Command {
+public class LavStykListe extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();

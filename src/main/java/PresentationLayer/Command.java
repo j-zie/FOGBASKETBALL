@@ -19,14 +19,14 @@ abstract class Command {
         commands.put( "register", new Register() );
         commands.put( "quickByg", new QuickByg() );
         commands.put( "nav", new Navigation() );
-        commands.put("stykliste", new lavStykListe());
+        commands.put("stykliste", new LavStykListe());
         //commands.put("SkabMateriale", new SkabMateriale());
-        commands.put("SletMateriale", new SletMateriale());
+        commands.put("sletMateriale", new SletMateriale());
         commands.put("lægIkurv", new TilføjTilKurv());
-        commands.put("SletOrdre", new SletOrdre());
-        commands.put("Notification", new Notificationer());
+        commands.put("sletOrdre", new SletOrdre());
+        commands.put("notification", new Notificationer());
         commands.put("filter", new KatalogFilter());
-        commands.put("SletBruger", new SletBruger());
+        commands.put("sletBruger", new SletBruger());
         commands.put("sendstkliste", new SendStykListe());
 
 

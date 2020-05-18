@@ -57,7 +57,7 @@
         <div class="card-content ">
             <h4 class="center blue-text">Indsæt nyt materiale i databasen</h4>
             <form class="row s12" action="upload" enctype="multipart/form-data" method="post">
-                <input type="hidden" name="target" value="SkabMateriale" >
+                <input type="hidden" name="target" value="skabMateriale" >
                 <input type="hidden" name="bool" value="komp" >
                 <div class="col s12">
                     <div class="input-field">
