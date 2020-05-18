@@ -1,5 +1,5 @@
 
-<%@ include file = "../includes/Adminheader.jsp" %>
+<%@ include file = "../includes/adminheader.jsp" %>
 
 
 <h2 style="margin-left: 10%"> Admin overview </h2>

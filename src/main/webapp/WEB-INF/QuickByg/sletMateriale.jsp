@@ -1,4 +1,4 @@
-<%@ include file = "/includes/Adminheader.jsp" %>
+<%@ include file = "/includes/adminheader.jsp" %>
 <style>
     body{
         padding: 0;
@@ -44,10 +44,10 @@
 <div class="container">
     <div class="row card hoverable">
         <div class="card-content ">
-            <h4 class="center blue-text">Slet Kunde Konto</h4>
-            <h5 class="center grey-text">Vælg id og slet en kundes konto</h5>
+            <h4 class="center blue-text">Slet Materiale</h4>
+            <h5 class="center grey-text">Vælg MaterialeID og slet et Materiale</h5>
             <form class="row s12" action="FrontController" method="POST">
-                <input type="hidden" name="target" value="SletBruger">
+                <input type="hidden" name="target" value="SletMateriale">
                 ${requestScope.html}
 
                 <div class="col s12 center">

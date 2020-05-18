@@ -31,24 +31,24 @@ public class Navigation extends Command {
 
 
         switch (nav) {
-            case "Katalog":
+            case "katalog":
                 MaterialeListe x = new MaterialeListe();
                 ArrayList<Materiale> xs = x.getMatListe();
                 applicationScope.setAttribute("matListeA", xs);
                 session.setAttribute("matListe", xs);
-                return "Katalogpage";
+                return "katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {
-                    return "QuickByg/LoginOrSignuppage";
+                    return "QuickByg/loginOrSignuppage";
                 }
-                return "QuickByg/TagValgpage";
+                return "QuickByg/tagValgpage";
             case "login":
                 return "login";
             case "kurv":
                 if (request.getParameter("item") != null) {
                     KurvItems.removeItem(request.getParameter("item"));
                    }
-                return "Kurvpage";
+                return "kurvpage";
             case "ordrer":
                 ArrayList<Ordre> alleOrdre = LogicFacade.hentAlleOrdre();
                 session.setAttribute("alleOrdre", alleOrdre);
@@ -57,21 +57,21 @@ public class Navigation extends Command {
                 return "admin";
             case "register":
                 return "register";
-            case "SkabMateriale":
-                return "SkabMateriale";
-            case "SletMateriale":
+            case "skabMateriale":
+                return "skabMateriale";
+            case "sletMateriale":
                 request.setAttribute("html",html.fåSelectFormForMaterialerpåID());
-                return "QuickByg/SletMateriale";
+                return "QuickByg/sletMateriale";
             case "logud":
                 session.invalidate(); // Log ud her. Ved ikke lige om det sådan..
                 return "main";
             case "tilføjCarport":
-                return "TilføjCarport";
+                return "tilføjCarport";
             case "hjem":
                 return "main";
-            case "SletBruger":
+            case "sletBruger":
                 request.setAttribute("html",html.fåSelectFormForBrugerepåID());
-                return "SletBruger";
+                return "sletBruger";
         }
 
         return nav + "page";

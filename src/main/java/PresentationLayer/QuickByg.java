@@ -38,15 +38,15 @@ public class QuickByg extends Command{
         switch (to) {
 
             case "Fladt":
-                return "QuickByg/FladtTagpage";
+                return "QuickByg/fladtTagpage";
 
             case "Rejsning":
-                return "QuickByg/RejsningTagpage";
+                return "QuickByg/rejsningTagpage";
 
             case "FladtTagOrdrebekræft":
                 Boolean fejlFundet = tjekFelter(request);
                 if (fejlFundet == true) {
-                    return "QuickByg/FladtTagpage";
+                    return "QuickByg/fladtTagpage";
                 }
                 String tagtypeNavn = "";
                 MaterialeMapper mp = new MaterialeMapper();
@@ -75,12 +75,12 @@ public class QuickByg extends Command{
                 SvgCarportForfra svgForfra = new SvgCarportForfra();
                 request.setAttribute("svgCarportForfra", svgForfra.Build(længde, bredde, skurbredde, skurlængde, svgForfra.gavlBeregner(0, bredde3)));
 
-                return "QuickByg/Bekræftelse";
+                return "QuickByg/bekræftelse";
 
             case "RejsningTagOrdrebekræft":
                 fejlFundet = tjekFelterRejsning(request);
                 if (fejlFundet == true) {
-                    return "QuickByg/RejsningTagpage";
+                    return "QuickByg/rejsningTagpage";
                 }
                 carport = sammenSætCarport(request, Tag.Rejsning);
                 kunde = (User) session.getAttribute("user");
@@ -107,7 +107,7 @@ public class QuickByg extends Command{
                 double gavlHøjde = Double.parseDouble(request.getParameter("Taghældning"));
                 SvgCarportForfra svgForfra1 = new SvgCarportForfra();
                 request.setAttribute("svgCarportForfra", svgForfra1.Build(længde2, bredde2, skurbredde2, skurlængde2, svgForfra1.gavlBeregner(gavlHøjde, bredde4)));
-                return "QuickByg/Bekræftelse";
+                return "QuickByg/bekræftelse";
 
 
 

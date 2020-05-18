@@ -15,7 +15,7 @@ public class lavStykListeTest extends Mockito {
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
         when(request.getParameter("ordrenr")).thenReturn("1");
-        Command testObj = new lavStykListe();
+        Command testObj = new LavStykListe();
         Assert.assertEquals(testObj.execute(request, response), "stykliste" );
     }
 }
