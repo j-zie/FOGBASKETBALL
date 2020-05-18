@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file = "../includes/header.jsp" %>
+<%@ include file = "../includes/Adminheader.jsp" %>
 
 <p class="flow-text">Styk-listen laves lige nu med følgende antagelser:</p>
 <ul>
