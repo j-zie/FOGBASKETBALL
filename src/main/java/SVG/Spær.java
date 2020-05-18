@@ -35,6 +35,19 @@ public class Spær implements Draw  {
         );
 
 
+        int mellemRum = 56 + spærTykkelse;
+        int antalSpær = (length / mellemRum);
+
+        int location = 40 + mellemRum;
+        for (int i = 0; i < antalSpær; i++){
+
+            svgSpærText.append("<rect x=\"" +location+ "\" y=\""+40+"\" width=\""+spærTykkelse+"\" " +
+                    "height=\""+width+"\" " +
+                    "style=\"stroke:black; storke-width:1; fill:rgb(255,255,255);\" > </rect>" + "\n"
+            );
+        location += (56 + spærTykkelse);
+        }
+
 
         return svgSpærText.toString();
     }
