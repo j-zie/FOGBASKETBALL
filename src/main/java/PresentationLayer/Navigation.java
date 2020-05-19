@@ -36,7 +36,7 @@ public class Navigation extends Command {
                 ArrayList<Materiale> xs = x.getMatListe();
                 applicationScope.setAttribute("matListeA", xs);
                 session.setAttribute("matListe", xs);
-                return "katalogpage";
+                return "QuickByg/katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {
                     return "QuickByg/loginOrSignuppage";
