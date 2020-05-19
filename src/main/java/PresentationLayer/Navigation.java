@@ -1,7 +1,5 @@
 package PresentationLayer;
 
-import DBAccess.MaterialeMapper;
-import DBAccess.UserMapper;
 import FunctionLayer.*;
 
 import javax.servlet.ServletContext;
@@ -36,7 +34,7 @@ public class Navigation extends Command {
                 ArrayList<Materiale> xs = x.getMatListe();
                 applicationScope.setAttribute("matListeA", xs);
                 session.setAttribute("matListe", xs);
-                return "QuickByg/katalogpage";
+                return "katalogpage";
             case "QuickByg":
                 if (session.getAttribute("user") == null) {
                     return "QuickByg/loginOrSignuppage";
