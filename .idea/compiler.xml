@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="FOGBASKETBALL" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
+      <module name="FOGBASKETBALL" options="-endorseddirs C:\Users\Madsj\Documents\FOGBASKETBALL\target/endorsed" />
     </option>
   </component>
 </project>
