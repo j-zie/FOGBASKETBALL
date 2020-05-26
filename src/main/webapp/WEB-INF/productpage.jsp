@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file = "../includes/adminheader.jsp" %>
+<%@ include file = "../includes/header.jsp" %>
 <div class="col s12 m8 l10" style="margin-top: 20px;">
         <div class="card" style="width: 240px; height: 300px; display: inline-block; margin: 15px; ">
             <div class="card-image waves-effect waves-block waves-light">
@@ -27,8 +27,8 @@
         </div>
 </div>
 
-
-
+heheheheh:
+${sessionScope.product}
 
 
 <br>

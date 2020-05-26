@@ -1,10 +1,4 @@
-Is toxicity really an issue? I see much greater issue with content creator can scam and lie all day, and then just filter off every sentence containing 'scammer' and then manually delete the rest. <%--
-  Created by IntelliJ IDEA.
-  User: Patrick
-  Date: 11/05/2020
-  Time: 23.06
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file = "/includes/header.jsp" %>
 
