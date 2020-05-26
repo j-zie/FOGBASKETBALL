@@ -94,7 +94,8 @@
                     <img class="activator" style="height: 131px; width: 100%; object-fit: cover;" src=${ordre.path}>
                 </div>
                 <div class="card-content">
-                    <span class="card-subtitle activator grey-text text-darken-4">${Formatter.fixedStrLength(ordre.materialeNavn)}</span>
+                    <span class="card-subtitle activator grey-text text-darken-4">
+                            ${Formatter.fixedStrLength(ordre.materialeNavn)}</span>
                     <p>Pris: ${ordre.pris.toString()}</p>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="lægIkurv" >
