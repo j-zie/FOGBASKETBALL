@@ -47,6 +47,8 @@
           <c:if test="${sessionScope.user == null}" >
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=login" >Login</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Registrer</a></li>
+          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=productPage" >productpage</a></li>
+
           </c:if>
           <c:if test="${sessionScope.user != null}" >
             <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>

@@ -40,6 +40,8 @@ public class Navigation extends Command {
                     return "QuickByg/loginOrSignuppage";
                 }
                 return "QuickByg/tagValgpage";
+            case "productPage":
+                return "productpage";
             case "login":
                 return "login";
             case "kurv":
