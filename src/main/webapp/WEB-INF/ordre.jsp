@@ -9,7 +9,7 @@
 <%@ include file = "../includes/adminheader.jsp" %>
 
 </body>
-<h2 class="light-blue-text center"> Odrer oversigt </h2>
+<h2 class="light-blue-text center"> Ordre oversigt </h2>
 <div class="collection" style="width: 60%; margin-right: auto; margin-left: auto">
 
     <c:forEach var="ordre" items="${sessionScope.alleOrdre}">
