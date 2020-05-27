@@ -44,7 +44,6 @@
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=skabMateriale">Tilføj materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=sletMateriale">Slet materiale</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=sletBruger">Slet Bruger</a></li>
-          <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=sletBruger">Ret Bruger</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=register" >Register admin</a></li>
           <li class="tab hoverable"><a class="active" href="FrontController?target=nav&Nav=logud">Log ud</a></li>
 
