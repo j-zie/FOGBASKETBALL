@@ -40,10 +40,15 @@ public class Navigation extends Command {
                     return "QuickByg/loginOrSignuppage";
                 }
                 return "QuickByg/tagValgpage";
+            case "productPage":
+                String product = request.getParameter("product");
+                session.setAttribute("product", product);
+                return "productpage";
             case "login":
                 return "login";
             case "kurv":
-                if (request.getParameter("item") != null) {
+                if
+                (request.getParameter("item") != null) {
                     KurvItems.removeItem(request.getParameter("item"));
                    }
                 return "kurvpage";

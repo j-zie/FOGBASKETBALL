@@ -88,13 +88,18 @@
     </div>
 
     <div class="col s12 m8 l10" style="margin-top: 20px;">
+
         <c:forEach var="ordre" items="${sessionScope.matListe}">
             <div class="card" style="width: 240px; height: 300px; display: inline-block; margin: 15px; ">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" style="height: 131px; width: 100%; object-fit: cover;" src=${ordre.path}>
                 </div>
                 <div class="card-content">
-                    <span class="card-subtitle activator grey-text text-darken-4">${Formatter.fixedStrLength(ordre.materialeNavn)}</span>
+                    <span class="card-subtitle activator grey-text text-darken-4">
+                        <a href="FrontController?target=nav&Nav=productPage&product=${ordre.materialeID} style="cursor: pointer">
+                            ${Formatter.fixedStrLength(ordre.materialeNavn)}
+                        </a>
+                    </span>
                     <p>Pris: ${ordre.pris.toString()}</p>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="lægIkurv" >

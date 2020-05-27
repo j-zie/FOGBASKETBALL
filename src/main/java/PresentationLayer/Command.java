@@ -20,7 +20,6 @@ abstract class Command {
         commands.put( "quickByg", new QuickByg() );
         commands.put( "nav", new Navigation() );
         commands.put("stykliste", new LavStykListe());
-        //commands.put("SkabMateriale", new SkabMateriale());
         commands.put("sletMateriale", new SletMateriale());
         commands.put("lægIkurv", new TilføjTilKurv());
         commands.put("sletOrdre", new SletOrdre());
@@ -28,7 +27,7 @@ abstract class Command {
         commands.put("filter", new KatalogFilter());
         commands.put("sletBruger", new SletBruger());
         commands.put("sendstkliste", new SendStykListe());
-
+        commands.put("productpage", new productPage());
 
     }
 
