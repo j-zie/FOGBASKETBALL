@@ -23,7 +23,6 @@ public class OrdreMapper {
             ResultSet rs;
             rs = stm.executeQuery(SQL);
             ArrayList<Ordre> OrdreListe = new ArrayList<>();
-            System.out.println("after");
 
             while(rs.next()) {
                 String id = Integer.toString(rs.getInt("brugerId"));

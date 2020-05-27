@@ -33,7 +33,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="tab white-text" href="#email">${sessionScope.user.email}</a></li>
           <c:if test="${sessionScope.user != null}" >
-          <li><a class="tab white-text" href="FrontController?target=Notification">Notifications <c:if test="${sessionScope.antalNoti > 0}"><span class="new badge"> ${sessionScope.antalNoti} </span> </c:if> </a></li>
+          <li><a class="tab white-text" href="FrontController?target=notification">Notifications <c:if test="${sessionScope.antalNoti > 0}"><span class="new badge"> ${sessionScope.antalNoti} </span> </c:if> </a></li>
           </c:if>
           <li><a class="tab white-text" href="FrontController?target=nav&Nav=kurv"> <i class="material-icons">shopping_cart</i></a></li>
 

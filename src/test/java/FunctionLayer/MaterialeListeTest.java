@@ -16,7 +16,7 @@ public class MaterialeListeTest {
     @Test
     public void getMaterialeBytag() {
         // Virker kun hvis de pågældene materiale er i DB'en
-       Materiale m = materialeListe.getMaterialeBytag("spær"); // HVORFOR I AL VERDEN LIGGER SPÆR UNDER TAG? haha
+       Materiale m = materialeListe.getMaterialeBytag("carport"); // HVORFOR I AL VERDEN LIGGER SPÆR UNDER TAG? haha
 
         assertTrue(m != null);
 

@@ -44,7 +44,7 @@ public class NavigationTest extends Mockito {
         HttpServletResponse response = mock(HttpServletResponse.class);
         when(request.getParameter("Nav")).thenReturn("admin");
         Command testObj = new Navigation();
-        Assert.assertEquals( "AdminStyklisteRefpage", testObj.execute(request, response));
+        Assert.assertEquals( "admin", testObj.execute(request, response));
     }
     @Test
     public void NavigationTestRegister() throws Exception {
