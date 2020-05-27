@@ -41,8 +41,11 @@ public class Navigation extends Command {
                 }
                 return "QuickByg/tagValgpage";
             case "productPage":
+
+                MaterialeListe alom = new MaterialeListe();
                 String product = request.getParameter("product");
-                session.setAttribute("product", product);
+                Materiale mater = alom.getMaterialeByNum(Integer.parseInt(product));
+                session.setAttribute("product", mater);
                 return "productpage";
             case "login":
                 return "login";

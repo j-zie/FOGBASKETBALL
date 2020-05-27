@@ -86,4 +86,8 @@ public class Materiale {
     public String getPath() {
         return path;
     }
+    public String getBeskrivelse() {
+        return beskrivelse;
+    }
+
 }

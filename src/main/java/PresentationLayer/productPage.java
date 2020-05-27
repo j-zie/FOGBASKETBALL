@@ -15,9 +15,11 @@ public class productPage extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         HttpSession session = request.getSession();
-        ServletContext applicaitonScope = request.getServletContext();
-        String product = request.getParameter("product");
-        session.setAttribute(product, product);
+        MaterialeListe alom = new MaterialeListe();
+        String productNumber = request.getParameter("product");
+        Materiale x = alom.getMaterialeByNum(Integer.parseInt(productNumber));
+        System.out.println(x);
+        session.setAttribute("product", x);
 
 
         return "productPage";

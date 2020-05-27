@@ -53,6 +53,15 @@ public class MaterialeListe implements Iterable<Materiale> {
         }
         return null;
     }
+
+    public Materiale getMaterialeByNum(int order) {
+        for (int i = 0; i < matListe.size(); i++) {
+            if (matListe.get(i).getMaterialeID() == order) {
+                return matListe.get(i);
+            }
+        }
+        return null;
+    }
     public ArrayList<Materiale> getMatListe() {
         return matListe;
     }
@@ -93,7 +102,6 @@ public class MaterialeListe implements Iterable<Materiale> {
 
         for (Materiale i: matListe) {
             if (IDsFromOrder.contains(i.getMaterialeID())) {
-                System.out.println("idsfromorder contains: " + i.getMaterialeID());
                 retVal.addToList(i);
             }
         }

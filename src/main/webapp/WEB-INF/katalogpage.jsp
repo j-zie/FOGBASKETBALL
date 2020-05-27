@@ -92,11 +92,13 @@
         <c:forEach var="ordre" items="${sessionScope.matListe}">
             <div class="card" style="width: 240px; height: 300px; display: inline-block; margin: 15px; ">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" style="height: 131px; width: 100%; object-fit: cover;" src=${ordre.path}>
+                    <a href="FrontController?target=nav&Nav=productPage&product=${ordre.materialeID}">
+                        <img class="activator" style="height: 131px; width: 100%; object-fit: cover;" src=${ordre.path}>
+                    </a>
                 </div>
                 <div class="card-content">
                     <span class="card-subtitle activator grey-text text-darken-4">
-                        <a href="FrontController?target=nav&Nav=productPage&product=${ordre.materialeID} style="cursor: pointer">
+                        <a href="FrontController?target=nav&Nav=productPage&product=${ordre.materialeID}">
                             ${Formatter.fixedStrLength(ordre.materialeNavn)}
                         </a>
                     </span>
