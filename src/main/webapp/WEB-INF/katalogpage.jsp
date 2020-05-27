@@ -14,7 +14,7 @@
 <div style="position: absolute; z-index: 10; width: 100%; height: 130%; background-color: rgba(0,0,0,0.55) ">
 <div style="width: 40%; height: 20%; background-color: white; text-align: center; margin-left: auto; margin-right: auto; margin-top: 40px;">
     <h3 style="margin-top: 20px;"> Carport tilføjet til kurv</h3>
-    <a href="FrontController?target=nav&Nav=Katalog" class="waves-effect waves-light btn blue" style="margin: 20px">Shop videre</a>
+    <a href="FrontController?target=nav&Nav=katalog" class="waves-effect waves-light btn blue" style="margin: 20px">Shop videre</a>
     <a href="FrontController?target=nav&Nav=kurv" class="waves-effect waves-light btn blue" style="margin: 20px">Gå til kurv </a>
 </div>
 

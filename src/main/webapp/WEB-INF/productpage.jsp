@@ -22,7 +22,7 @@
         <div class="card" style="width: 450px; height: 150px; margin: 15px; ">
         <div style="padding-top: 50px; padding-left: 30px;">
                     <span class="card-subtitle activator grey-text text-darken-4">
-                        <i class="small material-icons">check</i> På lager!     
+                        <i class="small material-icons">check</i> På lager!
                     </span>
             <div style="display: inline-block;">
             <form action="FrontController" method="POST">
