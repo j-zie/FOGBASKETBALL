@@ -24,14 +24,11 @@
 
     <div class="col s12 m4 l2" id="sidefilter"> <!-- Note that "m4 l3" was added -->
 
-        <div class="section">
-            <h5>Carport type</h5>
-            <p><a style="cursor: pointer">Enkelt</a></p>
-            <p><a style="cursor: pointer">Dobbelt</a></p>
-        </div>
+
 
         <div class="section">
-            <h5>Carport type</h5>
+            <h5>Kategorier</h5>
+            <p><a href="FrontController?target=filter&filter=alle" style="cursor: pointer">Vis alle</a></p>
             <p><a href="FrontController?target=filter&filter=default_spær" style="cursor: pointer">Vis spær</a></p>
             <p><a href="FrontController?target=filter&filter=default_stolpe" style="cursor: pointer">Vis Stolper</a></p>
             <p><a href="FrontController?target=filter&filter=bekældning"style="cursor: pointer">Vis Beklædning</a></p>
@@ -39,53 +36,10 @@
 
 
         </div>
-
-        <div class="divider"></div>
-        <div class="section">
-            <h5>Bredde</h5>
-            <form action="#">
-            <label>
-                <input type="checkbox" class="filled-in"  />
-                <span>200 Centimeter</span>
-            </label>
-            <label>
-                <input type="checkbox" class="filled-in"  />
-                <span>250 Centimeter</span>
-            </label>
-            <label>
-                <input type="checkbox" class="filled-in"  />
-                <span>300 Centimeter</span>
-            </label>
-            <label>
-                <input type="checkbox" class="filled-in"  />
-                <span>400 Centimeter</span>
-            </label>
-                </form>
-
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <h5>Længde</h5>
-            <form action="#">
-                <label>
-                    <input type="checkbox" class="filled-in"  />
-                    <span>200 Centimeter</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="filled-in"  />
-                    <span>250 Centimeter</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="filled-in"  />
-                    <span>300 Centimeter</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="filled-in"  />
-                    <span>400 Centimeter</span>
-                </label>
-            </form>
-        </div>
     </div>
+
+        <div class="divider"></div>
+
 
     <div class="col s12 m8 l10" style="margin-top: 20px;">
 

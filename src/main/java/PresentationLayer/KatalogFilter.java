@@ -28,7 +28,9 @@ public class KatalogFilter extends Command {
         ArrayList<Materiale> matlist = OGlist;
 
         String filter = request.getParameter("filter");
-        matlist.removeIf(x -> !x.getTag().equals(filter));
+        if (!filter.equals("alle")) {
+            matlist.removeIf(x -> !x.getTag().equals(filter));
+        }
         session.setAttribute("matListe",matlist);
 
         return "katalogpage";
