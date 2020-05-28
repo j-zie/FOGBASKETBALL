@@ -2,7 +2,7 @@
 <%@ include file = "../includes/adminheader.jsp" %>
 
 
-<h2 style="margin-left: 10%"> Admin overview </h2>
+
 <div style="margin-left: auto; margin-right: auto; width: 85%;">
 <div style="background-image: linear-gradient(deeppink, blue); opacity: 0.7; margin: 20px; height: 150px; width: 300px;  border-radius: 20px;display: inline-block;">
     <i style="display: inline-block; margin: 10px" class="medium material-icons white-text">person</i>

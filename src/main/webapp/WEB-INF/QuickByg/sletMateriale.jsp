@@ -47,7 +47,7 @@
             <h4 class="center blue-text">Slet Materiale</h4>
             <h5 class="center grey-text">Vælg MaterialeID og slet et Materiale</h5>
             <form class="row s12" action="FrontController" method="POST">
-                <input type="hidden" name="target" value="SletMateriale">
+                <input type="hidden" name="target" value="sletMateriale">
                 ${requestScope.html}
 
                 <div class="col s12 center">
