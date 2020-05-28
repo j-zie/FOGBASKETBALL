@@ -15,10 +15,10 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login", new Login() );
-        commands.put( "register", new Register() );
-        commands.put( "quickByg", new QuickByg() );
-        commands.put( "nav", new Navigation() );
+        commands.put("login", new Login() );
+        commands.put("register", new Register() );
+        commands.put("quickByg", new QuickByg() );
+        commands.put("nav", new Navigation() );
         commands.put("stykliste", new LavStykListe());
         commands.put("sletMateriale", new SletMateriale());
         commands.put("lægIkurv", new TilføjTilKurv());

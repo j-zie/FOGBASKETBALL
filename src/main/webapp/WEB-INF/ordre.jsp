@@ -23,7 +23,7 @@
 
 
             <form action="FrontController" method="post" style="text-align:center">
-            <input type="hidden" name="target" value="SletOrdre" >
+            <input type="hidden" name="target" value="sletOrdre" >
         <button class="waves-effect waves-teal btn-flat" name="ordrenr" value="${ordre.ordreNr}">Slet Ordre</button>
             </form> </a>
     </c:forEach>

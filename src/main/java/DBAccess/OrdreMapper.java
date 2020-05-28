@@ -106,6 +106,8 @@ public class OrdreMapper {
                 ps.executeUpdate();
             } catch ( ClassNotFoundException | SQLException ex ) {
                 System.out.println(ex);
+                System.out.println(ex.getMessage());
+                System.out.println("HEllo");
             }
     }
     /**

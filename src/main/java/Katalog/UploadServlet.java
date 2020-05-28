@@ -53,13 +53,13 @@ public class UploadServlet extends HttpServlet {
             // Følgende bruges til validering
             if (carportNavn.equals("")) {
                 request.setAttribute("errorNavn", "Ugyldigt Carport Navn");
-                request.getRequestDispatcher("/WEB-INF/" + "TilføjCarport" + ".jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/" + "tilføjCarport" + ".jsp").forward(request, response);
             }
             try {
                 pris = Double.parseDouble(request.getParameter("pris"));
             } catch (NumberFormatException e) {
                 request.setAttribute("errorPris", "Ugyldig Pris");
-                request.getRequestDispatcher("/WEB-INF/" + "TilføjCarport" + ".jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/" + "tilføjCarport" + ".jsp").forward(request, response);
             }
             //valideringen er slut
 
@@ -105,10 +105,10 @@ public class UploadServlet extends HttpServlet {
                 pris = Double.parseDouble(request.getParameter("pris"));
             } catch (NumberFormatException e) {
                 request.setAttribute("errorPris", "Ugyldig Pris");
-                request.getRequestDispatcher("/WEB-INF/" + "SkabMateriale" + ".jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/" + "skabMateriale" + ".jsp").forward(request, response);
             }
             if (validering(materialeNavn, materialeBeskrivelse, tag, request) == false) {
-                request.getRequestDispatcher("/WEB-INF/" + "SkabMateriale" + ".jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/" + "skabMateriale" + ".jsp").forward(request, response);
             }
             //validering er slut
 
