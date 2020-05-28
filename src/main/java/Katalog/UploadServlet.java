@@ -50,6 +50,8 @@ public class UploadServlet extends HttpServlet {
             // Get the stuff from request scope
             double pris = 0;
             String carportNavn = request.getParameter("carportNavn");
+            String carportBeskrivelse = request.getParameter("carportBeskrivelse");
+
             // Følgende bruges til validering
             if (carportNavn.equals("")) {
                 request.setAttribute("errorNavn", "Ugyldigt Carport Navn");
@@ -74,7 +76,7 @@ public class UploadServlet extends HttpServlet {
             MaterialeMapper sender = new MaterialeMapper();
             try {
                 System.out.println("yay we send some stuff");
-                sender.opretCarport(carportNavn, pris, (contextPath + fileName));
+                sender.opretMateriale(carportNavn, carportBeskrivelse, "carport", pris, (contextPath + fileName));
             } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
             }

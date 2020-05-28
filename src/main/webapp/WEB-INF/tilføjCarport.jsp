@@ -61,9 +61,15 @@
                 <div class="col s12">
                     <div class="input-field">
                         <input type="text" id="materialeNavn" name="carportNavn" placeholder="Carport 3,60X7,20M med redskabsrum 3,20X2,20M">
+                        <label class="active" for="materialeNavn">Carport navn:</label>
+                        <p id="errortekst">${requestScope.errorNavn}</p>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="materialebeskrivelse" name="carportBeskrivelse" placeholder="En flot carport med plads til ...">
                         <label class="active" for="materialeNavn">Carport beskrivelse:</label>
                         <p id="errortekst">${requestScope.errorNavn}</p>
                     </div>
+
                 </div>
 
                 <div class="input-field col s6">
