@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`bruger` (
   `postnr` INT(11) NULL DEFAULT NULL,
   `telefon` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`brugerId`))
+
 ENGINE = InnoDB;
 
 
@@ -74,7 +75,8 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`ordre` (
   INDEX `tagtypeNr_idx` (`tagtypeNr` ASC) VISIBLE,
   CONSTRAINT `brugerId`
     FOREIGN KEY (`brugerId`)
-    REFERENCES `fog_db`.`bruger` (`brugerId`),
+    REFERENCES `fog_db`.`bruger` (`brugerId`)
+	ON DELETE CASCADE,
   CONSTRAINT `tagtypeNr`
     FOREIGN KEY (`tagtypeNr`)
     REFERENCES `fog_db`.`tagtyper` (`tagtypeNr`)
@@ -118,11 +120,9 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`materialer` (
   `pris` DOUBLE NULL DEFAULT NULL,
   `path` VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (`materialeID`)
-  )
+  );
 
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+
 
 
 -- noti
@@ -137,6 +137,7 @@ CREATE TABLE IF NOT EXISTS `fog_db`.`notificationer` (
    CONSTRAINT `brugerId2`
     FOREIGN KEY (`brugerId`)
     REFERENCES `fog_db`.`bruger` (`brugerId`)
+      ON DELETE CASCADE
   )
 
 
