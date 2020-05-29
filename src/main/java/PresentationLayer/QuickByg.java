@@ -84,7 +84,6 @@ public class QuickByg extends Command{
                 }
                 carport = sammenSætCarport(request, Tag.Rejsning);
                 kunde = (User) session.getAttribute("user");
-                LogicFacade.sendForspørgsel(new Ordre(carport, kunde));
                 SvgCarport svg2 = new SvgCarport();
 
                 //Lav en ordre og smid den i databasen

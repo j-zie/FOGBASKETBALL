@@ -89,41 +89,7 @@
   <div class="container">
     <div class="section">
 
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Stil os et spørgsmål</h4>
-          <p class="left-align light">En af vores kompetente medarbejdere vil hurtigst muligt besvare spørgsmålet. Ønsker du at få oplyst en pris eller få et tilbud, svarer vi dig gerne på mail eller telefon.
-            Det er derfor vigtigt, at du oplyser navn, adresse, telefonnummer samt e-mail.</p>
-
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_nae" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-                    <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-                <div class="input-field col s6">
-                  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                  <label for="first_name">Telefonnummer</label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="last_nam" type="text" class="validate">
-                  <label for="last_name">Email</label>
-                </div>
-
-                <div class="input-field col s6">
-                  <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                  <label for="icon_prefix2">Skriv besked her </label>
-                </div>
-
-              </div>
-              </form>
+    
             </div>
         </div>
       </div>

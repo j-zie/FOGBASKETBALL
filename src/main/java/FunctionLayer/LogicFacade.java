@@ -144,8 +144,8 @@ public class LogicFacade {
 
     /**
      * Denne metode sender en stykliste til en kunde via klassen @StyklisteMapper
-     * @param oid
-     * @param bid
+     * @param oid ordreID
+     * @param bid BrugerID
      */
         public static void  sendStykliste(int oid, int bid){
 
